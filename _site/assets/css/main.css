@@ -1,0 +1,44 @@
+body {
+    background-image: url('/assets/images/farm-bg-fade-2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #fffff;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    position: relative;
+  }
+
+/*footer*/
+.footer {
+    flex-shrink: 0;
+  }
+
+/*home*/
+.masthead {
+    height: 100vh;
+    min-height: 500px;
+    background-image: url('/assets/images/s2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+.home h1{
+    color: #f8f9fa;
+    font-weight: bold;
+}
+
+.home h4{
+    color: #f8f9fa;
+    font-weight: bold;
+}
+
+/* workshop cards*/
+.workshops .card-img img{
+    width: 100%;
+    height: 25vh;
+    object-fit: cover;
+}
