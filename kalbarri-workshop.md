@@ -348,6 +348,11 @@ The dimensions of a pixel relative to distance on the Earth’s land surface det
 
 In Google Earth Engine, raster data is stored as an `Image`. An `Image` is a special data structure that can have one or more bands (a band is an array of pixels with values that comprise the raster data model) and some properties that tell use about the data in the bands (e.g. data source, date of image creation). This information about the data is called metadata. 
 
+<figure style="margin-left: auto; margin-right: auto; text-align: center;">
+    <img src="{{site.url}}/assets/images/gee-image.png" class="img-fluid">
+    <figcaption>Visual of <code>Image</code> data structure in Google Earth Engine (source: Google Earth Engine)</figcaption>
+</figure>
+
 Let's explore an `Image` in Google Earth Engine. Run the following code:
 
 ```
@@ -378,10 +383,87 @@ Map.addLayer(ps4Img, ps4VisParams, 'PS4 Image');
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center;">
     <img src="{{site.url}}/assets/images/ps4-image-map.png" class="img-fluid">
-    <figcaption>Printing PS4 Image to the Map display</figcaption>
+    <figcaption>Printing PS4 Image to the Map display.</figcaption>
 </figure>
 
 ### ImageCollections
+
+An `ImageCollection` in Google Earth Engine is a stack of `Image`s; it provides a structure to group together and organise related `Image`s. For example, you could create an `ImageCollection` that stores all `Image`s captured by a satellite such as Landsat, Sentinel-2, or Planet. 
+
+<figure style="margin-left: auto; margin-right: auto; text-align: center;">
+    <img src="{{site.url}}/assets/images/image-collection.png" class="img-fluid">
+    <figcaption>Visual of <code>ImageCollection</code> data structure in Google Earth Engine (source: Google Earth Engine)</figcaption>
+</figure>
+
+`ImageCollection`s provide functions for:
+
+* Filtering `Image`s based on a condition (e.g. selecting `Image`s that fall within a date range).
+* Mapping functions over `Image`s in the `ImageCollection` (e.g. multiplying all `Image` values by a constant value).
+* Reducing `Image`s in an `ImageCollection` (e.g. summing the values of all `Image`s in an `ImageCollection`).
+
+Let's explore an `ImageCollection` of Planet Scope 4 `Image`s in Google Earth Engine. Execute the following code snippet in the code editor. 
+
+```
+//ImageCollection
+var ps4ImgColl = ee.ImageCollection('users/jmad1v07/morethanmaps/kalbarri-ps4-tc-seroja');
+print(ps4ImgColl);
+```
+
+You should see that the `ImageCollection`'s metadata has been printed to the *Console* and that there are 130 Planet Scope 4 `Image`s in the collection. 
+
+#### Filter
+
+We can filter out a subset of `Image`s from the `ImageCollection` using conditions and summarise (`reduce`) our filtered data. Let's get all the `Image`s before Tropical Cyclone Seroja made land fall on the Western Australian coastline (11 April 2021) and compute the median value for each band in these `Image`s.
+
+We call the `.filterDate()` date function on our `ImageCollection` and pass two dates (start date and end date) as strings into the function. These string dates specify the date range that we want to select `Image`s from. You can check out the `Image`'s that have been filtered into a new `ImageCollection` `ps4PreTCSeroja` in the *Console*. 
+
+```
+// Filter Images pre TC Seroja
+var ps4PreTCSeroja = ps4ImgColl
+    .filterDate('2021-01-01', '2021-04-09');
+print('Images pre-TC Seroja:', ps4PreTCSeroja);
+```
+
+#### Reduce
+
+We can also summarise all the `Image`s in an `ImageCollection`; we use [`reduce()`](https://developers.google.com/earth-engine/guides/reducers_intro) operations to perform these summaries. For example, we can compute the average value for each pixel, in each band, for all `Image`s in an `ImageCollection`. 
+
+<figure style="margin-left: auto; margin-right: auto; text-align: center;">
+    <img src="{{site.url}}/assets/images/gee-reduce-image-collections.png" class="img-fluid">
+    <figcaption>Illustration of reducing an <code>ImageCollection</code> in Google Earth Engine (source: Google Earth Engine).</figcaption>
+</figure>
+
+The pattern for reducing an `ImageCollection` should be familiar. We use the `.` operator to call the relevant `reduce()` function on the `ImageCollection` we wish summarise. Here, we'll use the `.median()` reducer to compute median pre Tropical Cyclone Seroja `Image`. 
+
+```
+// Median reducer
+var ps4PreTCSerojaMedian = ps4PreTCSeroja.median();
+print('pre-TC Seroja - median Image:', ps4PreTCSerojaMedian);
+
+// visualise parameters
+var medianVisParams = {
+  'bands': ['b3', 'b2', 'b1'],
+  'min': 0,
+  'max': 2500
+};
+Map.addLayer(ps4PreTCSerojaMedian, medianVisParams, 'PS4 Image - pre-TC Seroja');
+
+```
+
+Your code editor should be similar to the screengrab below. You should see the median Planet Scope 4 `Image` of pre-Tropical Cyclone Seroja `Image`s added to the map and available under the *Layers* selector. The median `Image` should also be printed on your *Console* with four bands. 
+
+<figure style="margin-left: auto; margin-right: auto; text-align: center;">
+    <img src="{{site.url}}/assets/images/reducer-results.png" class="img-fluid">
+    <figcaption>Visualising and exploring the results from reducing an <code>ImageCollection</code>.</figcaption>
+</figure>
+
+
+<details>
+  <summary><b>If you wanted create a mean <code>Image</code> from a stack of <code>Image</code>s in an <code>ImageCollection</code>, what do you think the reducer function would look like?</b></summary>
+  <p><br><code>.mean()</code></p>
+</details>
+
+<br>
 
 ## Vector
 
@@ -398,12 +480,102 @@ Vector data represents geographic data as geometric features:
 
 Along with coordinates that represent the position of the geometric feature, vector data also stores non-spatial attribute information which describe characteristics of the geographic phenomenon or entity represented by the geometry feature.
 
+### Geometry
+
+In Google Earth Engine a [`Geometry`](https://developers.google.com/earth-engine/guides/geometries) object is used to represent geographic coordinates for vector data. We can create a list of coordinates and pass them into a constructor function to create `Geometry` objects that we can draw on the map or use in geometric operations (e.g. create buffers around points, measure distance between points).
+
+Let's create a `Point` `Geometry` object in Kalbarri. You should see a marker appear on the map at location specified by the coordinate pair. 
+
+```
+// Vector data - point
+var kalbarriPoint =  ee.Geometry.Point([114.16361565669752, -27.71407018883071]);
+print('Kalbarri Point:', kalbarriPoint);
+Map.addLayer(kalbarriPoint, {}, 'Point');
+```
+
+<figure style="margin-left: auto; margin-right: auto; text-align: center;">
+    <img src="{{site.url}}/assets/images/display-point-kalbarri.png" class="img-fluid">
+    <figcaption>Display a <code>Point</code> <code>Geometry</code> object on the map.</figcaption>
+</figure>
+
+### Feature
+
+`Geometry` objects help us store geographic coordinates, but what attribute information that describes the location? For example, if we have a `Point` object describing the location of a town on the Earth's surface we might also want attribute information that tells us the name of the town or the population of the town. In Google Earth Engine we use `Feature`s to combine geographic information in `Geometry` objects with non-spatial attribute information in `Dictionary` objects. 
+
+We've already introduced JavaScript objects which consist of name:value pairs (e.g. `{name: 'Kalbarri'}`). A `Feature` in Google Earth Engine contains a `Geometry` object in a `geometry` property and a `Dictionary` object of attributes in a `properties` property. 
+
+We can create a `Feature` in Google Earth Engine using the `ee.Feature()` constructor function. 
+
+```
+// Feature
+var kalbarriFeature = ee.Feature(kalbarriPoint, {name: 'Kalbarri'});
+print('Kalbarri Feature:', kalbarriFeature);
+```
+You should see `kalbarriFeature` printed to the *Console* where you can inspect its `geometry` and `properties` property slots. 
+
+### FeatureCollection
+
+Similar to the approach of grouping `Image`s in an `ImageCollection`, we can organise `Feature`s in a `FeatureCollection`. `FeatureCollection`s give us similar tools to filter and summarise `Feature`s stored in the `FeatureCollection`. 
+
+Let's explore a `FeatureCollection` storing building footprints for Kalbarri. Each building is represented as a `Feature` in the `FeatureCollection` and each `Feature` stores a `Geometry` object representing the building's footprint. The building footprints are obtained from Microsoft's building footprints [dataset](https://github.com/microsoft/AustraliaBuildingFootprints).
+
+```
+// Feature Collection - Building Footprints
+var buildingFootprints = ee.FeatureCollection('users/jmad1v07/morethanmaps/microsoft_building_footprints');
+print('Building Footprings:', buildingFootprints);
+Map.addLayer(buildingFootprints, {}, 'Building Footprints');
+```
+
+You should see the outline of the building footpringts in Kalbarri appear on the map.
+
+<figure style="margin-left: auto; margin-right: auto; text-align: center;">
+    <img src="{{site.url}}/assets/images/feature-collection-building-footprints.png" class="img-fluid">
+    <figcaption><code>FeatureCollection</code> of building footprints in Kalbarri.</figcaption>
+</figure>
 
 # Remote Sensing
+
+The Planet Scope 4 `Image`s that you have been working with store data that is recorded by sensors on satellites that are observing the Earth. 
+
+As satellites orbit the Earth, they monitor the same location on the land surface across time and capture information about land surface conditions. This information can be used to track changes in properties of the Earth's land surface (e.g. land cover change or vegetation health) and identify how ecosystems are responding to climatic change and hazard events. 
+
+The process of using sensors to capture information about the Earth's land surface is remote senisng. Let's explore some core remote sensing concepts so we can understand how the Planet Scope 4 `Image`s are created and contain useful information for detecting change caused by climatic events. 
 
 ## Remote Sensing Concepts
 
 ### Spectral Reflectance
+
+Remote sensors on satellites measure electromagnetic energy reflected or emitted by objects on the Earth's land surface. 
+
+The sensor that produces Planet Scope 4 `Image`s is a passive sensor; this means it measures the energy of sunlight reflected by objects. 
+
+Most often, when monitoring the Earth's surface using remote sensing images, we want `Image` pixels to have units of surface reflectance. Surface reflectance is the ratio of energy in incoming solar radiation to outgoing reflected solar radiation as measured by a sensor at the Earth's surface. Reflectance has values between 0 (no incoming solar radiation is reflected) to 1 (all incoming solar radiation is reflected). The roughness and albedo of an object determine how much light is reflected. 
+
+When conditions on the Earth's surface change, levels of surface reflectance change. Imagine looking at a scene before and after a flood, after a flood you can see there has been a change and water is present where previously there was land. The reason you can detect this change with your eyes is because there if a difference in light reflected off the scene in areas of flood-driven change. The same principle applies when monitoring the land surface using satellite-based sensors; a change in surface reflectance indicates a change on the land surface. This allows us to detect change such as deforestation events or damage caused by tropical cyclones. 
+
+<details>
+  <summary><b>Why is surface reflectance used to monitor land surface objects as opposed to a more direct measure of energy levels at the sensor?</b></summary>
+  <p><br>Some days are brighter than others, this means that solar illumination conditions are different and levels of reflected energy off land surface objects at the sensor will be different. However, the land surface object will not have changed and it is change in land surface objects that we seek to monitor. If the reflective properties of an object do not change, the ratio of incoming to reflected light should be the same even if the energy of incoming light changes. Thus, using surface reflectance to monitor land surface objects avoids conflating change in illumination conditions with actual changes in land surface objects.</p>
+</details>
+
+<br>
+
+Remote sensors measure electromagnetic energy reflected by Earth surface features. Electromagnetic energy travels through the atmosphere and space as waves that are characterised by its wavelength and frequency. 
+
+<figure style="margin-left: auto; margin-right: auto; text-align: center;">
+    <img src="{{site.url}}/assets/images/EMS-Introduction_earthdata-nasa.jpeg" class="img-fluid">
+    <figcaption>Electromagnetic spectrum. Source: <a href="https://earthdata.nasa.gov/learn/backgrounders/remote-sensing" target="_blank">NASA</a>.</figcaption>
+</figure>
+
+Features on the Earth's land surface have different reflectance characteristics at different wavelenghts. Think about smooth bright white roofs; these roofs are reflecting lots incoming light across red, green, and blue visible wavelenghts which is why the roof is white (reflectance across the visible spectrum) and bright (lots of incoming energy reflected). The same prinicple also explains why vegetation appears green to us. Healthy vegetation reflects more green light and absorbs more red and blue light. 
+
+Remote sensors measure reflectance in different spectral wavebands. This allows us to distinguish features on the Earth's surface based on their varying reflectance across spectral wavebands. Our eyes can only sense reflected energy in the visible spectrum; however, remote sensors can sense over a wider range of wavelengths. 
+
+
+
+For example, 
+
+This boosts our capacity to distinguish features and change on the Earth's surface. Different features 
 
 ### Image Bands
 
