@@ -535,13 +535,47 @@ You should see the outline of the building footpringts in Kalbarri appear on the
 
 # Remote Sensing
 
+The Planet Scope 4 `Image`s that you have been working with store data that is recorded by sensors on satellites that are observing the Earth. 
 
+As satellites orbit the Earth, they monitor the same location on the land surface across time and capture information about land surface conditions. This information can be used to track changes in properties of the Earth's land surface (e.g. land cover change or vegetation health) and identify how ecosystems are responding to climatic change and hazard events. 
+
+The process of using sensors to capture information about the Earth's land surface is remote senisng. Let's explore some core remote sensing concepts so we can understand how the Planet Scope 4 `Image`s are created and contain useful information for detecting change caused by climatic events. 
 
 ## Remote Sensing Concepts
 
-
-
 ### Spectral Reflectance
+
+Remote sensors on satellites measure electromagnetic energy reflected or emitted by objects on the Earth's land surface. 
+
+The sensor that produces Planet Scope 4 `Image`s is a passive sensor; this means it measures the energy of sunlight reflected by objects. 
+
+Most often, when monitoring the Earth's surface using remote sensing images, we want `Image` pixels to have units of surface reflectance. Surface reflectance is the ratio of energy in incoming solar radiation to outgoing reflected solar radiation as measured by a sensor at the Earth's surface. Reflectance has values between 0 (no incoming solar radiation is reflected) to 1 (all incoming solar radiation is reflected). The roughness and albedo of an object determine how much light is reflected. 
+
+When conditions on the Earth's surface change, levels of surface reflectance change. Imagine looking at a scene before and after a flood, after a flood you can see there has been a change and water is present where previously there was land. The reason you can detect this change with your eyes is because there if a difference in light reflected off the scene in areas of flood-driven change. The same principle applies when monitoring the land surface using satellite-based sensors; a change in surface reflectance indicates a change on the land surface. This allows us to detect change such as deforestation events or damage caused by tropical cyclones. 
+
+<details>
+  <summary><b>Why is surface reflectance used to monitor land surface objects as opposed to a more direct measure of energy levels at the sensor?</b></summary>
+  <p><br>Some days are brighter than others, this means that solar illumination conditions are different and levels of reflected energy off land surface objects at the sensor will be different. However, the land surface object will not have changed and it is change in land surface objects that we seek to monitor. If the reflective properties of an object do not change, the ratio of incoming to reflected light should be the same even if the energy of incoming light changes. Thus, using surface reflectance to monitor land surface objects avoids conflating change in illumination conditions with actual changes in land surface objects.</p>
+</details>
+
+<br>
+
+Remote sensors measure electromagnetic energy reflected by Earth surface features. Electromagnetic energy travels through the atmosphere and space as waves that are characterised by its wavelength and frequency. 
+
+<figure style="margin-left: auto; margin-right: auto; text-align: center;">
+    <img src="{{site.url}}/assets/images/EMS-Introduction_earthdata-nasa.jpeg" class="img-fluid">
+    <figcaption>Electromagnetic spectrum. Source: <a href="https://earthdata.nasa.gov/learn/backgrounders/remote-sensing" target="_blank">NASA</a>.</figcaption>
+</figure>
+
+Features on the Earth's land surface have different reflectance characteristics at different wavelenghts. Think about smooth bright white roofs; these roofs are reflecting lots incoming light across red, green, and blue visible wavelenghts which is why the roof is white (reflectance across the visible spectrum) and bright (lots of incoming energy reflected). The same prinicple also explains why vegetation appears green to us. Healthy vegetation reflects more green light and absorbs more red and blue light. 
+
+Remote sensors measure reflectance in different spectral wavebands. This allows us to distinguish features on the Earth's surface based on their varying reflectance across spectral wavebands. Our eyes can only sense reflected energy in the visible spectrum; however, remote sensors can sense over a wider range of wavelengths. 
+
+
+
+For example, 
+
+This boosts our capacity to distinguish features and change on the Earth's surface. Different features 
 
 ### Image Bands
 
