@@ -31,6 +31,7 @@ Add gem paths and replace `X.X` with first two digits of ruby version (`ruby -v`
 
 ```
 # If you're using Zsh
+# echo 'export PATH="$HOME/.gem/ruby/3.0.0/bin:$PATH"' >> ~/.zshrc
 echo 'export PATH="$HOME/.gem/ruby/X.X.0/bin:$PATH"' >> ~/.zshrc
 ```
 
