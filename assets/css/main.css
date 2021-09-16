@@ -75,8 +75,6 @@ body {
     overflow: auto;
 } */
 
-
-
 /* workshop cards*/
 .workshops .card-img img{
     width: 100%;
@@ -109,6 +107,9 @@ body {
     }
 }
 
+.workshop-content h1{
+    border-top: 2px solid #5a5a5a;
+}
 
 /* team */
 .info {
