@@ -3,14 +3,40 @@ layout: workshops
 title: Kalbarri Damage
 ---
 
+# Introduction
+
+This workshop will demonstrate techniques for assessing building damage following Tropical Cyclones using Tropical Cyclone Seroja, which impacted Kalbarri in April 2021, as a case study. 
+
+## Tropical Cyclone Seroja
+
+Tropical Cyclone Seroja formed on 3 April 2021 and dissipated on 12 April 2021. It's track passed through Indonesia, Timor Leste, and finally impacted the Western Australia coast near Kalbarri as a category 3 storm. The storm caused significant damage in all the countries it impacted including damaging infrastructure and buildings in Western Australia's coastal towns. 
+
+The ABC news has reported on damage to buildings in Kalbarri [here](https://www.abc.net.au/news/2021-05-28/cyclone-seroja-damage-report-suggests-region-classified-cyclonic/100170602).
+
+## Learning Objectives
+
+* Understand the different types of geospatial data (vector, raster, and attributes).
+* Develop an understanding of remote sensing images.
+* Learn basic programming techniques to process and analyse remote sensing images.
+* Learn image analysis techniques to detect change from remote sensing images.
+* Understand how remote sensing data can be used for rapid and wide-scale mapping of climatic hazard impacts to infrastructure and property.
+
+## Activities
+
+* Introduction to Tropical Cyclones, the cost of their impacts, and importance of damage mapping. 
+* Introduction to geospatial data in Google Earth Engine.
+* Introduction to basic programming techniques and concepts.
+* Introduction to workshop data (polygon building footprints, coarse spatial resolution multi-date Planet data, fine spatial resolution Nearmap data).
+* Introduction to image analysis techniques to map building damage.
+* Discussion of how rapid damage mapping is important to guide responses as coastal areas are more exposed to climatic hazards under climate change.
+
+
+<br>
+
 # Introduction to GEE
 Google Earth Engine is a geospatial analysis platform that runs on Google Cloud. Using Google Earth Engine you can access and analyse large amounts of geospatial data and satellite images from your web browser. 
 
-Google Earth Engine is advancing our capacity to monitor and understand changes in Earth systems due to climate change and human development through making it easier for scientists to unlock insights from big archives of satellite data. Check out some applications of Google Earth Engine here:
-
-* Deforestation
-* Urban Heat Islands
-* Water
+Google Earth Engine is advancing our capacity to monitor and understand changes in Earth systems due to climate change and human development through making it easier for scientists to unlock insights from big archives of satellite data. 
 
 You need to sign up for Google Earth Engine here: [https://earthengine.google.com/signup/](https://earthengine.google.com/signup/) 
 
@@ -55,7 +81,6 @@ In JavaScript there are seven primitive data types:
 
 Strings are used to represent text in JavaScript programs. Strings contain characters which are surrounded by ` or “ (single or double quotes). There are several cases where string variables are used when working with geospatial data; for example, in the metadata of satellite images the name of the sensor used to collect an image could be stored as a string.
 
-<br>
 <details>
   <summary><b>What other information related to geographic data could be stored as a string data type?</b></summary>
   <p><br>Anything that needs to be represented as text data such as place names, road names, names of weather stations.</p>
@@ -87,7 +112,6 @@ You should see `Hello World!` displayed in the *Console*.
 
 Number data type is used to represent numeric data. Storing numbers in programs allows us to perform mathematical and statistical operations and use numeric attributes to describe geographic features and entities.
 
-<br>
 <details>
   <summary><b>What other information related to geographic data could be stored as a number data type?</b></summary>
   <p><br>Temperature, precipitation, population counts.</p>
@@ -110,7 +134,6 @@ Execute the following code to perform some basic maths with the variables `x` an
 var z = x + y;
 ```
 
-<br>
 <details>
   <summary><b>What value do you think will be stored in the variable <code>z</code>?</b></summary>
   <p> <p><br>3<br> <code>print(z);</code></p></p>
@@ -186,7 +209,6 @@ var bool1 = x == 1 && y == 2;
 var bool2 = y < x;
 ```
 
-<br>
 <details>
   <summary><b>What value do you think will be stored in the variable <code>bool1</code> and <code>bool2</code>?</b></summary>
   <p> 
@@ -316,7 +338,7 @@ print(diff)
 
 You should see the result of calling `subtraction()` printed in the *Console*.
 
-Google Earth Engine also comes with a suite of in-built functions that you can use to retrieve, analyse, and visualise data. You can explore these functions under the *Docs* tab in the left side-bar. The picture below shows the documentation for the `addBands()` function which can be used to add two image bands together. 
+Google Earth Engine also comes with a suite of in-built functions that you can use to retrieve, analyse, and visualise data. You can explore these functions under the *Docs* tab in the left side-bar. The picture below shows the documentation for the `addBands()` function which can be used to stack bands from two `Image`s. 
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center;">
     <img src="{{site.url}}/assets/images/docs_side_bar.png" class="workshop-img-small">
@@ -349,10 +371,10 @@ The dimensions of a pixel relative to distance on the Earth’s land surface det
 
 ### Images
 
-In Google Earth Engine, raster data is stored as an `Image`. An `Image` is a special data structure that can have one or more bands (a band is an array of pixels with values that comprise the raster data model) and some properties that tell use about the data in the bands (e.g. data source, date of image creation). This information about the data is called metadata. 
+In Google Earth Engine, raster data is stored as an `Image`. An `Image` is a special data structure that can have one or more bands (a band is an array of pixels with values) and some properties that tell us about the data in the bands (e.g. data source, date of image creation). This information about the data is called metadata. 
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center;">
-    <img src="{{site.url}}/assets/images/gee-image.png" class="workshop-img">
+    <img src="{{site.url}}/assets/images/gee-image.png" class="workshop-img-small">
     <figcaption>Visual of <code>Image</code> data structure in Google Earth Engine (source: Google Earth Engine)</figcaption>
 </figure>
 
@@ -389,7 +411,7 @@ Map.addLayer(ps4Img, ps4VisParams, 'PS4 Image');
 ```
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center;">
-    <img src="{{site.url}}/assets/images/ps4-image-map.png" class="workshop-img">
+    <img src="{{site.url}}/assets/images/ps4-image-map.png" class="workshop-img-small">
     <figcaption>Printing PS4 Image to the Map display.</figcaption>
 </figure>
 
@@ -440,7 +462,7 @@ We can also summarise all the `Image`s in an `ImageCollection`; we use [`reduce(
     <figcaption>Illustration of reducing an <code>ImageCollection</code> in Google Earth Engine (source: Google Earth Engine).</figcaption>
 </figure>
 
-The pattern for reducing an `ImageCollection` should be familiar. We use the `.` operator to call the relevant `reduce()` function on the `ImageCollection` we wish summarise. Here, we'll use the `.median()` reducer to compute median pre Tropical Cyclone Seroja `Image`. 
+The pattern for reducing an `ImageCollection` should be familiar. We use the `.` operator to call the relevant `reduce()` function on the `ImageCollection` we wish to summarise. Here, we'll use the `.median()` reducer to compute median pre-Tropical Cyclone Seroja `Image`. 
 
 ```js
 // Median reducer
@@ -492,7 +514,7 @@ Along with coordinates that represent the position of the geometric feature, vec
 
 In Google Earth Engine a [`Geometry`](https://developers.google.com/earth-engine/guides/geometries) object is used to represent geographic coordinates for vector data. We can create a list of coordinates and pass them into a constructor function to create `Geometry` objects that we can draw on the map or use in geometric operations (e.g. create buffers around points, measure distance between points).
 
-Let's create a `Point` `Geometry` object in Kalbarri. You should see a marker appear on the map at location specified by the coordinate pair. 
+Let's create a `Point` `Geometry` object in Kalbarri. You should see a marker appear on the map at the location specified by the coordinate pair. 
 
 ```js
 // Vector data - point
@@ -508,7 +530,7 @@ Map.addLayer(kalbarriPoint, {}, 'Point');
 
 ### Feature
 
-`Geometry` objects help us store geographic coordinates, but what attribute information that describes the location? For example, if we have a `Point` object describing the location of a town on the Earth's surface we might also want attribute information that tells us the name of the town or the population of the town. In Google Earth Engine we use `Feature`s to combine geographic information in `Geometry` objects with non-spatial attribute information in `Dictionary` objects. 
+`Geometry` objects help us store geographic coordinates, but what about attribute information that describes the location? For example, if we have a `Point` object describing the location of a town on the Earth's surface we might also want attribute information that tells us the name of the town or the population of the town. In Google Earth Engine we use `Feature`s to combine geographic information in `Geometry` objects with non-spatial attribute information in `Dictionary` objects. 
 
 We've already introduced JavaScript objects which consist of name:value pairs (e.g. `{name: 'Kalbarri'}`). A `Feature` in Google Earth Engine contains a `Geometry` object in a `geometry` property and a `Dictionary` object of attributes in a `properties` property. 
 
@@ -538,7 +560,7 @@ You should see the outline of the building footpringts in Kalbarri appear on the
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center;">
     <img src="{{site.url}}/assets/images/feature-collection-building-footprints.png" class="workshop-img">
-    <figcaption><code>FeatureCollection</code> of building footprints in Kalbarri.</figcaption>
+    <figcaption><code>FeatureCollection</code> of Microsoft building footprints in Kalbarri.</figcaption>
 </figure>
 
 <br>
@@ -549,7 +571,7 @@ The Planet Scope 4 `Image`s that you have been working with store data that is r
 
 As satellites orbit the Earth, they monitor the same location on the land surface across time and capture information about land surface conditions. This information can be used to track changes in properties of the Earth's land surface (e.g. land cover change or vegetation health) and identify how ecosystems are responding to climatic change and hazard events. 
 
-The process of using sensors to capture information about the Earth's land surface is remote senisng. Let's explore some core remote sensing concepts so we can understand how the Planet Scope 4 `Image`s are created and contain useful information for detecting change caused by climatic events. 
+The process of using sensors to capture information about the Earth's land surface is remote senisng. Let's explore some core remote sensing concepts so that we can understand how the Planet Scope 4 `Image`s are created and contain useful information for detecting change caused by climatic events. 
 
 ## Remote Sensing Concepts
 
@@ -558,7 +580,7 @@ The process of using sensors to capture information about the Earth's land surfa
 Remote sensors on satellites measure electromagnetic energy reflected or emitted by objects on the Earth's land surface. The sensor that produces Planet Scope 4 `Image`s is a passive sensor; this means it measures the energy of sunlight reflected by objects. 
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center;">
-    <img src="{{site.url}}/assets/images/satellite-remote-sensing.png" class="workshop-img">
+    <img src="{{site.url}}/assets/images/satellite-remote-sensing.png" class="workshop-img-small">
     <figcaption>Simple model of passive satellite remote sensing.</figcaption>
 </figure>
 
@@ -582,7 +604,7 @@ Remote sensors measure electromagnetic energy reflected by Earth surface feature
 
 Features on the Earth's land surface have different reflectance characteristics at different wavelenghts. Think about smooth bright white roofs; these roofs are reflecting lots incoming light across red, green, and blue visible wavelengths which is why the roof is white (reflectance across the visible spectrum) and bright (lots of incoming energy reflected). The same prinicple also explains why vegetation appears green; healthy vegetation reflects more green light and absorbs more red and blue light. 
 
-Remote sensors measure reflectance in different spectral wavelengths. This allows us to distinguish features on the Earth's surface based on their varying reflectance across spectral wavelengths. Our eyes can only sense reflected energy in the visible spectrum; however, remote sensors can sense over a wider range of the electromagnetic spectrum. 
+Remote sensors measure reflectance in different spectral wavelengths. This allows us to distinguish features on the Earth's surface based on their varying reflectance across wavelengths. Our eyes can only sense reflected energy in the visible spectrum; however, remote sensors can sense over a wider range of the electromagnetic spectrum. 
 
 Sensing reflectance across the electromagnetic spectrum increases our capacity to monitor important and interesting properties of Earth surface features. For example, water absorbs near-infrared radiation so appears `darker' compared the land surface. Green vegetation is reflective in near-infrared wavelengths (as near-infrared radiation reflects off the internal structure of leaves).
 
@@ -590,25 +612,25 @@ Sensing reflectance across the electromagnetic spectrum increases our capacity t
 
 Let's explore how surface reflectance in different wavelengths is represented in the Planet Scope 4 `Image`s we have been visualising on the map.
 
-Head the *Inspector* tab next to the *Console* in the upper right of the code editor. When the *Inspector* tab is selected you can click on the map display and values in `Image`s at the location you clicked will be printed.
+Head to the *Inspector* tab next to the *Console* in the upper right of the code editor. When the *Inspector* tab is selected you can click on the map display and values in `Image`s at the location you clicked will be printed.
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center;">
     <img src="{{site.url}}/assets/images/inspector-tab.png" class="workshop-img-small">
     <figcaption><em>Inspector</em> tab.</figcaption>
 </figure>
 
-Click at a location on the map and look in the *Inspectors* tab. Under the *PS4 Image - pre-TC Seroja* and *PS4 Image - post-TC Seroja* `Image`s you should see four numbers printed against properties labelled `b1`, `b2`, `b3`, and `b4`. These numbers are the surface reflectance values recorded by the sensor in different wavelengths:
+Click at a location on the map and look in the *Inspectors* tab. Under the *PS4 Image - pre-TC Seroja* `Image` you should see four numbers printed against properties labelled `b1`, `b2`, `b3`, and `b4`. These numbers are the surface reflectance values recorded by the sensor in different wavelengths:
 
 * `b1`: blue visible light
 * `b2`: green visible light
 * `b3`: red visible light
 * `b4`: near-infrared light
 
-`b1`, `b2`, `b3`, and `b4` are the names of `Image` bands. Surface reflectance values for the same location but different wavelengths are stored in a separate band. Each band is a raster `Image` - values are stored in pixels.
+`b1`, `b2`, `b3`, and `b4` are the names of `Image` bands. Surface reflectance values for the same location but different wavelengths are stored in a separate band. Each band is a raster dataset - values are stored in pixels.
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center;">
     <img src="{{site.url}}/assets/images/reflectance-values.png" class="workshop-img-small">
-    <figcaption>Surface reflectance values in the four bands of a Planet Scope 4 `Image`.</figcaption>
+    <figcaption>Surface reflectance values in the four bands of a Planet Scope 4 <code>Image</code>.</figcaption>
 </figure>
 
 We have been visualising the red, green, and blue bands of Planet Scope 4 `Image`s together on the map display. This is called a RGB colour composite image, which is similar to how our eyes perceive colour by combining intensities of red, green, and blue light. 
@@ -666,7 +688,7 @@ Click on pixels of different surface cover types such as buildings, roads, and v
 
 # Mapping Buildings Damaged by Tropical Cyclone Seroja
 
-You have learnt about how we can represent real world features and phenomenon using geographic data, programming tools to manipulate and analyse geographic data, and how satellite images can be used to monitor change on the Earth's surface. Let's pull all these skills together to map the location of damaged buildings after Tropical Cyclone Seroja impacted Kalbarri in April, 2021.
+You have learnt about how we can represent real world features and phenomenon using geographic data, programming tools to manipulate and analyse geographic data, and how satellite images can be used to monitor change on the Earth's surface. Let's pull all these skills together to map the location of damaged buildings after Tropical Cyclone Seroja impacted Kalbarri in April 2021.
 
 First, let's have a look at the impact of Tropical Cyclone Seroja on buildings in Kalbarri. We can use a high-resolution aerial image captured by [Nearmap](https://www.nearmap.com/au/en) after the cyclone event. 
 
@@ -689,7 +711,7 @@ You can clearly see the complete damage to some roofs, partial damage to others,
 
 ## Change Detection - Identifying Damaged Roofs
 
-Change detection is an image analysis technique where two images of the same location but different dates are compared to identify change in surface reflectance which can be related to actual change on the Earth's surface. 
+Change detection is an image analysis technique where two images of the same location, but captured on different dates, are compared to identify change in surface reflectance which can be related to actual change on the Earth's surface. 
 
 A simple approach is subtracting one image from another and visualising the difference in pixel values. Large positive or negative pixel values indicate that a change occurred at that location. Another approach is to divide the pre-image by the post-image; if there has been little change between the two images the change image should have pixel values of 1. If there has been a decrease in surface reflectance, pixel values in the change image should be greater than one. 
 
@@ -740,7 +762,7 @@ Turn off all layers except the *Building Damage* layer and the *Nearmap post-TC 
 
 ## Mapping Roof Texture - Identifying Damaged Roofs
 
-We have just used Planet Scope 4 `Image`s to detect damaged roofs by comparing pre- and post-cyclone event `Image`s. However, there might be occassions where we do not have pre- and post-event satellite images that we can use for damage mapping. For example, the high-resolution Nearmap `Image` we have been using to inspect damaged roofs is only available after Tropical Cyclone Seroja when Nearmap flew a aeroplane over the impacted regions with a sensor on-board. 
+We have just used Planet Scope 4 `Image`s to detect damaged roofs by comparing pre- and post-cyclone event `Image`s. However, there might be occassions where we do not have pre- and post-event satellite images that we can use for damage mapping. For example, the high-resolution Nearmap `Image` we have been using to inspect damaged roofs is only available after Tropical Cyclone Seroja when Nearmap flew an aeroplane over the impacted regions with a sensor on-board. 
 
 However, we can still detect damaged roofs using the single point-in-time Nearmap `Image` through contrasting the reflectance properties of intact and damaged roofs. We expect damaged roofs to have a rougher texture than intact roofs, which will be smoother. Roofs with a rougher texture will exhibit more variation in reflectance. Let's see if there is a pattern between roof texture and roof damage.
 
