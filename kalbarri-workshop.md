@@ -1,11 +1,15 @@
 ---
 layout: workshops
-title: Kalbarri Damage
+title: Kalbarri Damage s
 ---
 
-# Introduction
+# Building Damage in Kalbarri - Tropical Cyclone Seroja
 
-This workshop will demonstrate techniques for assessing building damage following Tropical Cyclones using Tropical Cyclone Seroja, which impacted Kalbarri in April 2021, as a case study. 
+<figure style="margin-left: auto; margin-right: auto; text-align: center;">
+    <img src="{{site.url}}/assets/images/kalbarri-title.png" class="img-fluid" style="min-width:100%">
+</figure>
+
+This workshop will demonstrate techniques for assessing building damage caused by Tropical Cyclone Seroja, which impacted Kalbarri in April 2021. 
 
 ## Tropical Cyclone Seroja
 
