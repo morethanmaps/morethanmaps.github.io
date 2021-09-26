@@ -46,7 +46,7 @@ The benefits people obtain from ecosystems. These benefits can be **products** l
 
 # Activity 2: Climate Impacts
 
-**TASK:** make a list of a climate event that affects each of the landscape components or ecosystem services that are important for supporting livelihoods (that you identified in Activity 1). 
+**TASK:** make a list of a climate events that affect each of the landscape components or ecosystem services that are important for supporting livelihoods (that you identified in Activity 1). 
 
 ## Detecting Climate Impacts from Satellite Images
 
@@ -66,7 +66,7 @@ Let's build a simple causal loop diagram to illustrate how they work:
 
 #### Identify the problem variable
 
-The first stage in building a causal loop diagram is picking a **problem or focus variable**. Typically, a problem variable should be something that relates to someone's well-being; an increase or decrease in the problem variable should cause a change in their well-being. Often, we're looking to design strategies or policies that affect problem variables to boost people's well-being or protect them from climate shocks. In this example, let's focus on *collecting crabs from the mangroves*. Mud crabs collected from the Ba Mangroves are sold in the local markets, which is an important source of income for many households. 
+The first stage in building a causal loop diagram is picking a **problem or focus variable**. Typically, a problem variable should be something that relates to someone's well-being; an increase or decrease in the problem variable should cause a change in their well-being. Often, we're looking to design strategies or policies that affect problem variables to boost people's well-being or protect them from climate shocks or other harmful stressors. In this example, let's focus on *collecting crabs from the mangroves*. Mud crabs collected from the Ba Mangroves are sold in the local markets, which is an important source of income for many households. 
 
 #### Identify the causes of the problem
 
@@ -175,11 +175,19 @@ Following the tasks below, you will create a causal loop diagram that depicts ho
 
 **TASK 1: Select a problem variable**
 
-In Activity 1 you made a list of landscape components and ecosystem services that people's use to support their livelihoods. Pick one of the items on this list as a problem variable. Think carefully about how you select this variable. The goal of this task is to use a causal loop diagram to design an adaptation strategy that reduces climate impacts on livelihoods. You should look to select a variable that is important for someone's livelihood and is sensitive to climate shocks. 
+In Activity 1 you made a list of landscape components and ecosystem services that people use to support their livelihoods. Pick one of the items on this list as a problem variable. Think carefully about how you select this variable. The goal of this task is to use a causal loop diagram to design an adaptation strategy that reduces climate impacts on livelihoods. You should look to select a variable that is important for someone's livelihood and is sensitive to climate shocks. 
 
 In the middle of a sheet of paper write down your problem variable. 
 
 **TASK 2: Identify causes**
+
+In Activity 2 you made a list of climatic events that affect landscape components and ecosystem services that support people's livelihoods. Identify the climate events that **directly cause** changes in your problem variable (i.e. the climate event does NOT causea a change in the problem variable indirectly through another variable). If crop production is your problem variable, an example of direct climate causes could be flooding or heat events damaging crops in fields.
+
+Use a different coloured pen, and to the left of your problem variable, write down the direct climate causes on your sheet of paper. Draw arrows that link climate causes to the problem variable. 
+
+It is possible that climate events can indirectly affect your problem variable. Look at the notes you made in Activity 1 and Activity 2 to see if you can spot cases where a climate event causes a change in another variable, and the change in that variable causes a change in your problem variable. These are cases when climate events are **indirect causes**. An example could be flooding damaging farm machinery or roads which makes it harder to harvest crops, which impacts crop production.
+
+Staying on the left side of your diagram, add these causal chains where climate events are indirect causes. Draw arrows that link climate causes indirectly to the problem variable.
 
 **TASK 3: Identify consequences**
 

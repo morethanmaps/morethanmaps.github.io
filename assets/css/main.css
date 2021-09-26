@@ -6,11 +6,8 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    background-color: #fffff;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    position: relative;
+    background-color: #f8f9fa;
+    position: relative; 
   }
 
 /*footer*/
@@ -18,7 +15,7 @@ body {
     flex-shrink: 0;
   }
 
-/*home*/
+/* landing page - set to full screen */
 .masthead {
     height: 100vh;
     min-height: 500px;
@@ -48,12 +45,6 @@ body {
     width: 100%;
 }
 
-.about span{
-    display: block;
-    position: absolute;
-    left: 15%;
-}
-
 /* workshops */
 .workshops {
     padding: 1em;
@@ -64,17 +55,6 @@ body {
     width: 100%;
 }
 
-.workshops span{
-    display: block;
-    position: absolute;
-    left: 15%;
-}
-
-/* pre {
-    color: #e83e8c;
-    overflow: auto;
-} */
-
 /* workshop cards*/
 .workshops .card-img img{
     width: 100%;
@@ -83,8 +63,6 @@ body {
 }
 
 /* workshop tutorials*/ 
-@import "emacs.css";
-
 .workshop-img{
     max-width: 75%;
     height: auto;
@@ -111,6 +89,25 @@ body {
     border-top: 2px solid #5a5a5a;
 }
 
+/* sidebar for workshop contents*/
+.workshops-wrapper{
+    display: flex;
+    width: 100%;
+}
+
+
+.sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    top: 100px;
+    height: 100vh;
+}
+
+/* Make selected heading in toc green -  https://stackoverflow.com/questions/54202804/how-to-properly-set-tocbot-with-bootrap-4 */
+a.is-active-link::before {
+    background-color: #78c2ad;
+}
+
 /* team */
 .info {
     padding: 1em;
@@ -120,13 +117,6 @@ body {
 .info img{
     width: 100%;
 }
-
-.info span{
-    display: block;
-    position: absolute;
-    left: 15%;
-}
-
 
 /* team */
 .team {
@@ -138,9 +128,4 @@ body {
     width: 100%;
 }
 
-.team span{
-    display: block;
-    position: absolute;
-    left: 15%;
-}
 
