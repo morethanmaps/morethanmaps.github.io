@@ -1,6 +1,6 @@
 ---
 layout: workshops
-title: Kalbarri Damage s
+title: Kalbarri
 ---
 
 # Building Damage in Kalbarri - Tropical Cyclone Seroja
