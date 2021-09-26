@@ -40,6 +40,8 @@ The benefits people obtain from ecosystems. These benefits can be **products** l
 
 **Feedback** 
 
+**Resilience**
+
 # Activity 1: Ecosystems and Livelihoods
 
 **TASK:** make a list of variables that comprise the landscape components, ecosystem services, and economic assets or flows that are important for supporting livelihoods. 
@@ -54,7 +56,7 @@ The benefits people obtain from ecosystems. These benefits can be **products** l
 
 
 
-# Responding to Climate Impacts
+# Activity 3: Coping and Adapting
 
 # Causal Loop Diagrams
 
@@ -154,6 +156,7 @@ Let's add `+` or `-` signs to the links on the diagram to denote positive or neg
 </details>
 
 <br>
+
 #### Feedback loops
 
 When links between variables form circles feedback loops form in the system depicted in the causal loop diagram. There are two types of feedback loops:
@@ -166,39 +169,85 @@ There's one loop in our simple causal loop diagram describing the mud crab colle
 Causal loop diagrams can provide a deeper and more complete understanding of the impact of external shocks, such as a climatic event or a policy intervention, by highlighting how their effects are amplified or attenuated by feedback loops. Identifying the presence of these feedback loops can highlight how resilient a system is to climate shocks and illustrate unforeseen consequences of policy interventions or adaptation strategies. 
 
 <br>
-# Activity 4: Creating Causal Loop Diagrams
+
+# Activity 4: Causal Loop Diagrams
 
 Following the tasks below, you will create a causal loop diagram that depicts how a problem variable affects poeple's livelihoods. You will then use this causal loop diagram to undertake two analyses:
 
-1. Identify the cause-effect chains that explain how climatic shocks affect the problem variable, and, subsequently, people's livelihoods. 
+1. Identify the cause-effect chains that explain how climatic shocks affect the problem variable, ecosystem services, and, subsequently, people's livelihoods. 
 2. Use the causal loop diagram to design an adaptation strategy or policy that reduces the negative impacts of climate shocks affecting your problem variable. 
 
-**TASK 1: Select a problem variable**
+#### TASK 1: Select a problem variable
 
-In Activity 1 you made a list of landscape components and ecosystem services that people use to support their livelihoods. Pick one of the items on this list as a problem variable. Think carefully about how you select this variable. The goal of this task is to use a causal loop diagram to design an adaptation strategy that reduces climate impacts on livelihoods. You should look to select a variable that is important for someone's livelihood and is sensitive to climate shocks. 
+In Activity 1 you made a list of landscape resources and ecosystem services that people use to support their livelihoods. Pick one of the items on this list as a problem variable. Think carefully about how you select this variable. The goal of this task is to use a causal loop diagram to design an adaptation strategy that reduces climate impacts on livelihoods. You should look to select a variable that is landscape resource or ecosystem service important for someone's livelihood and is sensitive to climate shocks. 
 
 In the middle of a sheet of paper write down your problem variable. 
 
-**TASK 2: Identify causes**
+#### TASK 2: Identify causes
 
-In Activity 2 you made a list of climatic events that affect landscape components and ecosystem services that support people's livelihoods. Identify the climate events that **directly cause** changes in your problem variable (i.e. the climate event does NOT causea a change in the problem variable indirectly through another variable). If crop production is your problem variable, an example of direct climate causes could be flooding or heat events damaging crops in fields.
+In Activity 2 you made a list of climatic variables that affect landscape resources and ecosystem services. Identify the climate variables that **directly cause** changes in your problem variable (i.e. the climatic variable does NOT causea a change in the problem variable indirectly through another variable). If crop production is your problem variable, an example of direct climate causes could be flooding or heat events damaging crops in fields.
 
 Use a different coloured pen, and to the left of your problem variable, write down the direct climate causes on your sheet of paper. Draw arrows that link climate causes to the problem variable. 
 
-It is possible that climate events can indirectly affect your problem variable. Look at the notes you made in Activity 1 and Activity 2 to see if you can spot cases where a climate event causes a change in another variable, and the change in that variable causes a change in your problem variable. These are cases when climate events are **indirect causes**. An example could be flooding damaging farm machinery or roads which makes it harder to harvest crops, which impacts crop production.
+It is possible that climate shhocks can indirectly affect your problem variable. Look at the notes you made in Activity 1 and Activity 2 to see if you can spot cases where a climate event causes a change in another variable, and the change in that variable causes a change in your problem variable. These are cases when climate variables are **indirect causes**. An example could be flooding damaging farm machinery or roads which makes it harder to harvest crops, which impacts crop production.
 
 Staying on the left side of your diagram, add these causal chains where climate events are indirect causes. Draw arrows that link climate causes indirectly to the problem variable.
 
-**TASK 3: Identify consequences**
+#### TASK 3: Identify consequences
 
-**TASK 4: Check for completeness**
+Next, we need to identify the consequences of the problem variable. There might be some obvious consequences (e.g. a decrease in crop production will result in less food for consumption or income generation). Make a note of any obvious consequences. 
 
-**TASK 5: Describe links**
+Another way to identify consequences of the problem variable is to identify other variables that are affected by the problem variable. Which of the variables that you identified in Activity 1 is your chosen problem variable a direct or indirect cause of? Add these to your list of consequences. 
 
-**TASK 6: Identify feedbacks**
+In Activity 3 you made a list of strategies people deployed to respond to climatic shocks. Check this list to see if any of these strategies were in response to climate shocks to your problem variable. Add these to your list of consequences. 
 
-**TASK 7: Identify climate shocks**
+Using a different coloured pen to your causes and problem variable, write down the consequences on the right side of your sheet of paper. Draw arrows that link the problem variable to the consequences. 
 
-**TASk 8: Identify response and coping strategies**
+#### TASK 4: Check for completeness
 
-**TASK 9: Design an adaptation strategy or policy to increase resilience**
+Reviewing the notes you made in Activities 1, 2, and 3 check that your causal loop diagram is complete. Ensure you have captured all the direct and indirect causes that affect the problem variable. Ensure that you have captured all the direct and indirect consequences of a change in the problem variable. It is likely at this step that you will spot several indirect consequences (e.g. a change in crop production affects sales of crops, this, in turn, causes people to increase fishing activities or take on jobs in town). 
+
+Capturing all the indirect consequences of a climate shock to your problem variable is important to i) fully understand how people's livelihoods are affected, and ii) to assess the resilience of the sytem in terms of its capacity to provide ecosystem services. 
+
+#### TASK 5: Describe links
+
+You should now have a detailed causal loop diagram depicting the direct and indirect causal chains showing how climate events affect your problem variable and chains of consequences showing how people are affected and respond. The next stage is to describe the links between the variables on your diagram. 
+
+Add a `+` sign next to all positive links and a `-` sign next to all negative links. 
+
+#### TASK 6: Identify feedbacks
+
+Work through your causal loop diagram to identify any feedback loops which link together causes and consequences. Feedback loops can involve two or more variables and can occur between causes and consequences of your problem variable, direct and indirect causes of your problem variable, and direct and indirect consequences of your problem variable. Make a note of whether a feedback loop is reinforcing or balancing. *Label each of the feedback loops as reinforcing (R) or balancing (B).*
+
+#### TASK 7: Identify climate shocks and their impacts
+
+Now your causal loop diagram is ready to be used for anlaysis tasks. 
+
+Let's use the diagram to analyse the different ways that climate shocks impact livelihoods. In particular, think about the ways that climate events indirectly and directly affect ecosystem services that people use to support their livelihoods. Use you diagram to answer the following questions. 
+
+* What are the different causal chains that describe how climate events impact livelihoods? *Highlight these causal chains on your diagram and identify the ecosystem service that is affected.* 
+* Are these climate impacts on livelhoods short-term and long-term? *Label each causal chain as a short-term, long-term, or both short- and long-term impact.*  
+* Are the causal chains you've identified part of feedback loops which reinforce (amplify) or balance (reduce) climate impacts on livelihoods? *Label each of the feedback loops as reinforcing (R) or balancing (B).*
+
+A resilient system is able to keep providing ecosystem services that people need to support their livelihoods. 
+
+* Do the feedback loops in your causal loop diagram interect with climate shock to to reduce the system's capacity to provide ecosystem services over time (low resilience) or quickly recover from the shock and maintain ecosystem service flows (high resilience)? *Label each of the feedback loops as low-resilience (LR) or high-resilience (HR)*
+
+#### TASK 8: Identify response and coping strategies
+
+Let's consider the role of human activities in responding to climate shocks affecting your problem variable. Look at the direct and indirect consequences on your causal loop diagram.
+
+* Identify all the human activities that are a response to climate shocks affecting your problem variable. *These can be a mix of measures taken to try and recover flows of ecosystem services related to your problem variable (e.g. replanting crops), using other landscape resources to generate ecosystem services (e.g. a switch from farming to fishing), or seeking out non-landscape sources of income (e.g. remittances from family members overseas).*
+* How successful do you think these human response activities are at protecting livelihoods? *After the response to the climate shock are people's livelihoods negatively impacted (e.g. less food, income, savings), stable (e.g. they've found ways to maintain similar levels of food and income as before the climate shock(, or improved (e.g. in responding to the climate shock they've boosed income or food supply).*
+* Are the human responses to the climate event short-term or long-term responses? *Label each human response short-term (ST) or long-term (LT) on your diagram.*
+* Are any of the human response activities part of feedback loops? *Are these feedback loops undermining the system's capacity to provide ecosystem services that are important for livelihoods or are they contributing to the system recovering after the climate shock to maintain levels of ecosystem service flows? Label any feedback loops undermining system resilience as negative (N)*
+
+#### TASK 9: Design an adaptation strategy or policy to increase resilience
+
+In this final task you will use your causal loop diagram to design a policy or adaptation strategy that will increase system resilience to climate shocks. The goal is for your policy or strategy to create a feedback loop that does oneor more of the following:
+
+* enables the problem variable, or ecosystem service flows from the problem variable if it is a landscape resource, to quickly recover after a climate shock
+* supports people in maintaining their livelihoods through transitioning to use other ecosystem services or livelihood activities that reduce their vulnerability to climate shocks
+* does not have any unforeseen impacts such as amplifying or creating negative feedback loops that undermine other aspects of someones livelihood system, landscpae resources, or other people's livelihoods
+
+The goal of this exercise is to demonstrate how causal loop diagrams can help develop adaptation strategies that increase the resilience of socio-ecological systems that support livelihoods. Don't worry too much about selecting a policy or strategy that is a perfect fit for the Ba Mangrove region. Instead, focus on testing out developing feedback loops for a few different ideas to get a sense for how a goal of adaptation strategy design is to maintain or enhance system functioning (provision of ecosystem services) in the face of climate shocks to support livelihoods. 
