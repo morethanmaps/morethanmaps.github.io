@@ -94,8 +94,6 @@ People living in and around the Ba Mangroves use a range of landscape resources 
 
 TO-DO -->
 
-## Field Tour of Climate Impacts
-
 Work through the Google Earth Tour accessed by clicking the button below. This tour compiles a range of information collected through various field activities demonstrating how climate shocks affect landscape resources and ecosystem services in the Ba Mangrove region. 
 
 <div class="d-flex justify-content-center">
@@ -254,7 +252,7 @@ In Activity 2 you made a list of climatic variables that affect landscape resour
 
 Use a different coloured pen, and to the left of your problem variable, write down the direct climate causes on your sheet of paper. Draw arrows that link climate causes to the problem variable. 
 
-It is possible that climate shhocks can indirectly affect your problem variable. Look at the notes you made in Activity 1 and Activity 2 to see if you can spot cases where a climate event causes a change in another variable, and the change in that variable causes a change in your problem variable. These are cases when climate variables are **indirect causes**. An example could be flooding damaging farm machinery or roads which makes it harder to harvest crops, which impacts crop production.
+It is possible that climate shocks can indirectly affect your problem variable. Look at the notes you made in Activity 1 and Activity 2 to see if you can spot cases where a climate event causes a change in another variable, and the change in that variable causes a change in your problem variable. These are cases when climate variables are **indirect causes**. An example could be flooding damaging farm machinery or roads which makes it harder to harvest crops, which impacts crop production.
 
 Staying on the left side of your diagram, add these causal chains where climate events are indirect causes. Draw arrows that link climate causes indirectly to the problem variable.
 
