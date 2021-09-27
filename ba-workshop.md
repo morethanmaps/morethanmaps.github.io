@@ -76,7 +76,7 @@ There are numerous definitions of resilience. Here, resilience is defined as the
 
 # Activity 1: Ecosystems and Livelihoods
 
-
+People living in and around the Ba Mangroves use a range of landscape resources and ecosystems to support their livelihoods. The Google Earth Tour accessed by clicking the button below will allow you to explore various coastal ecosystems, farms, and rivers that people use in Ba to generate food and income to support their livelihoods. Many of these ecosystems provide services other than products such as fish or crops but may provide climate regulation services (e.g. shade from trees). Look out for the range of ecosystem services people in Ba benefit from. 
 
 <div class="d-flex justify-content-center">
 <button type="button" class="btn btn-outline-primary btn-lg my-4">
