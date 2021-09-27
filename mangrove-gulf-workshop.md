@@ -32,6 +32,10 @@ title: Mangrove Dieback in the Gulf of Carpentaria
 - Describe the event and the probable cause.
 - The study area of Cox River
 
+Listen to ABC Rural Radio's Charlie McKillop interview David Carter, the CEO of Austral Fisheries about the mangrove dieback event. This interview took place in October 2016.
+
+{{site.url}}/assets/other/Rural-nrn-David-Carter-welcomes-climate-change-inquiry-1010.mp3
+
 ## Principles of Earth Observation by Satellite Remote Sensing
 - Major EO satellite platforms - Landsat, MODIS, Sentinel, Planet, Worldview
 - Spatial and Temporal Resolution
@@ -51,15 +55,59 @@ You can sign up for Google Earth Engine here: [https://earthengine.google.com/si
 
 Load Google Earth Engine in your web browser at: [https://code.earthengine.google.com](https://code.earthengine.google.com)
 
-## Centre the Map on Cox River
+Earth engine supports two basic types (or models) of spatial information: geographic features (also known as vector data), and image data (also known as gridded or raster data). Geographic features or vector data can represent spatial phenomenon using points, lines, or a polygon. 
 
+## Getting Started
+
+### Understanding the Map
+
+Let's start by setting the map so that it shows the Northern Territory, Australia. In the *Search places and datasets* box at the top of GEE, start typing in *NT Australia* and you will see *NT, Australia suggest under *PLACES*. Click on it and the map will centre on the Northern Territory. You can use the zoom tool in the map window to zoom in and out, and click and drag the map to change the view. However, we want to set the location and zoom level in our script so we don't need to keep placing the map by hand.
+
+### Setting the Map Zoom
+
+GEE allows you to control the map in the bottom half of the window using the `Map` object in your javascript code. The `Map` object has many functions which including setting the zoom level, centring the map in a location, and adding layers (images or features) so they can visualised. 
+
+First, let's set the zoom level. Enter the following into your script:
+```js
+Map.setZoom(6)
 ```
+Before you continue any further, let's save the script. Click the *Save* button at the top of your script and enter the *File Name* as *mangrove-gulf-dieback.js*, and click *OK*. 
+
+Now click the *Run* button. You should see the map zoom into the Northern Territory. The `setZoom` function takes one parameter - a number between 0 and 24. Try changing the number in your script to 0. You should see that the lower the number, the more 'zoomed out' the map is, or it is a larger *map scale*. You can see the map scale in the bottom of the map window. 
+
+Try a higher zoom number e.g. 9, the map will 'zoom in', and the map scale will be relatively smaller. You may need to pan the map around to see where you are in the Northern Territory. You can also switch *Satellite* view and try and even smaller scale with a zoom level of 24. 
+
+### Centre the Map
+
+Now you need to centre the map on the study site of Cox River in the Northern Territory. You will do this by creating a geographic feature, in this case a simple point, and centre the map on this point.
+
+First, let's create the point feature. Add the following as the next line in your script:
+
+```js
 var CoxR = ee.Geometry.Point([135.7, -15.1]);
-Map.centerObject(CoxR, 12);
-
 ```
+This creates an `ee.Geometry.Point` object and saves it in a new variable `CoxR`. When creating this object, you only need to provide one parameter - an array (denoted by the square [ ] brackets) containing two decimal numbers: the longitude and the latitude of the point. As the study site is east of the prime meridian and south of the equator, the longitude value is positive (east) and the latitude is negative (south).
 
-## Display a Landsat-8 (L8) Image before the Dieback Event
+Now you can centre the map window on this location by adding the following line:
+
+```js
+Map.centreObject(CoxR, 12);
+```
+The `Map.centreObject` function takes two parameters - an object zoom on, in this case the CoxR point feature, and a zoom level. The zoom level has the same effect as Map.setZoomLevel you used above but allows you do centre and zoom in one step. Run your script to see the effect on the Map window. It should look similar to the map below:
+
+### Adding a Layer
+
+
+You can also add layers to overlay on the base map window. Let's add the point you just created:
+
+```js
+Map.addLayer(CoxR, {}, "Cox River", true);
+```
+The `Map.addLayer` function takes 4 parameters: a layer to display (in this case the CoxR point), visualisation parameters between the curly braces which describe how to style the layers (colours etc), a descriptive label that will be used in the map window, and a boolean flag (i.e. true or false) indicating whether the layer is on or not by default (in this case it is on). Click Run and the point should display in the Map window. Click the Layers button in the Map window and you will see it has been added. You can tick the layer off to hide it, or use the slider to change the opacity of the layer.
+  
+## Working with Images
+
+### Display a Landsat-8 (L8) Image before the Dieback Event
 
 ```
 var L8 = ee.ImageCollection("LANDSAT/LC08/C02/T1_L2");
@@ -69,14 +117,14 @@ var beforeImage = L8.filterDate("2015-04-01", "2015-05-01").first();
 Map.addLayer(beforeImage, vis, "before image", false);
 ```
 
-## Display a L8 Image after the Dieback Event
+### Display a L8 Image after the Dieback Event
 
 ```
 var afterImage = L8.filterDate("2016-04-01", "2016-05-01").first();
 Map.addLayer(afterImage, vis, "after image", false);
 ```
 
-## Remove Clouds from Images
+### Remove Clouds from Images
 
 ```
 function removeCloud(image) {
@@ -91,8 +139,9 @@ Map.addLayer(beforeImage, vis, "before image - cloud free", false);
 Map.addLayer(afterImage, vis, "after image - cloud free", false);
 
 ```
+## Mapping Vegetation
 
-## Mapping Vegetation with the NDVI
+### Mapping Vegetation with the NDVI
 
 ```
 function calcNDVI(image) {
@@ -108,7 +157,7 @@ Map.addLayer(afterNDVI, {}, "after ndvi", false);
 
 ```
 
-## Mapping Vegetation Change Using NDVI Differencing
+### Mapping Vegetation Change Using NDVI Differencing
 
 ```
 var diffNDVI = afterNDVI.subtract(beforeNDVI);
@@ -116,12 +165,13 @@ Map.addLayer(diffNDVI, {min: -0.1, max: 0.1}, "ndvi difference", false);
 
 ```
 
-## Mapping Vegetation Loss
+### Mapping Vegetation Loss
 ```
 var vegLoss = diffNDVI.lt(-0.1);
 vegLoss = vegLoss.updateMask(vegLoss); // Mask out non-loss pixels
 Map.addLayer(vegLoss, {palette: ["ff0000"]}, "vegetation loss", false);
 ```
+
 
 ## Defining the Mangrove Zone
 
@@ -191,3 +241,4 @@ print(chart);
 ```
 - Add two more point and rerun.
 
+{% include open-embed.html %}
