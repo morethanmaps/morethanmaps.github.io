@@ -3,63 +3,125 @@ layout: workshops
 title: Ba Livelihoods
 ---
 
-# Introduction
+# Climate Impacts and Livelihoods
 
-This workshop will introduce how people living in coastal Fiji use a range of coastal and terrestrial ecosystems to support their livelihoods. It will also demonstrate how these ecosystems are affected by a range of climatic stressors including severe tropical cyclones to seasonal hot and dry spells. Through their effects on the ecosystems people use, climatic stressors exert a large impact on people's livelihoods in this region. 
+<figure style="margin-left: auto; margin-right: auto; text-align: center;">
+    <img src="{{site.url}}/assets/images/mangrove-title.png" class="img-fluid" style="min-width:100%">
+</figure>
 
-This workshop will focus on the Ba Mangroves area in Northern Viti Levu, Fiji. People living in communities surrounding the Ba Mangroves rely on a range of ecosystems including mangroves to collect crabs, other marine life, and firewood; freshwater and ocean fishing; farming; and labouring on larger sugarcane farms. 
-
-A range of climatic stressors affect these ecosystems. The strong winds and heavy rains of tropical cyclones damage mangroves and fruit trees, flood farms, and prevent people from fishing. The Ba Mangroves are frequently in the path of tropical cyclones; in 2016 Tropical Cyclone Winston caused widespread damage to ecosystems and infrastructure. More recently the Tropical Cyclones Josei, Keni, Yasa, Harold, and Ana have impacted ecosystems in Ba. The Ba region is also affected by flooding following heavy rain events which is exacerbated by land cover change in the upper reaches of the catchment. Following the cyclone season, the dry season brings dry spelss, drought, and extreme heat events that affect crops and people when they're working on the land or collecting marine life in coastal areas. 
+This workshop will introduce how people living in coastal Fiji use a range of coastal and terrestrial ecosystems to support their livelihoods. It will also demonstrate how these ecosystems are affected by a range of climatic stressors including severe tropical cyclones and seasonal hot and dry spells. Through their effects on the ecosystems people use, climate shocks exert a large impact on people's livelihoods in this region. 
 
 In this workshop you will learn how to use causal loop diagrams to combine socio-economic, climatic, and environmental variables to understand how ecosystems support people's livelihoods, how climate shocks affect these ecosystems, diagnose sources of  vulnerability in livelihood systems, and design adaptation strategies and policies to boost system resilience. 
 
-## Learning Objectives
+Causal loop diagrams are a modelling tool used for:
 
-* Develop an understanding of the importance of ecosystem services for livelihoods.
-* Develop an understanding of how satellite images can be used to monitor change in vegetation condition after a climatic shock. 
-* Learn how to build a causal loop diagram to combine climatic, socio-economic, and environmental data to represent the structure and dynamics of livelihood systems dependent on ecosystems.
-* Use the causal loop diagram to identify how climate impacts to ecosystems affect livelihoods.
-* Use the causal loop diagram to design an adaptation strategy or policy to boost the resilience of livelihood systems to climatic shocks. 
+* visualising system structures (i.e. the socio-economic and environmental variables comprising a livelihood system)
+* identifying the mechanisms that generate system outputs (e.g. ecosystem services)
+* exploring the effects of external factors such as climate shocks or policy interventions on the system
 
 ## Ba Mangroves
 
+This workshop will focus on the Ba Mangroves area in Northern Viti Levu, Fiji. People living in communities surrounding the Ba Mangroves rely on a range of ecosystems including mangroves to collect crabs, other marine life, and firewood; freshwater and ocean fishing; farming; and labouring on larger sugarcane farms. 
 
+<p class="text-primary">Click on a marker to explore the ecosystems surrounding the Ba Mangroves.</p>
+
+<div class="d-flex justify-content-center">
+    <div id="baMap" style="width: 100%; height: 60vh;"></div>
+    <script type="text/javascript" src="/assets/js/ba-map.js"></script>
+</div>
+
+<br>
+
+{% include ba-spherical-photos.html %}
+
+A range of climatic stressors affect these ecosystems. The strong winds and heavy rains of tropical cyclones damage mangroves and fruit trees, flood farms, and prevent people from fishing. The Ba region is also affected by flooding following heavy rain events which is exacerbated by land cover change in the upper reaches of the catchment. Following the cyclone season, the dry season brings dry spells, drought, and extreme heat events that affect crops and people when they're working on the land or collecting marine life. 
+
+{% include ba-climate-impacts-photos.html %}
+
+## Learning Objectives
+
+* Develop an understanding of how ecosystem services support livelihoods.
+* Develop an understanding of how satellite images can be used to monitor change in vegetation condition after a climatic shock. 
+* Learn how to build a causal loop diagram to represent the structure and dynamics of livelihood systems dependent on ecosystems.
+* Use the causal loop diagram to identify how climate impacts to ecosystems affect livelihoods.
+* Use the causal loop diagram to design an adaptation strategy or policy to boost the resilience of livelihood systems to climatic shocks. 
 
 ## Concepts
 
 **System**
 
+<a href="https://en.wikipedia.org/wiki/System" target="_blank">Systems</a> comprise a number of interacting variables and can be described by its structure (the relationships between variables) and functioning (the purpose of the system and what outputs it generates).
+
 **Variable**
+
+A variable is an entity that has a value and whose value can change. In this workshop we're interested in climatic variables (e.g. tropical cyclone intensity), biophysical and environmental variables (e.g. mangrove area, crop production, fish populations), and socio-economic variables (e.g. household income).
 
 **Ecosystem**
 
+An ecosystem is an area comprising dynamic and complex interactions between plants, animals, microoganism communities and non-living factors. <a href="https://www.millenniumassessment.org/documents/document.765.aspx.pdf" target="_blank">(MA, 2003).</a> A mangrove forest is an example of an ecosystem comprising mangrove trees and various marine and nearshore animals.
+
 **Ecosystem Service** 
 
-The benefits people obtain from ecosystems. These benefits can be **products** like crops, fish, timber or **processes** that regulate ecosystem functioning in ways that benefit people such as flood prototection services provided by coastal forest and pollination services provided by bees.
+The benefits people obtain from ecosystems. The benefits can be products such as crops, fish, and timber or processes that regulate ecosystem functioning in ways that benefit people such as flood prototection provided by coastal forest or pollination services provided by bees <a href="https://www.millenniumassessment.org/documents/document.765.aspx.pdf" target="_blank">(MA, 2003).</a> Mangrove forests provide a range of ecosystem services including timber and food (fish and crabs), storm protection services, carbon sequestration, and regulation of sediment dynamics.
 
 **Socio-ecological System**
 
-**Cause**
-
-**Feedback** 
+Socio-ecological systems are complex, integrated systems comprising human systems and ecosystems. 
 
 **Resilience**
 
+There are numerous definitions of resilience. Here, resilience is defined as the ability of a socio-ecological system to maintain provision of ecosystem services over time and in the face of climate shocks. 
+
+<br>
+
 # Activity 1: Ecosystems and Livelihoods
 
-**TASK:** make a list of variables that comprise the landscape components, ecosystem services, and economic assets or flows that are important for supporting livelihoods. 
+
+
+<div class="d-flex justify-content-center">
+<button type="button" class="btn btn-outline-primary btn-lg my-4">
+    <a href="" target="_blank">Google Earth Tour: Response Strategies</a>
+</button>
+</div>
+
+**TASK:** make a list of variables that comprise the landscape resources, ecosystem services, and economic variables that are important for supporting livelihoods in the Ba Mangrove region. 
+
+<br>
 
 # Activity 2: Climate Impacts
 
-**TASK:** make a list of a climate events that affect each of the landscape components or ecosystem services that are important for supporting livelihoods (that you identified in Activity 1). 
+<!-- ## Detecting Climate Impacts from Satellite Images
 
-## Detecting Climate Impacts from Satellite Images
+TO-DO -->
 
 ## Field Tour of Climate Impacts
 
+Work through the Google Earth Tour accessed by clicking the button below. This tour compiles a range of information collected through various field activities demonstrating how climate shocks affect landscape resources and ecosystem services in the Ba Mangrove region. 
+
+<div class="d-flex justify-content-center">
+<button type="button" class="btn btn-outline-primary btn-lg my-4">
+    <a href="https://earth.google.com/earth/d/10OWbFcjrTB9-uupho1505se3PUbW55_u?usp=sharing" target="_blank">Google Earth Tour: Climate Impacts</a>
+</button>
+</div>
 
 
-# Activity 3: Coping and Adapting
+**TASK:** make a list of a climate shocks that affect each of the landscape components or ecosystem services that are important for supporting livelihoods (identified in Activity 1). 
+
+<br>
+
+# Activity 3: Responding to Climate Shocks
+
+When climate shocks affect landscape resources and ecosystem service flows in the Ba Mangrove region people deploy various response strategies to compensate for these impacts, secure income and food, and recover affected resources. Use the Google Earth Tour below to explore some of the response strategies deployed by people living in the Ba Mangrove region.
+
+<div class="d-flex justify-content-center">
+<button type="button" class="btn btn-outline-primary btn-lg my-4">
+    <a href="" target="_blank">Google Earth Tour: Response Strategies</a>
+</button>
+</div>
+
+**TASK:** for each climate shock that you identified in Activity 2 identify a response strategy that people have deployed. Make a list of these response strategies. 
+
+<br>
 
 # Causal Loop Diagrams
 
