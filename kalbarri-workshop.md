@@ -3,7 +3,7 @@ layout: workshops
 title: Kalbarri
 ---
 
-# Building Damage in Kalbarri - Tropical Cyclone Seroja
+# Building Damage in Kalbarri
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center;">
     <img src="{{site.url}}/assets/images/kalbarri-title.png" class="img-fluid" style="min-width:100%">
@@ -690,7 +690,7 @@ Click on pixels of different surface cover types such as buildings, roads, and v
 
 <br>
 
-# Mapping Buildings Damaged by Tropical Cyclone Seroja
+# Mapping Building Damage
 
 You have learnt about how we can represent real world features and phenomenon using geographic data, programming tools to manipulate and analyse geographic data, and how satellite images can be used to monitor change on the Earth's surface. Let's pull all these skills together to map the location of damaged buildings after Tropical Cyclone Seroja impacted Kalbarri in April 2021.
 

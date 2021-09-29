@@ -3,63 +3,125 @@ layout: workshops
 title: Ba Livelihoods
 ---
 
-# Introduction
+# Climate Impacts and Livelihoods
 
-This workshop will introduce how people living in coastal Fiji use a range of coastal and terrestrial ecosystems to support their livelihoods. It will also demonstrate how these ecosystems are affected by a range of climatic stressors including severe tropical cyclones to seasonal hot and dry spells. Through their effects on the ecosystems people use, climatic stressors exert a large impact on people's livelihoods in this region. 
+<figure style="margin-left: auto; margin-right: auto; text-align: center;">
+    <img src="{{site.url}}/assets/images/mangrove-title.png" class="img-fluid" style="min-width:100%">
+</figure>
 
-This workshop will focus on the Ba Mangroves area in Northern Viti Levu, Fiji. People living in communities surrounding the Ba Mangroves rely on a range of ecosystems including mangroves to collect crabs, other marine life, and firewood; freshwater and ocean fishing; farming; and labouring on larger sugarcane farms. 
-
-A range of climatic stressors affect these ecosystems. The strong winds and heavy rains of tropical cyclones damage mangroves and fruit trees, flood farms, and prevent people from fishing. The Ba Mangroves are frequently in the path of tropical cyclones; in 2016 Tropical Cyclone Winston caused widespread damage to ecosystems and infrastructure. More recently the Tropical Cyclones Josei, Keni, Yasa, Harold, and Ana have impacted ecosystems in Ba. The Ba region is also affected by flooding following heavy rain events which is exacerbated by land cover change in the upper reaches of the catchment. Following the cyclone season, the dry season brings dry spelss, drought, and extreme heat events that affect crops and people when they're working on the land or collecting marine life in coastal areas. 
+This workshop will introduce how people living in coastal Fiji use a range of coastal and terrestrial ecosystems to support their livelihoods. It will also demonstrate how these ecosystems are affected by a range of climatic stressors including severe tropical cyclones and seasonal hot and dry spells. Through their effects on the ecosystems people use, climate shocks exert a large impact on people's livelihoods in this region. 
 
 In this workshop you will learn how to use causal loop diagrams to combine socio-economic, climatic, and environmental variables to understand how ecosystems support people's livelihoods, how climate shocks affect these ecosystems, diagnose sources of  vulnerability in livelihood systems, and design adaptation strategies and policies to boost system resilience. 
 
-## Learning Objectives
+Causal loop diagrams are a modelling tool used for:
 
-* Develop an understanding of the importance of ecosystem services for livelihoods.
-* Develop an understanding of how satellite images can be used to monitor change in vegetation condition after a climatic shock. 
-* Learn how to build a causal loop diagram to combine climatic, socio-economic, and environmental data to represent the structure and dynamics of livelihood systems dependent on ecosystems.
-* Use the causal loop diagram to identify how climate impacts to ecosystems affect livelihoods.
-* Use the causal loop diagram to design an adaptation strategy or policy to boost the resilience of livelihood systems to climatic shocks. 
+* visualising system structures (i.e. the socio-economic and environmental variables comprising a livelihood system)
+* identifying the mechanisms that generate system outputs (e.g. ecosystem services)
+* exploring the effects of external factors such as climate shocks or policy interventions on the system
+
+You will need a few sheets of blank paper, different coloured pens, a pencil, and an eraser to complete this workshop.
 
 ## Ba Mangroves
 
+This workshop will focus on the Ba Mangroves area in Northern Viti Levu, Fiji. People living in communities surrounding the Ba Mangroves rely on a range of ecosystems including mangroves to collect crabs, other marine life, and firewood; freshwater and ocean fishing; farming; and labouring on larger sugarcane farms. 
 
+<p class="text-primary">Click on a marker to explore the ecosystems surrounding the Ba Mangroves.</p>
+
+<div class="d-flex justify-content-center">
+    <div id="baMap" style="width: 100%; height: 60vh;"></div>
+    <script type="text/javascript" src="/assets/js/ba-map.js"></script>
+</div>
+
+<br>
+
+{% include ba-spherical-photos.html %}
+
+A range of climatic stressors affect these ecosystems. The strong winds and heavy rains of tropical cyclones damage mangroves and fruit trees, flood farms, and prevent people from fishing. The Ba region is also affected by flooding following heavy rain events which is exacerbated by land cover change in the upper reaches of the catchment. Following the cyclone season, the dry season brings dry spells, drought, and extreme heat events that affect crops and people when they're working on the land or collecting marine life. 
+
+{% include ba-climate-impacts-photos.html %}
+
+## Learning Objectives
+
+* Develop an understanding of how ecosystem services support livelihoods.
+* Develop an understanding of how satellite images can be used to monitor change in vegetation condition after a climatic shock. 
+* Learn how to build a causal loop diagram to represent the structure and dynamics of livelihood systems dependent on ecosystems.
+* Use the causal loop diagram to identify how climate impacts to ecosystems affect livelihoods.
+* Use the causal loop diagram to design an adaptation strategy or policy to boost the resilience of livelihood systems to climatic shocks. 
 
 ## Concepts
 
 **System**
 
+<a href="https://en.wikipedia.org/wiki/System" target="_blank">Systems</a> comprise a number of interacting variables and can be described by its structure (the relationships between variables) and functioning (the purpose of the system and what outputs it generates).
+
 **Variable**
+
+A variable is an entity that has a value and whose value can change. In this workshop we're interested in climatic variables (e.g. tropical cyclone intensity), biophysical and environmental variables (e.g. mangrove area, crop production, fish populations), and socio-economic variables (e.g. household income).
 
 **Ecosystem**
 
+An ecosystem is an area comprising dynamic and complex interactions between plants, animals, microoganism communities and non-living factors. <a href="https://www.millenniumassessment.org/documents/document.765.aspx.pdf" target="_blank">(MA, 2003).</a> A mangrove forest is an example of an ecosystem comprising mangrove trees and various marine and nearshore animals.
+
 **Ecosystem Service** 
 
-The benefits people obtain from ecosystems. These benefits can be **products** like crops, fish, timber or **processes** that regulate ecosystem functioning in ways that benefit people such as flood prototection services provided by coastal forest and pollination services provided by bees.
+The benefits people obtain from ecosystems. The benefits can be products such as crops, fish, and timber or processes that regulate ecosystem functioning in ways that benefit people such as flood prototection provided by coastal forest or pollination services provided by bees <a href="https://www.millenniumassessment.org/documents/document.765.aspx.pdf" target="_blank">(MA, 2003).</a> Mangrove forests provide a range of ecosystem services including timber and food (fish and crabs), storm protection services, carbon sequestration, and regulation of sediment dynamics.
 
 **Socio-ecological System**
 
-**Cause**
-
-**Feedback** 
+Socio-ecological systems are complex, integrated systems comprising human systems and ecosystems. 
 
 **Resilience**
 
+There are numerous definitions of resilience. Here, resilience is defined as the ability of a socio-ecological system to maintain provision of ecosystem services over time and in the face of climate shocks. 
+
+<br>
+
 # Activity 1: Ecosystems and Livelihoods
 
-**TASK:** make a list of variables that comprise the landscape components, ecosystem services, and economic assets or flows that are important for supporting livelihoods. 
+People living in and around the Ba Mangroves use a range of landscape resources and ecosystems to support their livelihoods. The Google Earth Tour accessed by clicking the button below will allow you to explore various coastal ecosystems, farms, and rivers that people use in Ba to generate food and income to support their livelihoods. Many of these ecosystems provide services other than products such as fish or crops but may provide climate regulation services (e.g. shade from trees). Look out for the range of ecosystem services people in Ba benefit from. 
+
+<div class="d-flex justify-content-center">
+<button type="button" class="btn btn-outline-primary btn-lg my-4">
+    <a href="" target="_blank">Google Earth Tour: Response Strategies</a>
+</button>
+</div>
+
+**TASK:** make a list of variables that comprise the landscape resources, ecosystem services, and economic variables that are important for supporting livelihoods in the Ba Mangrove region. 
+
+<br>
 
 # Activity 2: Climate Impacts
 
-**TASK:** make a list of a climate events that affect each of the landscape components or ecosystem services that are important for supporting livelihoods (that you identified in Activity 1). 
+<!-- ## Detecting Climate Impacts from Satellite Images
 
-## Detecting Climate Impacts from Satellite Images
+TO-DO -->
 
-## Field Tour of Climate Impacts
+Work through the Google Earth Tour accessed by clicking the button below. This tour compiles a range of information collected through various field activities demonstrating how climate shocks affect landscape resources and ecosystem services in the Ba Mangrove region. 
+
+<div class="d-flex justify-content-center">
+<button type="button" class="btn btn-outline-primary btn-lg my-4">
+    <a href="https://earth.google.com/earth/d/10OWbFcjrTB9-uupho1505se3PUbW55_u?usp=sharing" target="_blank">Google Earth Tour: Climate Impacts</a>
+</button>
+</div>
 
 
+**TASK:** make a list of a climate shocks that affect each of the landscape components or ecosystem services that are important for supporting livelihoods (identified in Activity 1). 
 
-# Activity 3: Coping and Adapting
+<br>
+
+# Activity 3: Responding to Climate Shocks
+
+When climate shocks affect landscape resources and ecosystem service flows in the Ba Mangrove region people deploy various response strategies to compensate for these impacts, secure income and food, and recover affected resources. Use the Google Earth Tour below to explore some of the response strategies deployed by people living in the Ba Mangrove region.
+
+<div class="d-flex justify-content-center">
+<button type="button" class="btn btn-outline-primary btn-lg my-4">
+    <a href="" target="_blank">Google Earth Tour: Response Strategies</a>
+</button>
+</div>
+
+**TASK:** for each climate shock that you identified in Activity 2 identify a response strategy that people have deployed. Make a list of these response strategies. 
+
+<br>
 
 # Causal Loop Diagrams
 
@@ -182,19 +244,31 @@ Following the tasks below, you will create a causal loop diagram that depicts ho
 
 #### TASK 1: Select a problem variable
 
-In Activity 1 you made a list of landscape resources and ecosystem services that people use to support their livelihoods. Pick one of the items on this list as a problem variable. Think carefully about how you select this variable. The goal of this task is to use a causal loop diagram to design an adaptation strategy that reduces climate impacts on livelihoods. You should look to select a variable that is landscape resource or ecosystem service important for someone's livelihood and is sensitive to climate shocks. 
+In Activity 1 you made a list of landscape resources and ecosystem services that people use to support their livelihoods. Pick one of the items on this list as a problem variable. Think carefully about how you select this variable. The goal of this task is to use a causal loop diagram to design an adaptation strategy or policy that reduces climate impacts on livelihoods. You should look to select a variable that is a landscape resource or ecosystem service which is important for someone's livelihood and is sensitive to climate shocks. 
 
 In the middle of a sheet of paper write down your problem variable. 
 
+<figure style="margin-left: auto; margin-right: auto; text-align: center;">
+    <img src="{{site.url}}/assets/images/paper-cld-1.jpg" class="workshop-img-small">
+</figure>
+
 #### TASK 2: Identify causes
 
-In Activity 2 you made a list of climatic variables that affect landscape resources and ecosystem services. Identify the climate variables that **directly cause** changes in your problem variable (i.e. the climatic variable does NOT causea a change in the problem variable indirectly through another variable). If crop production is your problem variable, an example of direct climate causes could be flooding or heat events damaging crops in fields.
+In Activity 2 you made a list of climatic variables that affect landscape resources and ecosystem services. Identify the climate variables that **directly cause** changes in your problem variable (i.e. the climatic variable does NOT cause a a change in the problem variable indirectly through another variable). If crop production is your problem variable, an example of direct climate causes could be flooding or heat events damaging crops in fields.
 
 Use a different coloured pen, and to the left of your problem variable, write down the direct climate causes on your sheet of paper. Draw arrows that link climate causes to the problem variable. 
 
-It is possible that climate shhocks can indirectly affect your problem variable. Look at the notes you made in Activity 1 and Activity 2 to see if you can spot cases where a climate event causes a change in another variable, and the change in that variable causes a change in your problem variable. These are cases when climate variables are **indirect causes**. An example could be flooding damaging farm machinery or roads which makes it harder to harvest crops, which impacts crop production.
+<figure style="margin-left: auto; margin-right: auto; text-align: center;">
+    <img src="{{site.url}}/assets/images/paper-cld-2.jpg" class="workshop-img-small">
+</figure>
+
+It is possible that climate shocks can indirectly affect your problem variable. Look at the notes you made in Activity 1 and Activity 2 to see if you can spot cases where a climate event causes a change in another variable, and the change in that variable causes a change in your problem variable. These are cases when climate variables are **indirect causes**. An example could be flooding damaging farm machinery or roads which makes it harder to harvest crops, which impacts crop production.
 
 Staying on the left side of your diagram, add these causal chains where climate events are indirect causes. Draw arrows that link climate causes indirectly to the problem variable.
+
+<figure style="margin-left: auto; margin-right: auto; text-align: center;">
+    <img src="{{site.url}}/assets/images/paper-cld-3.jpg" class="workshop-img-small">
+</figure>
 
 #### TASK 3: Identify consequences
 
@@ -206,11 +280,19 @@ In Activity 3 you made a list of strategies people deployed to respond to climat
 
 Using a different coloured pen to your causes and problem variable, write down the consequences on the right side of your sheet of paper. Draw arrows that link the problem variable to the consequences. 
 
+<figure style="margin-left: auto; margin-right: auto; text-align: center;">
+    <img src="{{site.url}}/assets/images/paper-cld-4.jpg" class="workshop-img">
+</figure>
+
 #### TASK 4: Check for completeness
 
 Reviewing the notes you made in Activities 1, 2, and 3 check that your causal loop diagram is complete. Ensure you have captured all the direct and indirect causes that affect the problem variable. Ensure that you have captured all the direct and indirect consequences of a change in the problem variable. It is likely at this step that you will spot several indirect consequences (e.g. a change in crop production affects sales of crops, this, in turn, causes people to increase fishing activities or take on jobs in town). 
 
 Capturing all the indirect consequences of a climate shock to your problem variable is important to i) fully understand how people's livelihoods are affected, and ii) to assess the resilience of the sytem in terms of its capacity to provide ecosystem services. 
+
+<figure style="margin-left: auto; margin-right: auto; text-align: center;">
+    <img src="{{site.url}}/assets/images/paper-cld-5.jpg" class="workshop-img">
+</figure>
 
 #### TASK 5: Describe links
 
@@ -218,9 +300,19 @@ You should now have a detailed causal loop diagram depicting the direct and indi
 
 Add a `+` sign next to all positive links and a `-` sign next to all negative links. 
 
+<figure style="margin-left: auto; margin-right: auto; text-align: center;">
+    <img src="{{site.url}}/assets/images/paper-cld-6.jpg" class="workshop-img">
+</figure>
+
 #### TASK 6: Identify feedbacks
 
 Work through your causal loop diagram to identify any feedback loops which link together causes and consequences. Feedback loops can involve two or more variables and can occur between causes and consequences of your problem variable, direct and indirect causes of your problem variable, and direct and indirect consequences of your problem variable. Make a note of whether a feedback loop is reinforcing or balancing. *Label each of the feedback loops as reinforcing (R) or balancing (B).*
+
+<figure style="margin-left: auto; margin-right: auto; text-align: center;">
+    <img src="{{site.url}}/assets/images/paper-cld-7.jpg" class="workshop-img">
+</figure>
+
+<p class="text-primary">Two feedback loops have been labelled. The first is a small balancing loop between fish catch and food. The second is a larger more complex feedback loop which shows how flooded roads prevent people working in towns through restricted access, which prevents people from generating an income, which prevents people from repairing farm equipment, which prevents people from replanting, which further impacts crop production. This is a reinforcing loop; the loop is reinforcing the negative impacts of flooding on crop production.</p>
 
 #### TASK 7: Identify climate shocks and their impacts
 
@@ -228,13 +320,19 @@ Now your causal loop diagram is ready to be used for anlaysis tasks.
 
 Let's use the diagram to analyse the different ways that climate shocks impact livelihoods. In particular, think about the ways that climate events indirectly and directly affect ecosystem services that people use to support their livelihoods. Use you diagram to answer the following questions. 
 
-* What are the different causal chains that describe how climate events impact livelihoods? *Highlight these causal chains on your diagram and identify the ecosystem service that is affected.* 
+* What are the different causal chains that describe how climate shocks impact livelihoods? *Highlight these causal chains on your diagram and identify the ecosystem service that is affected.* 
 * Are these climate impacts on livelhoods short-term and long-term? *Label each causal chain as a short-term, long-term, or both short- and long-term impact.*  
 * Are the causal chains you've identified part of feedback loops which reinforce (amplify) or balance (reduce) climate impacts on livelihoods? *Label each of the feedback loops as reinforcing (R) or balancing (B).*
 
 A resilient system is able to keep providing ecosystem services that people need to support their livelihoods. 
 
 * Do the feedback loops in your causal loop diagram interect with climate shock to to reduce the system's capacity to provide ecosystem services over time (low resilience) or quickly recover from the shock and maintain ecosystem service flows (high resilience)? *Label each of the feedback loops as low-resilience (LR) or high-resilience (HR)*
+
+<figure style="margin-left: auto; margin-right: auto; text-align: center;">
+    <img src="{{site.url}}/assets/images/paper-cld-8.jpg" class="workshop-img">
+</figure>
+
+<p class="text-primary">We have traced in red ink the causal chains describing how climate shocks impact crop production and labelled the feedback loops as low-resilience or high-resilience.</p>
 
 #### TASK 8: Identify response and coping strategies
 
@@ -245,12 +343,28 @@ Let's consider the role of human activities in responding to climate shocks affe
 * Are the human responses to the climate event short-term or long-term responses? *Label each human response short-term (ST) or long-term (LT) on your diagram.*
 * Are any of the human response activities part of feedback loops? *Are these feedback loops undermining the system's capacity to provide ecosystem services that are important for livelihoods or are they contributing to the system recovering after the climate shock to maintain levels of ecosystem service flows? Label any feedback loops undermining system resilience as negative (N)*
 
+<figure style="margin-left: auto; margin-right: auto; text-align: center;">
+    <img src="{{site.url}}/assets/images/paper-cld-9.jpg" class="workshop-img">
+</figure>
+
+<p class="text-primary">We've labelled fish catch and town jobs as both short- and long-term response activities as people could use these activities for a short period of time or the flood event could be a trigger to a more permanent shift in the mix of livelihood activities.</p>
+
+<p class="text-primary">We wouldn't label any of the human response activities as being negative and undermining the ability of the system to recover levels of crop production. In fact, the ability to use fishing or work in-town to compensate for shortfalls in crop production could be an indicator of a resilient system.</p>
+
 #### TASK 9: Design an adaptation strategy or policy to increase resilience
 
-In this final task you will use your causal loop diagram to design a policy or adaptation strategy that will increase system resilience to climate shocks. The goal is for your policy or strategy to create a feedback loop that does oneor more of the following:
+In this final task you will use your causal loop diagram to design a policy or adaptation strategy that will increase system resilience to climate shocks. The goal is for your policy or strategy to create a feedback loop that does one or more of the following:
 
 * enables the problem variable, or ecosystem service flows from the problem variable if it is a landscape resource, to quickly recover after a climate shock
 * supports people in maintaining their livelihoods through transitioning to use other ecosystem services or livelihood activities that reduce their vulnerability to climate shocks
-* does not have any unforeseen impacts such as amplifying or creating negative feedback loops that undermine other aspects of someones livelihood system, landscpae resources, or other people's livelihoods
+* does not have any unforeseen impacts such as amplifying or creating negative feedback loops that undermine other aspects of someone's livelihood system, landscpae resources, or other people's livelihoods
 
 The goal of this exercise is to demonstrate how causal loop diagrams can help develop adaptation strategies that increase the resilience of socio-ecological systems that support livelihoods. Don't worry too much about selecting a policy or strategy that is a perfect fit for the Ba Mangrove region. Instead, focus on testing out developing feedback loops for a few different ideas to get a sense for how a goal of adaptation strategy design is to maintain or enhance system functioning (provision of ecosystem services) in the face of climate shocks to support livelihoods. 
+
+Use a pencil to sketch different adaptation responses on your diagram and trace the effect of the intervention propagating through the system to check it doesn't have any unforeseen adverse impacts and that the mechanism through which it boosts resilience is plausible. 
+
+<figure style="margin-left: auto; margin-right: auto; text-align: center;">
+    <img src="{{site.url}}/assets/images/paper-cld-10.jpg" class="workshop-img">
+</figure>
+
+<p class="text-primary">We've added two interventions to disrupt the low-resilience feedback loop: cash relief to farmers to buy equipment and resources for replanting and improving drainage to reduce floods blocking roads.</p>
