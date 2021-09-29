@@ -5,24 +5,27 @@ title: Ba Livelihoods
 
 # Introduction
 
-This workshop will introduce how people living in coastal Fiji use a range of coastal and terrestrial ecosystems to support their livelihoods. It will also demonstrate how these ecosystems are affected by a range of climatic stressors including severe tropical cyclones to seasonal hot and dry spells. Through their effects on ecosystems people use, climatic stressors exert a large impact on people's livelihoods in this region. 
+This workshop will introduce how people living in coastal Fiji use a range of coastal and terrestrial ecosystems to support their livelihoods. It will also demonstrate how these ecosystems are affected by a range of climatic stressors including severe tropical cyclones to seasonal hot and dry spells. Through their effects on the ecosystems people use, climatic stressors exert a large impact on people's livelihoods in this region. 
 
 This workshop will focus on the Ba Mangroves area in Northern Viti Levu, Fiji. People living in communities surrounding the Ba Mangroves rely on a range of ecosystems including mangroves to collect crabs, other marine life, and firewood; freshwater and ocean fishing; farming; and labouring on larger sugarcane farms. 
 
-A range of climatic stressors affect these ecosystems. The strong winds and heavy rains of tropical cyclones damage mangroves and fruit trees, flood farms, and prevent people from fishing. The Ba Mangroves are frequently in the path of tropical cyclones; in 2016 Tropical Cyclone Winston causes severe damage to ecosystems and infrastructure in the Ba area. The Ba region is also affected by flooding caused by heavy rain and exacerbated by land cover change in the upper reaches of the catchment. Following the cyclone season, the dry season brings dry periods, drought, and extreme heat events that affect crops and people when they're working on the land or collecting marine life in coastal areas. 
+A range of climatic stressors affect these ecosystems. The strong winds and heavy rains of tropical cyclones damage mangroves and fruit trees, flood farms, and prevent people from fishing. The Ba Mangroves are frequently in the path of tropical cyclones; in 2016 Tropical Cyclone Winston caused widespread damage to ecosystems and infrastructure. More recently the Tropical Cyclones Josei, Keni, Yasa, Harold, and Ana have impacted ecosystems in Ba. The Ba region is also affected by flooding following heavy rain events which is exacerbated by land cover change in the upper reaches of the catchment. Following the cyclone season, the dry season brings dry spelss, drought, and extreme heat events that affect crops and people when they're working on the land or collecting marine life in coastal areas. 
 
-
+In this workshop you will learn how to use causal loop diagrams to combine socio-economic, climatic, and environmental variables to understand how ecosystems support people's livelihoods, how climate shocks affect these ecosystems, diagnose sources of  vulnerability in livelihood systems, and design adaptation strategies and policies to boost system resilience. 
 
 ## Learning Objectives
 
 * Develop an understanding of the importance of ecosystem services for livelihoods.
 * Develop an understanding of how satellite images can be used to monitor change in vegetation condition after a climatic shock. 
-* Learn a technique to combine satellite images and socio-economic data to understand how climate impacts to mangroves and other ecosystems affect people.
-* Develop an understanding of how climate impacts to mangroves and other ecosystems affect livelihoods.
+* Learn how to build a causal loop diagram to combine climatic, socio-economic, and environmental data to represent the structure and dynamics of livelihood systems dependent on ecosystems.
+* Use the causal loop diagram to identify how climate impacts to ecosystems affect livelihoods.
+* Use the causal loop diagram to design an adaptation strategy or policy to boost the resilience of livelihood systems to climatic shocks. 
 
 ## Ba Mangroves
 
-### Concepts
+
+
+## Concepts
 
 **System**
 
