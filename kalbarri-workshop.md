@@ -344,6 +344,7 @@ print(diff)
 
 You should see the result of calling `subtraction()` printed in the *Console*.
 
+<!--Stacking of bands will be unfamiliar to a newcomer at this point in the lab - consider a different function or shifting this to where geographic data starts to be used -->
 Google Earth Engine also comes with a suite of in-built functions that you can use to retrieve, analyse, and visualise data. You can explore these functions under the *Docs* tab in the left side-bar. The picture below shows the documentation for the `addBands()` function which can be used to stack bands from two `Image`s. 
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center;">
