@@ -356,18 +356,18 @@ Google Earth Engine also comes with a suite of in-built functions that you can u
 
 # Geographic Data
 
-Geographic data is used to describe entities (e.g. a road) or phenomenon (e.g. a bushfire) that have a position in space (i.e. on the Earth's land surface).
+Geographic data is used to describe entities (e.g. a road) or phenomena (e.g. a bushfire) that have a position in space (i.e. on the Earth's land surface).
 
 Geographic data consists of two pieces of information:
 
-1. Locational information that describes where the data is located on the Earth's land surface (e.g. a latitude and longitude pair of values describing the location of a point).
+1. Locational information that describes where the data is located on the Earth's land surface (e.g. a pair of latitude and longitude values describing the location of a point).
 2. Attribute information that describes the characteristics, entities, or phenomenon occurring at a location (e.g. the name of a city associated with a latitude and longitude pair for the city's location).
 
 There are two main approaches to representing geographic data: raster data and vector data.
 
 ## Raster
 
-Raster data represent geographic features or phenomenon by splitting the Earth's land surface up into a grid of regular sized cells (pixels) and assigning a value to each pixel. Pixel values can be continuous (e.g. values represent precipitation) or categorical (e.g. values represent a land cover type). 
+Raster data represent geographic features or phenomena by splitting the Earth's land surface into a grid of regular sized cells (pixels) and assigning a value to each pixel. Pixel values can be continuous (e.g. values representing precipitation) or categorical (e.g. values that represent a land cover type). 
 
 The dimensions of a pixel relative to distance on the Earth’s land surface determines the complexity and detail of spatial features that can be resolved in raster data. A pixel that represents a 1 km x 1 km footprint on the Earth’s surface will not be able to represent an individual tree or a single building.
 
@@ -382,7 +382,7 @@ In Google Earth Engine, raster data is stored as an `Image`. An `Image` is a spe
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center;">
     <img src="{{site.url}}/assets/images/gee-image.png" class="workshop-img-small">
-    <figcaption>Visual of <code>Image</code> data structure in Google Earth Engine (source: Google Earth Engine)</figcaption>
+    <figcaption>The multiple bands of a <code>Image</code> data structure in Google Earth Engine (source: Google Earth Engine)</figcaption>
 </figure>
 
 Let's explore an `Image` in Google Earth Engine. Run the following code:
