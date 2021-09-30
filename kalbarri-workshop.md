@@ -205,12 +205,14 @@ Boolean data is used to store true or false values. This is useful for storing t
 Boolean operations are useful for controlling the flow of programs (e.g. if X is true then do Y) and for filtering datasets based on a condition (e.g. get all cities with a population greater than 500,000). Let's experiment with boolean conditions. 
 
 ```js
-var demoBool = z == 4;
-print(demoBool);
+var demoBool = z;
+print(demoBool == 4);
 
-var bool1 = x == 1 && y == 2;
+var bool1 = x;
+print(bool1 == 1 && y == 2);
 
 var bool2 = y < x;
+print(bool2)
 ```
 
 <details>
