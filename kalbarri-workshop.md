@@ -144,8 +144,8 @@ var z = x + y;
 </details>
 <br>
 
-### Boolean
-
+### Boolean 
+<!-- Relevant to later exercises? -->
 Boolean data is used to store true or false values. This is useful for storing the results of comparison (equal to, greater than, less than) and logical (and, or, not) operations.
 
 <table style="width:75%; border-collapse: collapse; border-bottom: 1px solid #ddd; padding: 15px; margin-left: auto; margin-right: auto;">
@@ -273,7 +273,7 @@ You can also put strings inside arrays.
 var stringList = ['I', 'am', 'in', 'a', 'list'];
 print(stringList);
 ```
-
+<!-- Could be removed -->
 Remember, each item in an array is separated by a comma. You can create n-Dimensional arrays. 
 
 ```js
@@ -292,7 +292,7 @@ print(squareArray);
 <br>
 
 ## Variables
-
+<!-- Consider brinin this section earlier, before boolean? -->
 Variables provide a named reference for data that is used in a program.  
 
 To create a variable you need to declare it using the **`var`** keyword. Once a variable is declared you can put data inside it and use that variable, and therefore the data inside it, in your program. When we were adding `x` and `y` above, we were actually referring to the numeric data values stored inside `x` and `y`. 
@@ -313,7 +313,7 @@ Using variables makes code easier to organise and write. For example, if you wan
 <br>
 
 ## Functions
-
+<!-- This could be cut, if they're not writing functions in this lab they won't be applying this theory -->
 Functions perform a specific task or operation on data in your program. Before you use a function you need to declare it.
 
 * The `function` keyword.
@@ -424,7 +424,7 @@ Map.addLayer(ps4Img, ps4VisParams, 'PS4 Image');
 
 ### ImageCollections
 
-An `ImageCollection` in Google Earth Engine is a stack of `Image`s; it provides a structure to group together and organise related `Image`s. For example, you could create an `ImageCollection` that stores all `Image`s captured by a satellite such as Landsat, Sentinel-2, or Planet. 
+An `ImageCollection` in Google Earth Engine is a stack of `Image`s; it provides a structure to group together and organise related `Image`s. For example, you could create an `ImageCollection` that stores all the Kalbarri `Image`s captured by the Planet satellite over a 6 month period. 
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center;">
     <img src="{{site.url}}/assets/images/image-collection.png" class="workshop-img">
@@ -591,7 +591,7 @@ Remote sensors on satellites measure electromagnetic energy reflected or emitted
     <figcaption>Simple model of passive satellite remote sensing.</figcaption>
 </figure>
 
-Most often, when monitoring the Earth's surface using remote sensing images, we want `Image` pixels to have units of surface reflectance. Surface reflectance is the ratio of energy of incoming solar radiation to reflected solar radiation as measured by a sensor at the Earth's surface. Reflectance has values between 0 (no incoming solar radiation is reflected) to 1 (all incoming solar radiation is reflected). The roughness and albedo of an object determine how much radiation is reflected. 
+Most often, when monitoring the Earth's surface using remote sensing images, we want `Image` pixels to have units of surface reflectance. Surface reflectance is the ratio of energy of incoming solar radiation to reflected solar radiation as measured by a sensor at the Earth's surface. Reflectance has values between 0 (no incoming solar radiation is reflected) to 1 (all incoming solar radiation is reflected). The roughness and albedo of an object determine how much radiation is reflected e.g. polar ice caps have a high albedo and thus have high surface reflectance. 
 
 When conditions on the Earth's surface change, levels of surface reflectance change. Imagine looking at a scene before and after a flood, after a flood you can see water is present where previously there was land. The reason you can detect this change with your eyes is because there is a difference in light reflected off the scene in areas of flood-driven change. The same principle applies when monitoring the land surface using satellite-based sensors; a change in surface reflectance indicates a change on the land surface. This allows us to detect change such as deforestation events or damage caused by tropical cyclones. 
 
@@ -611,7 +611,7 @@ Remote sensors measure electromagnetic energy reflected by Earth surface feature
 
 Features on the Earth's land surface have different reflectance characteristics at different wavelenghts. Think about smooth bright white roofs; these roofs are reflecting lots incoming light across red, green, and blue visible wavelengths which is why the roof is white (reflectance across the visible spectrum) and bright (lots of incoming energy reflected). The same prinicple also explains why vegetation appears green; healthy vegetation reflects more green light and absorbs more red and blue light. 
 
-Remote sensors measure reflectance in different spectral wavelengths. This allows us to distinguish features on the Earth's surface based on their varying reflectance across wavelengths. Our eyes can only sense reflected energy in the visible spectrum; however, remote sensors can sense over a wider range of the electromagnetic spectrum. 
+Remote sensors measure reflectance in different spectral wavelengths. This allows us to distinguish features on the Earth's surface based on their varying reflectance across wavelengths. Our eyes can only sense reflected energy in the visible spectrum; however, remote sensors can sense over a wider range of the electromagnetic spectrum e.g. infrared. 
 
 Sensing reflectance across the electromagnetic spectrum increases our capacity to monitor important and interesting properties of Earth surface features. For example, water absorbs near-infrared radiation so appears `darker' compared the land surface. Green vegetation is reflective in near-infrared wavelengths (as near-infrared radiation reflects off the internal structure of leaves).
 
@@ -706,7 +706,7 @@ print(nmKalbarriSeroja);
 Map.addLayer(nmKalbarriSeroja, {}, 'Nearmap post-TC Seroja');
 ```
 
-You can clearly see the complete damage to some roofs, partial damage to others, while some roofs remain intact. We're going to try and automatically detect damaged roofs from satellite images. 
+Start exploring the imagery on your map - you can clearly see the complete damage to some roofs, partial damage to others, and those that remained intact. We're going to try and automatically detect damaged roofs from satellite images. 
 
 <details>
   <summary><b>How do you think the surface reflectance of a roof will change if it has been damaged during Tropical Cyclone Seroja?</b></summary>
