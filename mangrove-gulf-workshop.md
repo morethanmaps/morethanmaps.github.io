@@ -100,18 +100,18 @@ GEE allows you to control the map in the bottom half of the window using the `Ma
 
 First, let's set the zoom level. Enter the following into the main code editor window:
 ```js
-Map.setZoom(6)
+Map.setZoom(6);
 ```
-Before you continue any further, let's save the script. Click the **Save** button and enter the **File Name** as **mangrove-gulf-dieback.js** and click *OK*.
-
-*Remember, it is a good idea to save your script after each step so you don't lose any of your work*. 
-
-Now click the **Run** button. You should see the map zoom into the Northern Territory. The `setZoom()` function takes one parameter - a number between **0** and **24**. Try changing the zoom level in your script to **5** and click **Run** again and your map will zoom out. Now try a zoom level of **7** and the map should zoom in. You can find the map scale at the bottom of the map window (circled in the image below). 
+Now click the **Run** button. You should see the map zoom into the Northern Territory. The `setZoom()` function takes one parameter - a number between **0** and **24**. Try changing the zoom level in your script to **5** and click **Run** again and your map will zoom out. Now try a zoom level of **7** and the map should zoom in. You can find the map scale at the bottom of the map window (circled in the image below). Note also that lines of code should always end with a semi-colon `;`. 
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center">
     <img src="{{site.url}}/assets/images/gulf/gulf-map-zoom.png" class="workshop-img">
     <figcaption>The GEE Map with zoom level of 7. The map scale is shown on the bottom of the map.</figcaption>
 </figure>
+
+Before you continue any further, let's save the script. Click the **Save** button and enter the **File Name** as **mangrove-gulf-dieback.js** and click *OK*.
+
+*Remember, it is a good idea to save your script after each step so you don't lose any of your work*. 
 
 ## Centring the Map
 
@@ -122,14 +122,19 @@ First, let's create the point feature. Add the following as the next line in you
 ```js
 var CoxR = ee.Geometry.Point([135.7, -15.1]);
 ```
-This creates an `ee.Geometry.Point` object and saves it in a new variable `CoxR`. When creating this object, you only need to provide one parameter - an array (denoted by the square `[ ]` brackets) containing two decimal numbers: the longitude and the latitude of the point. As the study site is east of the prime meridian and south of the equator, the longitude value is positive (east) and the latitude is negative (south).
+The `ee.Geometry.Point()` function creates a new point feature and saves it in a new variable `CoxR`. When creating this feature, you only need to provide one parameter: an array (denoted by the square `[ ]` brackets) containing two decimal numbers: the longitude and the latitude of the point. As the study site is east of the prime meridian and south of the equator, the longitude value is positive (east) and the latitude is negative (south).
 
-Now you can centre the map window on this location by adding the following line:
+Now you can centre the map window on this location by adding the following line to your script:
 
 ```js
 Map.centreObject(CoxR, 12);
 ```
-The `Map.centreObject` function takes two parameters - an object to center on, in this case the CoxR point feature, and a zoom level. The zoom level has the same effect as Map.setZoomLevel you used above but allows you do the center and zoom in one step. Run your script to see the effect on the Map window. It should look similar to the map below:
+The `Map.centreObject()` function takes two parameters: an object to center on (in this case the CoxR point feature) and a zoom level. The zoom level has the same effect as `Map.setZoomLevel()` function you used above but allows you do the center and zoom in one step. Run your script to see the effect on the Map window. It should look similar to the map below:
+
+<figure style="margin-left: auto; margin-right: auto; text-align: center">
+    <img src="{{site.url}}/assets/images/gulf/gulf-map-centre.png" class="workshop-img">
+    <figcaption>The GEE Map centred on the Cox River with zoom level of 12.</figcaption>
+</figure>
 
 ## Mapping Layers
 
@@ -138,22 +143,28 @@ You can also add layers to overlay on the base map window. Let's add the point y
 ```js
 Map.addLayer(CoxR, {}, "Cox River", false);
 ```
-The `Map.addLayer` function takes 4 parameters: a layer to display (in this case the CoxR point), visualisation parameters between the curly braces `{}` which describe how to style the layers (colours etc), a descriptive label that will be used in the map window, and a boolean flag (i.e. true or false) indicating whether the layer is on or not by default (in this case it is off). 
+The `Map.addLayer()` function takes 4 parameters: a layer to display (in this case the CoxR point), visualisation parameters between the curly braces `{}` which describe how to style the layers (we are not providing any), a descriptive label for the layer that will be used in the map window, and a boolean flag (i.e. true or false) indicating whether the layer is visible or not by default (in this case it is turned off). 
 
-Click **Run** and then click the **Layers** button in the map window and you will see it has been added as a layer. To display the layer, click the tick box next to **Cox River** and the point should display. Move the slider next to the layer to change the *opacity* (or transparency)  for the displayed layer.
+Click **Run** and then click the **Layers** button in the map window and you will see the layer **Cox River** has been added. To display the layer, click the tick box next to **Cox River** and a single point should display near the mouth of the Cox River (see image below). Move the slider next to the layer to change the *opacity* (or transparency)  for the displayed layer.
+
+<figure style="margin-left: auto; margin-right: auto; text-align: center">
+    <img src="{{site.url}}/assets/images/gulf/gulf-map-layer.png" class="workshop-img">
+    <figcaption>The Cox River point layer on the GEE map.</figcaption>
+</figure>
 
 ## Summary
 
-At the end of this section, your script should look similar to the one below; however, you will notice the first line contains two forward slashes `//` followed by some text. This is a called a *comment* in JavaScript. Comments are are useful for writing your own descriptions about what is happening in the script, or excluding lines of code from being executed. You will see that the 2nd line containing the `Map.setZoom(24)` is also *commented out* because we set the map zoom using the `Map.centerObject()` function so it is no longer necessary. Adjust your code to match the script below.
+At the end of this section, your script should look similar to the one below; however, you will notice the first line contains two forward slashes `//` followed by some text. This is a called a *comment* in JavaScript. Comments are are useful for writing your own descriptions about what is happening in the script, or excluding lines of code from being executed. You will see that the 2nd line containing the `Map.setZoom(7)` is also *commented out* because we set the map zoom using the `Map.centerObject()` function so it is now redundant. Adjust your code to match the script below.
+
+Make sure you click the **Save** button before you move to the next section.
 
 ```js
-// Working with the Map
-// Map.setZoom(24);
+// Working with the GEE Map
+// Map.setZoom(7);
 var CoxR = ee.Geometry.Point([135.7, -15.1]);
 Map.centerObject(CoxR, 12);
 Map.addLayer(CoxR, {}, "Cox River", false); 
 ```
-Make sure you click the **Save** button frequently. As you follow the steps below, keep appending the code to the end of the same script.
   
 <!----------------------------------------------------------------------------->
 
@@ -533,12 +544,13 @@ The `setOptions()` function for the chart contains one important parameter: `int
 
 Run your mouse along the line representing the NDVI in the chart and the date and NDVI value will be displayed. What season (or months) do you think the mangrove dieback event occurred? Do you think the mangroves recovered in the years that followed? What do you think might cause the other smaller variations in the NDVI both before and after the dieback event?
 
+Click on the point marker to go into edit mode. Then click and drag the point marker to a new location on the coast where there was mangrove dieback according to your map, and click the **Exit** button at the top of the map. **Run** the script again. Do you see the same temporal pattern at this new location?
+
+**Congratulations - you have reached the end of the workshop.**. Remember to click the **Save** before you close your browser window.
+
 ## Summary
 
-The code from this section is summarised below. Check to make sure your code is similar, and remember to click the **Save** button as you finish the workshop.
-
-**Congratulations - you have reached the end of the workshop.**
-
+The code from this section is summarised below. Check to make sure your code is similar.
 
 ```js
 // Analysing Mangrove Dieback
@@ -582,7 +594,5 @@ chart = chart .setOptions({
 });
 print(chart);
 ```
-
-
 
 {% include open-embed.html %}
