@@ -5,58 +5,33 @@ title: Mangrove Dieback in the Gulf of Carpentaria
 
 # Mangrove Dieback in the Gulf of Carpentaria
 
-- More than half the world's species of mangroves are found in Australia.
-
 <figure style="margin-left: auto; margin-right: auto; text-align: center;">
     <img src="{{site.url}}/assets/images/mangrove-gulf-title.png" class="img-fluid">
     <!-- <figcaption><code>Overview</code> image of mangrove dieback in the Gulf of Carpentaria.</figcaption> -->
 </figure>
 
+## Learning Objectives
+1. Develop an understanding of the importance of mangroves in the Gulf of Carpentaria for fisheries.
+2. Develop an understanding of remote sensing images.
+3. Learn basic programming techniques to process and analyse remote sensing images (Google Earth Engine JavaScript API).
+4. Develop an understanding of how satellite images and vegetation indices can be used to monitor mangroves.
+
+
+## Activities
+- Introduction to mangroves, the ecosystem services they provide, and how they are susceptible to climatic hazards and change.
+- Introduction to the Gulf of Carpentaria case study and the mangrove dieback event.
+- Introduction to basic programming techniques and concepts.
+- Introduction workshop data (Landsat, why this is such an important resource for Earth observation).
+- Use remote sensing images to display pre- and post-dieback RGB and NDVI images.
+- Map and calculate the area of the mangrove dieback event.
+- Investigate time series data representing the dieback event and possible recovery.
+
 ## Background
-- Describe the event and the probable cause.
-- The study area of Cox River
+- Describe the event and the probable cause (Sharyn).
 
 Listen to ABC Rural Radio's Charlie McKillop interview David Carter, the CEO of Austral Fisheries about the mangrove dieback event. This interview took place in October 2016.
 
 {{site.url}}/assets/other/Rural-nrn-David-Carter-welcomes-climate-change-inquiry-1010.mp3
-
-## Learning Objectives
-1. Develop an understanding of the importance of mangroves in the Gulf of Carpentaria for fisheries.
-2. Develop an understanding of remote sensing images.
-3. Understand the different types of geospatial data (vector, raster, and attributes).
-4. Learn basic programming techniques to process and analyse remote sensing images (Google Earth Engine JavaScript API).
-5. Develop an understanding of how satellite images can be used to monitor coastal vegetation.
-
-
-## Activities
-- Introduction to mangroves, the ecosystem services they provide, and how they are susceptible to climatic hazards / change.
-- Introduction to the Gulf of Carpentaria case study and the mangrove dieback event.
-- Introduction to basic programming techniques and concepts.
-- Introduction workshop data (Landsat, why this is such an important resource for Earth observation).
-- Use remote sensing images to generate pre- and post-heatwave RGB and NDVI images.
-- Map and calculate the area of mangrove dieback in the Gulf of Carpentaria.
-- Investigate time series data representing the dieback event and possible recovery.
-
-# Principles of Satellite Remote Sensing
-- Major EO satellite platforms - Landsat, MODIS, Sentinel, Planet, Worldview
-- Spatial and Temporal Resolution
-- Spectral Reflectance
-- Image bands
-- Vegetation Indices
-
-## The Landsat Satellites
-- Brief History
-- Landsat 8
-- Future (L9)
-
-
-In this workshop, you will use Google Earth Engine (GEE) to map the extent of mangrove dieback in the Gulf of Carpentaria.
-
-You can sign up for Google Earth Engine here: [https://earthengine.google.com/signup/](https://earthengine.google.com/signup/) 
-
-Load Google Earth Engine in your web browser at: [https://code.earthengine.google.com](https://code.earthengine.google.com)
-
-Earth engine supports two basic types (or models) of spatial information: geographic features (also known as vector data), and image data (also known as gridded or raster data). Geographic features or vector data can represent spatial phenomenon using points, lines, or a polygon. 
 
 # Introduction to GEE
 
@@ -75,7 +50,7 @@ Load Google Earth Engine in your web browser at: [https://code.earthengine.googl
     <figcaption>Google Earth Engine code editor (source: Google Earth Engine Developers Guide)</figcaption>
 </figure>
 
-In this workshop you will be focussing on the GEE components:
+In this workshop you will be focussing on the following GEE components:
 
 * **Code Editor**: where you write your JavaScript statements.
 * **Map**: the web map used to visualise and create spatial data.
@@ -90,11 +65,34 @@ In this workshop you will be focussing on the GEE components:
 
 <!----------------------------------------------------------------------------->
 
-# Working with the Map
+# Principles of Satellite Remote Sensing
+- Major EO satellite platforms - Landsat, MODIS, Sentinel, Planet, Worldview
+- Spatial and Temporal Resolution
+- Spectral Reflectance
+- Image bands
+- Vegetation Indices
+
+## The Landsat Satellites
+- Brief History
+- Landsat 8
+- Future (L9)
+
+<!----------------------------------------------------------------------------->
+
+# Working with the GEE Map
+
+We will start the practical exercise by working with the GEE map interface.
 
 ## Searching for a Place
 
-Let's start by setting the map so that it shows the Northern Territory, Australia. In the **Search for places or datasets** box at the top of GEE, start typing in **NT Australia** and you will see **NT, Australia** suggested under **PLACES**. Click on it and the map will centre on the Northern Territory. You can use the **Zoom** tool in the map window to zoom in and out, and click and drag the map to change the view. However, we want to set the location and zoom level in our script so the map will placed at the study area when we run the script.
+Let's start by setting the map so that it shows the Northern Territory, Australia. In the **Search for places or datasets** box at the top of GEE, start typing in **NT Australia** and you will see **NT, Australia** suggested under **PLACES**. Click on it and the map will centre on the Northern Territory. 
+
+<figure style="margin-left: auto; margin-right: auto; text-align: center">
+    <img src="{{site.url}}/assets/images/gulf/gulf-map-nt.png" class="workshop-img">
+    <figcaption>The GEE Map</figcaption>
+</figure>
+
+You can use the **Zoom** tool in the map window to zoom in and out, and click and drag the map to change the view. However, we want to set the location and zoom level in our script so the map will always be placed at the study area when we run the script.
 
 ## Setting the Zoom Level
 
@@ -108,9 +106,12 @@ Before you continue any further, let's save the script. Click the **Save** butto
 
 *Remember, it is a good idea to save your script after each step so you don't lose any of your work*. 
 
-Now click the **Run** button. You should see the map zoom into the Northern Territory. The `setZoom` function takes one parameter - a number between **0** and **24**. Try changing the number in your script to 0. You should see that the lower the number, the more *zoomed out* the map is.  You can find the map scale at the bottom of the map window. 
+Now click the **Run** button. You should see the map zoom into the Northern Territory. The `setZoom()` function takes one parameter - a number between **0** and **24**. Try changing the zoom level in your script to **5** and click **Run** again and your map will zoom out. Now try a zoom level of **7** and the map should zoom in. You can find the map scale at the bottom of the map window (circled in the image below). 
 
-Try a higher zoom number e.g. 9 and the map will *zoom in*. See what happens to the map scale. You may need to drag the map around to see where you are in the Northern Territory. You can also switch to **Satellite** view in the top right hand corner of the map window, and then try and even smaller scale with a zoom level of 24.  
+<figure style="margin-left: auto; margin-right: auto; text-align: center">
+    <img src="{{site.url}}/assets/images/gulf/gulf-map-zoom.png" class="workshop-img">
+    <figcaption>The GEE Map with zoom level of 7. The map scale is shown on the bottom of the map.</figcaption>
+</figure>
 
 ## Centring the Map
 
@@ -155,6 +156,7 @@ Map.addLayer(CoxR, {}, "Cox River", false);
 Make sure you click the **Save** button frequently. As you follow the steps below, keep appending the code to the end of the same script.
   
 <!----------------------------------------------------------------------------->
+
 # Working with Images
 
 ## Filtering a Collection
@@ -266,6 +268,8 @@ afterImage = removeCloud(afterImage)
 Map.addLayer(beforeImage, vis, "before image - cloud free", false);
 Map.addLayer(afterImage, vis, "after image - cloud free", false);
 ```
+
+<!----------------------------------------------------------------------------->
 
 # Mapping Changes to Vegetation
 
@@ -379,6 +383,8 @@ vegLoss = vegLoss.updateMask(vegLoss); // Mask out non-loss pixels
 Map.addLayer(vegLoss, {palette: ["ff0000"]}, "vegetation loss", false);
 ```
 
+<!----------------------------------------------------------------------------->
+
 # Analysing Mangrove Dieback
 In this section, you will refine the vegetation loss map to exclude areas that are less likely to have mangroves. You will then calculate the area of mangrove dieback. In the final step, you will look at the NDVI of mangrove areas through time.
 
@@ -463,7 +469,7 @@ One of the powerful features of GEE is the ability to analyse the temporal patte
 
 To do this, we will first need to create a point feature on the map representing an area of mangrove loss in order to extract time series information from Landsat 8.
 
-First, make sure that the only layer turned on in your map is the **mangroveLoss** layer, and all other layers are turned off. Then, in the map window, click on the **marker** icon (circled in the image below). This will put the map into point drawing mode.
+First, make sure that the only layer turned on in your map is the **mangroveLoss** layer, and all other layers are turned off. Then, in the map window, click on the **marker** icon in the Geometry Tools (circled on the image below). This will put the map into point drawing mode.
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center;">
     <img src="{{site.url}}/assets/images/gulf/gulf-time-marker.png" class="workshop-img-small">
@@ -524,6 +530,58 @@ The `setOptions()` function for the chart contains one important parameter: `int
     <img src="{{site.url}}/assets/images/gulf/gulf-time-chart.png" class="workshop-img-small">
     <figcaption>NDVI time series for over a mangrove dieback pixel.</figcaption>
 </figure>
+
+Run your mouse along the line representing the NDVI in the chart and the date and NDVI value will be displayed. What season (or months) do you think the mangrove dieback event occurred? Do you think the mangroves recovered in the years that followed? What do you think might cause the other smaller variations in the NDVI both before and after the dieback event?
+
+## Summary
+
+The code from this section is summarised below. Check to make sure your code is similar, and remember to click the **Save** button as you finish the workshop.
+
+**Congratulations - you have reached the end of the workshop.**
+
+
+```js
+// Analysing Mangrove Dieback
+var coastline = ee.FeatureCollection("USDOS/LSIB/2017")
+  .filterMetadata("COUNTRY_NA", "equals", "Australia");
+Map.addLayer(coastline, {}, "coastline", false);
+
+var distFromCoast = coastline.distance(5000);
+Map.addLayer(distFromCoast, {min: 0, max: 5000}, "distance from coast", false);
+
+var mangroveZone = distFromCoast.lte(1500);
+var mangroveLoss = vegLoss.updateMask(mangroveZone);
+Map.addLayer(mangroveLoss, {palette: ["ff0000"]}, "mangroveLoss", true);
+
+var lossPixels = mangroveLoss.reduceRegion({
+  reducer: ee.Reducer.count(), 
+  maxPixels: 60000000
+});
+lossPixels = ee.Number(lossPixels.get('nd'));
+print("Mangrove Dieback Pixels", lossPixels)
+
+var pixelArea = ee.Number(30).pow(2).divide(ee.Number(1000).pow(2));
+var lossArea = lossPixels.multiply(pixelArea);
+print("Mangrove Dieback Area (km2)", lossArea);
+
+L8 = L8.map(removeCloud);
+var ndviImages = L8.map(calcNDVI);
+
+var chart = ui.Chart.image.seriesByRegion({
+  imageCollection: ndviImages,
+  regions: geometry,
+  reducer: ee.Reducer.mean(),
+  xProperty: "system:time_start",
+});
+        
+chart = chart .setOptions({
+  title: 'NDVI Time Series',
+  hAxis: {title: 'Date', titleTextStyle: {italic: false, bold: true}},
+  vAxis: {title: 'NDVI', titleTextStyle: {italic: false, bold: true}},
+  interpolateNulls: true 
+});
+print(chart);
+```
 
 
 
