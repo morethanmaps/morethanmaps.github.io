@@ -5,6 +5,8 @@ title: Mangrove Dieback in the Gulf of Carpentaria
 
 # Mangrove Dieback in the Gulf of Carpentaria
 
+- More than half the world's species of mangroves are found in Australia.
+
 <figure style="margin-left: auto; margin-right: auto; text-align: center;">
     <img src="{{site.url}}/assets/images/mangrove-gulf-title.png" class="img-fluid">
     <!-- <figcaption><code>Overview</code> image of mangrove dieback in the Gulf of Carpentaria.</figcaption> -->
@@ -273,13 +275,13 @@ Vegetation has a unique reflectance signature compared to other surfaces on the 
 
 TODO: Image
 
-You can see above that vegetation reflects very little blue and red light, while reflecting more green light (and why we generally see vegetation as green). The red light is absorbed by chlorophyll in the leaves and is critical for photosynthesis. However, vegetation strongly reflects near-infrared light due to the cell structure in the leaves. We can't see this near-infrared light with our eyes, but the Landsat satellite can detect this. 
+You can see above that vegetation reflects very little blue and red light, while reflecting more green light (and why we generally see vegetation as green). The red light is absorbed by chlorophyll in the leaves, critical for photosynthesis. However, vegetation strongly reflects near-infrared light due to the cell structure in the leaves. We can't see this near-infrared light with our eyes, but the Landsat satellite can detect this. 
 
 We can use this characteristic contrast between the strong absorption in the red region with the strong reflectance in the near-infrared (or NIR) region to detect pixels that are more likely to be vegetation. We do this with a simple formula known as the Normalised Difference Vegetation Index, or NDVI. The formula is:
 
 *NDVI = (NIR - red) / (NIR + red)*
 
-The top line of this formula is the contrast between the NIR band and red band in an image. The larger this number, the more likely a pixel is vegetation. The bottom line normalises the value so that the NDVI will always range between a minimum of -1 and a maximum of +1. Pixels with negative NDVI values are very unlikely to contain vegetation, where as larger positive values are more likely to contain vegetation. 
+The NDVI captures this contrast in a simple number ranging from -1 to +1. Pixels with negative NDVI values are very unlikely to contain vegetation, where as larger positive values are more likely to contain vegetation. 
 
 Let's write a function to calculate the NDVI for an image:
 
@@ -288,13 +290,14 @@ Let's write a function to calculate the NDVI for an image:
 function calcNDVI(image) {
   var ndvi = image.normalizedDifference(["SR_B5", "SR_B4"]);
   ndvi = ndvi.set("system:time_start", image.get("system:time_start"));
-  return ee.Image(ndvi);
+  return ndvi;
 }
+
 ```
 
-The above function takes one parameter - an image. We then use the `normalizedDifference()` function provided by GEE to easily calculate a new NDVI image. We just need to provide a list containing the names of the NIR and red bands in the image - in this case the NIR band is `SR_B5` and the red band is `SR_B4`. The new band is saved to the `ndvi` variable. The `ndvi.set()` and `ndvi.get()` functions are used to copy the date of the original image (`"system:time_start"`) to the new ndvi image. This will be important later when we are analysing the mangrove dieback and recovery through time.
+The above function takes one parameter - an image. We then use the `normalizedDifference()` function provided by GEE to easily apply the NDVI formula and create a new image. We just need to provide a list containing the names of the NIR and red bands in the image - in this case the NIR band is `SR_B5` and the red band is `SR_B4`. The new band is saved to the `ndvi` variable. The `image.get()` and `ndvi.set()` functions are used to copy the date of the original image (`"system:time_start"`) to the new ndvi image. This will be important later when we are analysing the mangrove dieback and recovery through time.
 
-Now we can calculate the NDVI from the image before the dieback event, and after the dieback event by calling the `calcNDVI` function, and add the results to the map:
+Now we can calculate the NDVI for the images captured before and after the dieback event by calling the `calcNDVI` function, and also add these results to the map:
 ```js
 var beforeNDVI = calcNDVI(beforeImage).select('ndvi');
 var afterNDVI = calcNDVI(afterImage).select('ndvi');
@@ -303,93 +306,225 @@ Map.addLayer(afterNDVI, {}, "after ndvi", false);
 
 ```
 
-Click **Run** and then click the **Layers** button in the map window, and click the tick box next to both the **before ndvi** and the **after ndvi**. Use the slider next to the **after ndvi** image to see the changes between the two images. Can you see any how the NDVI decreases where there were impacts on the mangroves near the mouth of the Cox River?
+Click **Run** and then click the **Layers** button in the map window, and click the tick box next to both the **before ndvi** and the **after ndvi**. Use the slider next to the **after ndvi** image to see the changes between the two images. Can you see any how the NDVI decreases where there may have been impacts on the mangroves near the mouth of the Cox River? See the image below as a guide.
 
+<figure style="margin-left: auto; margin-right: auto; text-align: center;">
+    <img src="{{site.url}}/assets/images/gulf/gulf-ndvi-compare.png" class="workshop-img-small">
+    <figcaption>NDVI images before (left) and after (right) the dieback event. An area of affected mangroves is circled. </figcaption>
+</figure>
 
 
 ## Mapping Vegetation Change Using NDVI Differencing
 
-```
+A simple way to map changes in vegetation between two time steps is to perform a subtraction between two NDVI images (i.e. NDVI differencing). We subtract the older NDVI image from the newer NDVI image:
+
+NDVI Difference = NDVI (newer) - NDVI (older).
+ 
+Positives NDVI difference values will likely represent increases in vegetation, while negative values represent a decrease.  Let's do this by using the `subtract()` function for images:
+
+```js
 var diffNDVI = afterNDVI.subtract(beforeNDVI);
 Map.addLayer(diffNDVI, {min: -0.1, max: 0.1}, "ndvi difference", false);
 
 ```
+The `subtract()` function is called on the more recent image (`afterNDVI`) and takes one parameter - in this case the earlier NDVI image (`beforeNDVI`). Once you have added the above lines to your script, click **Run** and then click the **Layers** button to turn on the **ndvi difference** image. Can you see any how NDVI is negative (black in colour) where there may have been impacts on the mangroves along the coastline near the Cox River?
+
+<figure style="margin-left: auto; margin-right: auto; text-align: center;">
+    <img src="{{site.url}}/assets/images/gulf/gulf-ndvi-diff.png" class="workshop-img-small">
+    <figcaption>The difference between the later and earlier NDVI images.</figcaption>
+</figure>
 
 ## Mapping Vegetation Loss
+
+Since we are focussing on loss of mangroves, we are only interested in pixels where the NDVI difference value is negative. We can do this by performing a boolean *less than* operation on the image to find pixels that are negative.  
+
+```js
+var vegLoss = diffNDVI.lt(-0.1);
+vegLoss = vegLoss.updateMask(vegLoss); 
+Map.addLayer(vegLoss, {palette: ["ff0000"]}, "vegetation loss", false);
 ```
+The first line above calls the boolean *less than* function `lt()` on the NDVI difference image. It takes one parameter: in this case a fixed value of `-0.1`. This operation will create a new image (called `vegLoss`). This new image will only contain pixels values of 1 (where the *less than* condition was true) or 0 (where the condition was false).
+
+We are only interested in the true pixels (value of 1) so we need to exclude the false pixels. We can set these pixels to be transparent by updating the image's *mask*. The `updateMask()` function takes a boolean image (in this case the `vegLoss` image) and sets any pixels to be transparent where the boolean image is false. Only the vegetation loss pixels are displayed when we use the `Map.addLayer()` function to display the layer. Note the use of style `{palette: ["ff0000"]}` so the pixels are displayed in red:
+
+<figure style="margin-left: auto; margin-right: auto; text-align: center;">
+    <img src="{{site.url}}/assets/images/gulf/gulf-ndvi-loss.png" class="workshop-img-small">
+    <figcaption>Pixels where the NDVI Difference was negative representing possible loss in vegetation.</figcaption>
+</figure>
+
+Your *vegetation* loss image should look the same as the above. Your map of vegetation loss could include non-mangrove vegetation. In the final section you will refine the map to reduce the likelihood of non-mangrove vegetation being included.
+
+## Summary
+
+The code from this section is summarised below. Check to make sure your code is similar, and remember to click the **Save** button before continuing to the next section.
+
+```js
+// Mapping Changes to Vegetation
+function calcNDVI(image) {
+  var ndvi = image.normalizedDifference(["SR_B5", "SR_B4"]);
+  ndvi = ndvi.set("system:time_start", image.get("system:time_start"));
+  return ndvi;
+}
+
+var beforeNDVI = calcNDVI(beforeImage);
+var afterNDVI = calcNDVI(afterImage);
+Map.addLayer(beforeNDVI, {}, "before ndvi", false);
+Map.addLayer(afterNDVI, {}, "after ndvi", false);
+
+var diffNDVI = afterNDVI.subtract(beforeNDVI);
+Map.addLayer(diffNDVI, {min: -0.1, max: 0.1}, "ndvi difference", false);
+
 var vegLoss = diffNDVI.lt(-0.1);
 vegLoss = vegLoss.updateMask(vegLoss); // Mask out non-loss pixels
 Map.addLayer(vegLoss, {palette: ["ff0000"]}, "vegetation loss", false);
 ```
 
 # Analysing Mangrove Dieback
+In this section, you will refine the vegetation loss map to exclude areas that are less likely to have mangroves. You will then calculate the area of mangrove dieback. In the final step, you will look at the NDVI of mangrove areas through time.
 
-## Defining the Mangrove Zone
+### TODO fix this
 
-```
+In order to exclude vegetation loss that is less likely mangroves, we need to define the area where mangroves are more likely to grow. Mangroves grow in fine sediment in the intertidal zones of coastal rivers, estuaries and bays. We can exclude pixels that were mapped as vegetation loss that are a long way from the coastline as *less likely* to be mangrove dieback. 
+
+## Mapping the Coastline
+
+To map the coastline, you will use a geometric `FeatureCollection()` supplied by GEE of Large Scale International Boundary (LSIB) polygons representing coastlines national boundaries:
+
+```js
+// Analysing Mangrove Dieback
 var coastline = ee.FeatureCollection("USDOS/LSIB/2017")
   .filterMetadata("COUNTRY_NA", "equals", "Australia");
 Map.addLayer(coastline, {}, "coastline", false);
+```
+The first line of this code creates a new coastline object using the `ee.FeatureCollection()` function with the collection name `"USDOS/LSIB/2017"`. This is similar to creating an image collection you used earlier, however, the it is a collection of geometric features and not images. Feature collections can be filtered, and you use the `filterMetadata()` function to select only features where the country name `"COUNTRY_NA"` is equals to `"Australia"`. Geometric features can be added to the map just like images.
 
+One you have added the above lines to your script, click the **Run** button and turn on and check the **coastline** layer is displayed for Australia.
+
+## Mapping the Distance from the Coastline
+We can use the distance from the coastline as method for excluding areas from the vegetation loss image as unlikely to be mangrove:
+
+```js
 var distFromCoast = coastline.distance(5000);
 Map.addLayer(distFromCoast, {min: 0, max: 5000}, "distance from coast", false);
-
-var mangroveZone = distFromCoast.lte(1500);
-
 ```
+The `distance()` function produces a new image from a feature collection, where each pixel contains the distance to the nearest feature in metres. The distance function takes a single argument that limits how far from each pixel to search for the edge of a feature, in this case 5000 metres. If no feature is found, the pixel is *masked out* (i.e. transparent).  **Run** the script and make sure your **distance from coast** layer looks the same as the image below.
+
+<figure style="margin-left: auto; margin-right: auto; text-align: center;">
+    <img src="{{site.url}}/assets/images/gulf/gulf-coast-distance.png" class="workshop-img-small">
+    <figcaption>Pixel values in the distFromCoast image represent the distance to the nearest coastline feature. Pixels further than 5 km from the coastline are masked out (transparent).</figcaption>
+</figure>
 
 ## Mapping Mangrove Dieback
 
-```
+We can use the distance from the coast image to create a boolean (true/false) image of the area more likely to have mangroves (the mangrove zone). We will use a distance of 1.5 km from the coastline to define the mangrove zone, and then use this to exclude areas of vegetation loss unlikely to be mangroves.
+
+```js
+var mangroveZone = distFromCoast.lte(1500);
 var mangroveLoss = vegLoss.updateMask(mangroveZone);
 Map.addLayer(mangroveLoss, {palette: ["ff0000"]}, "mangroveLoss", true);
-
 ```
+The *less than or equals to* function `lte()` is used to create a new `mangroveZone` image with pixel values of 1 (true) for areas within 1.5 km of the coastline, or 0 for areas that are not. We can then use this new mangroveZone image and the `updateMask()` function to set any pixels in the vegetation loss image that are outside the mangrove zone to be transparent.
+
+**Run** the script view your final mangrove loss map (it should match the image below). You can pan the map up and down the coastline to see other areas that may have mangrove dieback.
+
+<figure style="margin-left: auto; margin-right: auto; text-align: center;">
+    <img src="{{site.url}}/assets/images/gulf/gulf-mangrove-loss.png" class="workshop-img-small">
+    <figcaption>Final mangrove loss map.</figcaption>
+</figure>
+
 
 ## Calculating the Area of Mangrove Dieback
 
-```
+In order to calculate the area of mangrove dieback, we will use a *reducer*. A reducer in GEE is a way to aggregate data, in this case, pixels representing mangrove loss. There are lots of different reducers available in GEE, but we will use a simple count of the number of pixels:
+
+```js
 var lossPixels = mangroveLoss.reduceRegion({
   reducer: ee.Reducer.count(), 
-  geometry: beforeImage.geometry(),
-  scale: 30,
-  maxPixels: 50000000
+  maxPixels: 60000000
 });
-lossPixels = ee.Number(lossPixels.get('ndvi'));
-print("Mangrove Loss Pixels", lossPixels)
+lossPixels = ee.Number(lossPixels.get('nd'));
+print("Mangrove Dieback Pixels", lossPixels)
+```
+The above code calls the `reduceRegion()` function on the `mangroveLoss` image. We are using a new way of calling a function by enclosing a list (in curly braces `{}`) of the parameters we want to pass and the value for each parameter separated by a colon `:`. This technique is useful if a function has a large number of parameters and you only need to provide a subset of these, and it also makes your code easier to read. We only need to pass two parameters: the `reducer` which in this case is a simple count of unmasked pixels `ee.Reducer.count()`, and the `maxPixels` so that GEE will process the entire image. We then need to convert the result using the `ee.Number()` function. We then use the `print()` function to display the count on the console. **Run** the script and your console should display **Mangrove Dieback Pixels** of **27209**.
 
+We need to convert the number of pixels to square kilometres. Given a Landsat pixel is 30 m resolution, then a single pixels has an area of 900 m2. To convert this to km2 we divide by 1,000,000 (or 1000^2). We can then multiply the number of mangrove dieback pixels calculated previously by the area of a single pixel to get the total area of mangrove dieback:
+
+```js
 var pixelArea = ee.Number(30).pow(2).divide(ee.Number(1000).pow(2));
 var lossArea = lossPixels.multiply(pixelArea);
 print("Mangrove Loss Area (km2)", lossArea);
 ```
+The first line calculates the pixel area using a chain of functions. The `ee.Number()` function creates a simple number in GEE. The `pow()` function raises this number to a given power: in this case 2. The `divide()` function dives the results by the given parameter which in this case is `ee.Number(1000).pow(2)` which converts square metres into square kilometres. The `lossArea` is calculated by using the `multiply()` function on the `lossPixels` and using the `pixelArea` as the parameter. The `print()` function is used to output the result to the console. **Run** the script and your console should display **Mangrove Dieback Area (km2)** of **24.4881**.
+
 
 ## Exploring Mangrove NDVI through time
 
-- Place a point featurecollection on the map.
+One of the powerful features of GEE is the ability to analyse the temporal pattern of phenomenon on the earth's surface over long time periods using large collections of satellite images. We will use this capability to look at changes in the Cox River mangroves since Landsat 8 began collecting images in 2013.
 
-```
+To do this, we will first need to create a point feature on the map representing an area of mangrove loss in order to extract time series information from Landsat 8.
+
+First, make sure that the only layer turned on in your map is the **mangroveLoss** layer, and all other layers are turned off. Then, in the map window, click on the **marker** icon (circled in the image below). This will put the map into point drawing mode.
+
+<figure style="margin-left: auto; margin-right: auto; text-align: center;">
+    <img src="{{site.url}}/assets/images/gulf/gulf-time-marker.png" class="workshop-img-small">
+    <figcaption>Tool to add a marker.</figcaption>
+</figure>
+
+Next, click on the mangrove loss area near the mouth of the Cox River to create a point. Make sure the tip of the point is over a mangrove loss area. See the image below as a guide but it doesn't need to be exactly the same. You can also zoom in to help place the marker. Don't worry if you make a mistake, as you will get the change to move or delete markers. Click the **Exit** button at the top of the Map window (circled in the image below). 
+
+<figure style="margin-left: auto; margin-right: auto; text-align: center;">
+    <img src="{{site.url}}/assets/images/gulf/gulf-time-edit.png" class="workshop-img-small">
+    <figcaption>Ensure the marker is in the mangrove loss area near the mouth of the Cox River.</figcaption>
+</figure>
+
+If you need to move your point, click on it once and it will enlarge, Then click and drag it to the new location, or click **Delete** at the top of the map window to remove it.
+
+Once you have your first marker in place, we can now do a time series analysis for this location. 
+
+We will be using all available Landsat 8 images since the satellite was launched in 2013. We have already imported the Landsat 8 image collection at the top of this workshop. First, we need to remove clouds and create a collection of NDVI images: 
+
+
+```js
 L8 = L8.map(removeCloud);
-L8 = L8.map(calcNDVI);
+var ndviImages = L8.map(calcNDVI);
+```
+Both of these lines use a the `map()` function. The map function will run an algorithm over every image in an image collection and return a new image collection. The parameter passed to map must be an algorithm or function that receives an image and returns an image. We have already created functions to remove clouds, and calculate the NDVI, so is very simple for us to run these two functions over the entire Landsat 8 image collection. The result is a collection of NDVI images.
 
+Now that we have a collection of NDVI images, we can use the point marker we created on the map to create a chart of the NDVI pixel value at the marker location through time.
+
+```js
 var chart = ui.Chart.image.seriesByRegion({
-  imageCollection: L8.select('ndvi'),
+  imageCollection: ndviImages,
   regions: geometry,
   reducer: ee.Reducer.mean(),
-  scale: 30,
-  xProperty: 'system:time_st
+  xProperty: "system:time_start",
 });
-        
+```
 
-chart = chart .setOptions({
+GEE provides many different charing functions. Here we are using the `ui.Chart.image.seriesByRegion()` function. We are using the *series by region* as we want to extract the NDVI values in the region covered by the point marker. We provide the function the `imageCollection:` which is the `ndviImages`. The `regions:` parameter is set to `geometry`. This is the default name of the feature collection used to keep the point marker you created on the map. We also need to provide a `reducer:`. A reducer is important if the regions were polygons, but given our region is a single point it doesn't need to be reduced any further. However, the parameter is required so we set it to `ee.Reducer.mean()`. The chart will extract the NDVI value at our point marker location through time and this will represent the y-value in the chart. However, we need to also specify the x-value for the chart, and in this case it is the date of the image which is stored in the NDVI image metadata as `"system:time_start"`. You will remember now why it was important that we copied this attribute in the `calcNDVI()` function we created earlier.
+
+Now we can also make some cosmetic changes to the chart such axis titles and text styling:
+
+```js
+chart = chart.setOptions({
   title: 'NDVI Time Series',
   hAxis: {title: 'Date', titleTextStyle: {italic: false, bold: true}},
   vAxis: {title: 'NDVI', titleTextStyle: {italic: false, bold: true}},
-  interpolateNulls: true // Fill in values that may be missing due to cloud
+  interpolateNulls: true 
 });
-
 print(chart);
-
 ```
-- Add two more point and rerun.
+
+The `setOptions()` function for the chart contains one important parameter: `interpolateNulls:`. Given that clouds are almost certain to occur in one or more of the images at the point marker location, there will be missing (or null) values for the NDVI. This can make the chart difficult to interpret. By setting `interpolateNulls` to `true` the chart will guess the missing values and draw a continuous line. The `print()` function is used to display the chart in the console.
+
+**Run** the script and your console should display a chart similar to the one below. Remember, you will have placed the point marker in a slightly different location so the chart will not match exactly.
+
+
+<figure style="margin-left: auto; margin-right: auto; text-align: center;">
+    <img src="{{site.url}}/assets/images/gulf/gulf-time-chart.png" class="workshop-img-small">
+    <figcaption>NDVI time series for over a mangrove dieback pixel.</figcaption>
+</figure>
+
+
 
 {% include open-embed.html %}
