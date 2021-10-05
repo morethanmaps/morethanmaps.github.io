@@ -170,34 +170,38 @@ Map.addLayer(CoxR, {}, "Cox River", false);
 
 # Working with Images
 
+In this section, you will learn how to select and display satellite images in GEE, as well as how to remove clouds from images.
+
 ## Filtering a Collection
 
-GEE provides large collections of images from many different satellites. You will be working with images captured from the Landsat-8 satellite. You can access a collection in GEE using the `ee.ImageCollection{}` function and provide the name of the collection. Add the following into your script (and include the comment too):
+GEE provides large collections of images from many different satellites. You will be working with images captured from the Landsat-8 satellite. You can access a collection in GEE using the `ee.ImageCollection()` function and provide the name of the collection. Add the following into your script (and include the comment too):
 
 ```js
 // Working with Images
 var L8 = ee.ImageCollection("LANDSAT/LC08/C02/T1_L2");
 ``` 
-The `ee.ImageCollection{}` function takes one parameter: a string representing the collection you would like to use. The reference to this collection is stored in the variable `L8` so we can use it throughout the script.
+The `ee.ImageCollection()` function takes one parameter: a string representing the collection you would like to use. The image collection is stored in the variable `L8` so we can use it throughout the script.
 
-Landsat-8 has been collecting about 750 images of the globe every day since launch in February 2013. You will therefore need to filter this large collection to the location and dates of the dieback event. Do this using the `filterBounds()` function on the collection:
+Landsat-8 has been collecting about 750 images of the globe every day since launch in February 2013. You will therefore need to select from this large collection the images taken over the location and on the dates required. In GEE, image collections are reduced using *filters*. 
+
+First, we will filter the collection to the Cox River study site using the `filterBounds()` function:
 
 ```js
 L8 = L8.filterBounds(CoxR);
 ``` 
-The `filterBounds()` function takes one parameter: an object that has a geographic extent. In this case, we can use the point feature we already used to position the map on the Cox River. Notice how we reuse the variable `L8` rather than creating a new variable. It makes our script easier to follow.
+The `filterBounds()` function takes one parameter: an object that has a geographic extent. In this case, we can use the point feature we already used to position the map on the Cox River. Notice how we reuse the variable `L8` to hold the filtered collection rather than creating a new variable. It makes our script easier to follow.
 
-Now filter the dates of the collection using a similar function `filterDate()` to retrieve a single image over the Cox River:
+Next, we need to filter the collection further to a date before the mangrove dieback event. GEE provides a similar function `filterDate()` to retrieve a single image:
 
 ```js
-var beforeImage = L8.filterDate("2015-04-01", "2015-05-01").first();
+var beforeImage = L8.filterDate("2015-04-01", "2015-04-17").first();
 ``` 
 
-The `filterDate()` function takes a start date and end date, and returns all images that were captured on or after the start date but before the end date. In this case, a single day was chosen before the mangrove dieback event occurred. 
+The `filterDate()` function takes a start date and end date, and returns all images that were captured on or after the start date but before the end date. In this case, a 16 day interval chosen in April 2015 before the mangrove dieback event occurred which will select a single image.
 
-The `filterDate()` function returns a reduced `ee.ImageCollection` containing just the images between the required dates. In our case, there will be only one image in the collection, so we can easily select this by appending the `first()` function after the `filterDate()` function. The `first()` function returns an `ee.Image` object which we save in a new variable `beforeImage`. 
+The `filterDate()` function returns an image collection containing just the images between the required dates. In our case, there will be only one image in the collection, so we can easily select this by appending the `first()` function after the `filterDate()` function. The `first()` function returns an `ee.Image()` object which we save in a new variable `beforeImage`. 
 
-Note how we *chained* the two functions together like this in a single line - it makes your script simpler and easier to read by avoiding unnecessary variables to save intermediate results.
+Note how we *chained* the two functions together like this in a single line - it makes your script simpler and easier to read by avoiding unnecessary intermediate variables.
 
 ## Displaying an Image Before the Dieback Event
 
@@ -207,29 +211,37 @@ Now you have an `ee.Image()`, let's display it on the map. But first we need to 
 var vis = {"bands":["SR_B4", "SR_B3", "SR_B2"], "min":6000, "max":12000};
 
 ```
-The above line defines a set of visualisation parameter that the `Map.addLayer()` understands. It includes which bands from the image should be used for the red, green and blue colour channels (in this case bands 4, 3, and 2), and the minimum and maximum pixel values to *stretch* the image to (in this case 6000 and 12000). We save these in the variable `vis` so we can easily reuse them. Now we can add the image to the map using the `Map.addLayer()` function you used before:
+The above line defines a set of visualisation parameter that the `Map.addLayer()` understands. It includes which bands from the image should be used for the red, green and blue colour channels (in this case bands 4, 3, and 2), and the minimum and maximum pixel values to *stretch* the image to (in this case 6000 and 12000). We save these in the variable `vis` so we can easily reuse them. Now we can add the image to the map using the `Map.addLayer()` function you have used before:
 
 ```js
 Map.addLayer(beforeImage, vis, "before image", false);
 ```
 
-Click **Run** and then click the **Layers** button in the map window, and click the tick box next to **before image**. The image should display as shown below:
+Click **Run** and then click the **Layers** button in the map window, and click the tick box next to **before image**. The image should display as shown below. Use the zoom tool to zoom out to see the whole image.
 
-TODO: before image
+<figure style="margin-left: auto; margin-right: auto; text-align: center">
+    <img src="{{site.url}}/assets/images/gulf/gulf-image-before.png" class="workshop-img">
+    <figcaption>Landsat-8 image before the mangrove dieback event.</figcaption>
+</figure>
 
 ## Displaying an Image After the Dieback Event
 We can now repeat the above code to display an image exactly one year later, after the dieback event. The code is very similar except for the dates used to filter the image collection:
 
 ```js
-var afterImage = L8.filterDate("2016-04-01", "2016-05-01").first();
+var afterImage = L8.filterDate("2016-04-01", "2016-04-17").first();
 Map.addLayer(afterImage, vis, "after image", false);
 ```
 
-Click **Run** and then click the **Layers** button in the map window, and click the tick box next to both the **before image** and the **after image**. Use the slider next to the after image to see the changes between the two images. Can you see any impacts on the mangroves near the mouth of the Cox River?
+Click **Run** and then click the **Layers** button in the map window, and click the tick box next to both the **before image** and the **after image**. Use the slider next to the after image to see the changes between the two images. An area of mangrove dieback in circled in the image below. Can you see other areas along the coastline?
+
+<figure style="margin-left: auto; margin-right: auto; text-align: center">
+    <img src="{{site.url}}/assets/images/gulf/gulf-image-after.png" class="workshop-img">
+    <figcaption>Landsat-8 image after the mangrove dieback event. Mangrove dieback is circled.</figcaption>
+</figure>
 
 ## Removing Clouds from Images
 
-Your may have noticed that there are clouds present in the images displayed. Clouds can present a problem when trying to analyse images from satellites so we need to exclude pixels that are affected. Landsat provides a *quality assurance* (QA) band with the image that we can use for this. First, copy the following code into your script.
+Your may have noticed that there are clouds present in the images displayed. Clouds can present a problem when trying to analyse images from satellites so we need to exclude pixels that are affected. Landsat provides a *quality assurance* (QA) band with the image that we can use to do this. First, copy the following code into your script.
 
 ```js
 function removeCloud(image) {
@@ -239,7 +251,7 @@ function removeCloud(image) {
 }
 ```
 
-The above code creates a `function` called `removeCloud` that takes one parameter (an image) and returns that image with cloudy pixels removed. A `function` is a way of writing a piece of code that can be reused in your script. We won't go into the details of how the cloud is removed by this function but ask your instructor if you would like to know more.
+The above code creates a `function` called `removeCloud()` that takes one parameter (an image) and returns that image with cloudy pixels removed. A `function` is a way of writing a piece of code that can be reused in your script. We won't go into the details of how the cloud is removed by this function but ask your instructor if you would like to know more.
 
 Now we have a function to remove cloud, we can apply it to our before and after images and add them to the map. 
 
@@ -250,7 +262,13 @@ Map.addLayer(beforeImage, vis, "before image - cloud free", false);
 Map.addLayer(afterImage, vis, "after image - cloud free", false);
 
 ```
-Click **Run**. Turn on the new layers (using the **Layers** button) and see the effect of the `removeCloud()` function has had on both images.
+Click **Run**. Turn on the new layers (using the **Layers** button) and see the effect of the `removeCloud()` function has had on both images. The before image is shown below. Note how the clouds are now transparent and the underlying map shows through.
+
+<figure style="margin-left: auto; margin-right: auto; text-align: center">
+    <img src="{{site.url}}/assets/images/gulf/gulf-image-cloud.png" class="workshop-img">
+    <figcaption>Landsat-8 image before mangrove dieback event with cloud removed.</figcaption>
+</figure>
+
 
 ## Summary
 
@@ -261,11 +279,11 @@ The code from this section is summarised below. Check to make sure your code is 
 var L8 = ee.ImageCollection("LANDSAT/LC08/C02/T1_L2");
 L8 = L8.filterBounds(CoxR);
 
-var beforeImage = L8.filterDate("2015-04-01", "2015-05-01").first();
+var beforeImage = L8.filterDate("2015-04-01", "2015-04-17").first();
 var vis = {"bands":["SR_B4", "SR_B3", "SR_B2"], "min":6000, "max":12000};
 Map.addLayer(beforeImage, vis, "before image", false);
 
-var afterImage = L8.filterDate("2016-04-01", "2016-05-01").first();
+var afterImage = L8.filterDate("2016-04-01", "2016-04-17").first();
 Map.addLayer(afterImage, vis, "after image", false);
 
 function removeCloud(image) {
