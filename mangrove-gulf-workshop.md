@@ -535,7 +535,7 @@ We will be using all available Landsat 8 images since the satellite was launched
 L8 = L8.map(removeCloud);
 var ndviImages = L8.map(calcNDVI);
 ```
-Both of these lines use a the `map()` function. The map function will run an algorithm over every image in an image collection and return a new image collection. The parameter passed to map must be an algorithm or function that receives an image and returns an image. We have already created functions to remove clouds, and calculate the NDVI, so is very simple for us to run these two functions over the entire Landsat 8 image collection. The result is a collection of NDVI images.
+Both of these lines use a the `map()` function. The map function will run an algorithm over every image in an image collection and return a new image collection. The parameter passed to `map()` must be an algorithm or function that receives an image and returns an image. We have already created functions to remove clouds, and calculate the NDVI, so is very simple for us to run these two functions over the entire Landsat 8 image collection. The result is a collection of NDVI images.
 
 Now that we have a collection of NDVI images, we can use the point marker we created on the map to create a chart of the NDVI pixel value at the marker location through time.
 
