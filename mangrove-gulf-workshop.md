@@ -127,7 +127,7 @@ The `ee.Geometry.Point()` function creates a new point feature and saves it in a
 Now you can centre the map window on this location by adding the following line to your script:
 
 ```js
-Map.centreObject(CoxR, 12);
+Map.centerObject(CoxR, 12);
 ```
 The `Map.centreObject()` function takes two parameters: an object to center on (in this case the CoxR point feature) and a zoom level. The zoom level has the same effect as `Map.setZoomLevel()` function you used above but allows you do the center and zoom in one step. Run your script to see the effect on the Map window. It should look similar to the map below:
 
