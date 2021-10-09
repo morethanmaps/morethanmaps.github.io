@@ -144,8 +144,8 @@ var z = x + y;
 </details>
 <br>
 
-### Boolean
-
+### Boolean 
+<!-- Relevant to later exercises? -->
 Boolean data is used to store true or false values. This is useful for storing the results of comparison (equal to, greater than, less than) and logical (and, or, not) operations.
 
 <table style="width:75%; border-collapse: collapse; border-bottom: 1px solid #ddd; padding: 15px; margin-left: auto; margin-right: auto;">
@@ -205,12 +205,14 @@ Boolean data is used to store true or false values. This is useful for storing t
 Boolean operations are useful for controlling the flow of programs (e.g. if X is true then do Y) and for filtering datasets based on a condition (e.g. get all cities with a population greater than 500,000). Let's experiment with boolean conditions. 
 
 ```js
-var demoBool = z == 4;
-print(demoBool);
+var demoBool = z;
+print(demoBool == 4);
 
-var bool1 = x == 1 && y == 2;
+var bool1 = x;
+print(bool1 == 1 && y == 2);
 
 var bool2 = y < x;
+print(bool2)
 ```
 
 <details>
@@ -271,7 +273,7 @@ You can also put strings inside arrays.
 var stringList = ['I', 'am', 'in', 'a', 'list'];
 print(stringList);
 ```
-
+<!-- Could be removed -->
 Remember, each item in an array is separated by a comma. You can create n-Dimensional arrays. 
 
 ```js
@@ -290,7 +292,7 @@ print(squareArray);
 <br>
 
 ## Variables
-
+<!-- Consider brinin this section earlier, before boolean? -->
 Variables provide a named reference for data that is used in a program.  
 
 To create a variable you need to declare it using the **`var`** keyword. Once a variable is declared you can put data inside it and use that variable, and therefore the data inside it, in your program. When we were adding `x` and `y` above, we were actually referring to the numeric data values stored inside `x` and `y`. 
@@ -311,7 +313,7 @@ Using variables makes code easier to organise and write. For example, if you wan
 <br>
 
 ## Functions
-
+<!-- This could be cut, if they're not writing functions in this lab they won't be applying this theory -->
 Functions perform a specific task or operation on data in your program. Before you use a function you need to declare it.
 
 * The `function` keyword.
@@ -342,6 +344,7 @@ print(diff)
 
 You should see the result of calling `subtraction()` printed in the *Console*.
 
+<!--Stacking of bands will be unfamiliar to a newcomer at this point in the lab - consider a different function or shifting this to where geographic data starts to be used -->
 Google Earth Engine also comes with a suite of in-built functions that you can use to retrieve, analyse, and visualise data. You can explore these functions under the *Docs* tab in the left side-bar. The picture below shows the documentation for the `addBands()` function which can be used to stack bands from two `Image`s. 
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center;">
@@ -353,18 +356,18 @@ Google Earth Engine also comes with a suite of in-built functions that you can u
 
 # Geographic Data
 
-Geographic data is used to describe entities (e.g. a road) or phenomenon (e.g. a bushfire) that have a position in space (i.e. on the Earth's land surface).
+Geographic data is used to describe entities (e.g. a road) or phenomena (e.g. a bushfire) that have a position in space (i.e. on the Earth's land surface).
 
 Geographic data consists of two pieces of information:
 
-1. Locational information that describes where the data is located on the Earth's land surface (e.g. a latitude and longitude pair of values describing the location of a point).
+1. Locational information that describes where the data is located on the Earth's land surface (e.g. a pair of latitude and longitude values describing the location of a point).
 2. Attribute information that describes the characteristics, entities, or phenomenon occurring at a location (e.g. the name of a city associated with a latitude and longitude pair for the city's location).
 
 There are two main approaches to representing geographic data: raster data and vector data.
 
 ## Raster
 
-Raster data represent geographic features or phenomenon by splitting the Earth's land surface up into a grid of regular sized cells (pixels) and assigning a value to each pixel. Pixel values can be continuous (e.g. values represent precipitation) or categorical (e.g. values represent a land cover type). 
+Raster data represent geographic features or phenomena by splitting the Earth's land surface into a grid of regular sized cells (pixels) and assigning a value to each pixel. Pixel values can be continuous (e.g. values representing precipitation) or categorical (e.g. values that represent a land cover type). 
 
 The dimensions of a pixel relative to distance on the Earth’s land surface determines the complexity and detail of spatial features that can be resolved in raster data. A pixel that represents a 1 km x 1 km footprint on the Earth’s surface will not be able to represent an individual tree or a single building.
 
@@ -379,7 +382,7 @@ In Google Earth Engine, raster data is stored as an `Image`. An `Image` is a spe
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center;">
     <img src="{{site.url}}/assets/images/gee-image.png" class="workshop-img-small">
-    <figcaption>Visual of <code>Image</code> data structure in Google Earth Engine (source: Google Earth Engine)</figcaption>
+    <figcaption>The multiple bands of a <code>Image</code> data structure in Google Earth Engine (source: Google Earth Engine)</figcaption>
 </figure>
 
 Let's explore an `Image` in Google Earth Engine. Run the following code:
@@ -421,7 +424,7 @@ Map.addLayer(ps4Img, ps4VisParams, 'PS4 Image');
 
 ### ImageCollections
 
-An `ImageCollection` in Google Earth Engine is a stack of `Image`s; it provides a structure to group together and organise related `Image`s. For example, you could create an `ImageCollection` that stores all `Image`s captured by a satellite such as Landsat, Sentinel-2, or Planet. 
+An `ImageCollection` in Google Earth Engine is a stack of `Image`s; it provides a structure to group together and organise related `Image`s. For example, you could create an `ImageCollection` that stores all the Kalbarri `Image`s captured by the Planet satellite over a 6 month period. 
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center;">
     <img src="{{site.url}}/assets/images/image-collection.png" class="workshop-img">
@@ -588,7 +591,7 @@ Remote sensors on satellites measure electromagnetic energy reflected or emitted
     <figcaption>Simple model of passive satellite remote sensing.</figcaption>
 </figure>
 
-Most often, when monitoring the Earth's surface using remote sensing images, we want `Image` pixels to have units of surface reflectance. Surface reflectance is the ratio of energy of incoming solar radiation to reflected solar radiation as measured by a sensor at the Earth's surface. Reflectance has values between 0 (no incoming solar radiation is reflected) to 1 (all incoming solar radiation is reflected). The roughness and albedo of an object determine how much radiation is reflected. 
+Most often, when monitoring the Earth's surface using remote sensing images, we want `Image` pixels to have units of surface reflectance. Surface reflectance is the ratio of energy of incoming solar radiation to reflected solar radiation as measured by a sensor at the Earth's surface. Reflectance has values between 0 (no incoming solar radiation is reflected) to 1 (all incoming solar radiation is reflected). The roughness and albedo of an object determine how much radiation is reflected e.g. polar ice caps have a high albedo and thus have high surface reflectance. 
 
 When conditions on the Earth's surface change, levels of surface reflectance change. Imagine looking at a scene before and after a flood, after a flood you can see water is present where previously there was land. The reason you can detect this change with your eyes is because there is a difference in light reflected off the scene in areas of flood-driven change. The same principle applies when monitoring the land surface using satellite-based sensors; a change in surface reflectance indicates a change on the land surface. This allows us to detect change such as deforestation events or damage caused by tropical cyclones. 
 
@@ -608,7 +611,7 @@ Remote sensors measure electromagnetic energy reflected by Earth surface feature
 
 Features on the Earth's land surface have different reflectance characteristics at different wavelenghts. Think about smooth bright white roofs; these roofs are reflecting lots incoming light across red, green, and blue visible wavelengths which is why the roof is white (reflectance across the visible spectrum) and bright (lots of incoming energy reflected). The same prinicple also explains why vegetation appears green; healthy vegetation reflects more green light and absorbs more red and blue light. 
 
-Remote sensors measure reflectance in different spectral wavelengths. This allows us to distinguish features on the Earth's surface based on their varying reflectance across wavelengths. Our eyes can only sense reflected energy in the visible spectrum; however, remote sensors can sense over a wider range of the electromagnetic spectrum. 
+Remote sensors measure reflectance in different spectral wavelengths. This allows us to distinguish features on the Earth's surface based on their varying reflectance across wavelengths. Our eyes can only sense reflected energy in the visible spectrum; however, remote sensors can sense over a wider range of the electromagnetic spectrum e.g. infrared. 
 
 Sensing reflectance across the electromagnetic spectrum increases our capacity to monitor important and interesting properties of Earth surface features. For example, water absorbs near-infrared radiation so appears `darker' compared the land surface. Green vegetation is reflective in near-infrared wavelengths (as near-infrared radiation reflects off the internal structure of leaves).
 
@@ -703,7 +706,7 @@ print(nmKalbarriSeroja);
 Map.addLayer(nmKalbarriSeroja, {}, 'Nearmap post-TC Seroja');
 ```
 
-You can clearly see the complete damage to some roofs, partial damage to others, while some roofs remain intact. We're going to try and automatically detect damaged roofs from satellite images. 
+Start exploring the imagery on your map - you can clearly see the complete damage to some roofs, partial damage to others, and those that remained intact. We're going to try and automatically detect damaged roofs from satellite images. 
 
 <details>
   <summary><b>How do you think the surface reflectance of a roof will change if it has been damaged during Tropical Cyclone Seroja?</b></summary>
