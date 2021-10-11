@@ -10,28 +10,58 @@ title: Mangrove Dieback in the Gulf of Carpentaria
     <!-- <figcaption><code>Overview</code> image of mangrove dieback in the Gulf of Carpentaria.</figcaption> -->
 </figure>
 
-## Learning Objectives
+<!----------------------------------------------------------------------------->
+
+# Learning Objectives
 1. Develop an understanding of the importance of mangroves in the Gulf of Carpentaria for fisheries.
 2. Develop an understanding of remote sensing images.
 3. Learn basic programming techniques to process and analyse remote sensing images (Google Earth Engine JavaScript API).
 4. Develop an understanding of how satellite images and vegetation indices can be used to monitor mangroves.
 
 
-## Activities
-- Introduction to mangroves, the ecosystem services they provide, and how they are susceptible to climatic hazards and change.
+<!----------------------------------------------------------------------------->
+
+# Activities
 - Introduction to the Gulf of Carpentaria case study and the mangrove dieback event.
-- Introduction to basic programming techniques and concepts.
-- Introduction workshop data (Landsat, why this is such an important resource for Earth observation).
+- Introduction to Landsat and why this is such an important resource for Earth observation.
 - Use remote sensing images to display pre- and post-dieback RGB and NDVI images.
 - Map and calculate the area of the mangrove dieback event.
 - Investigate time series data representing the dieback event and possible recovery.
 
-## Background
+<!----------------------------------------------------------------------------->
+
+# Mangrove Dieback Event
 - Describe the event and the probable cause (Sharyn).
 
 Listen to ABC Rural Radio's Charlie McKillop interview David Carter, the CEO of Austral Fisheries about the mangrove dieback event. This interview took place in October 2016.
 
 {{site.url}}/assets/other/Rural-nrn-David-Carter-welcomes-climate-change-inquiry-1010.mp3
+
+<!----------------------------------------------------------------------------->
+
+# The Landsat Satellites
+
+The Landsat series of satellites first started with the Launch of Landsat-1 in 1972 and have continued to the present day with Landsat-7 and Landsat-8 currently collecting images (see image below). The Landsat satellites have been designed to monitor land use and land change such as drought, fire, deforestation, flooding, urbanisation, and many other environmental and human-related changes. The Landsat programme is the world's longest continuous archive of satellite-based images of the earth, and this will continue into the future with the launch of Landsat-9 in September 2021. The Landsat archive is an invaluable source of information for understanding the impacts of climate change on the earth.
+
+<figure style="margin-left: auto; margin-right: auto; text-align: center">
+    <img src="{{site.url}}/assets/images/gulf/landsat_timeline_20200318_print.JPG" class="workshop-img">
+    <figcaption>This image depictS the timeline of the Landsat program, from Landsat 1 launched in 1972, through to Landsat 9 launched in 2021. Landsat 6 failed to reach orbit on launch. (Source: NASA Goddard Media Studios)</figcaption>
+</figure>
+
+In this workshop you will be using images captured by Landsat-8. Before we begin, it is useful to introduce the concept of **resolution** which is used to describe various aspects of satellites used for earth observation.
+
+**Spatial resolution** refers to the size that one pixel in an image represents on the ground. Landsat-8 has a spatial resolution of 30 metres. This means that each pixel in the image represents a 30 by 30 metre area on the ground (or 900 square metres).
+
+**Temporal resolution** refers to how often the satellite passes over the same location on the earth. Landsat-8 has a temporal resolution of 16 days which means that a new image of a location will be captured once every 16 days.
+
+**Spectral resolution** refers which parts of the electromagnetic spectrum the satellite will capture in an image. The Landsat-8 satellite captures 11 different parts of the spectrum known as *bands*. Three of these bands are the blue, green and red parts of the visible spectrum, while the other bands are in the the longer infrared wavelengths that are not visible to the human eye (see the image below). In this workshop you will only be working with 4 bands in from a Landsat-8 image: the 3 visible bands (red, green and blue) and the near-infrared band.
+
+<figure style="margin-left: auto; margin-right: auto; text-align: center">
+    <img src="{{site.url}}/assets/images/gulf/gulf-landsat-bands.png" class="workshop-img">
+    <figcaption>Landsat-8 captures 11 bands across the electromagnetic spectrum. (Source: Adapted from ESRI ArcGIS Online)</figcaption>
+</figure>
+
+<!----------------------------------------------------------------------------->
 
 # Introduction to GEE
 
@@ -62,20 +92,6 @@ In this workshop you will be focussing on the following GEE components:
 * **Geometry Tools**: digitise vector features to use in your Google Earth Engine programs.
 * **Zoom**: zoom the map in and out
 * **Layer Manager**: click this button to see and control the layers you added to your map.
-
-<!----------------------------------------------------------------------------->
-
-# Principles of Satellite Remote Sensing
-- Major EO satellite platforms - Landsat, MODIS, Sentinel, Planet, Worldview
-- Spatial and Temporal Resolution
-- Spectral Reflectance
-- Image bands
-- Vegetation Indices
-
-## The Landsat Satellites
-- Brief History
-- Landsat 8
-- Future (L9)
 
 <!----------------------------------------------------------------------------->
 
@@ -576,7 +592,7 @@ Run your mouse along the line representing the NDVI in the chart and the date an
 
 Click on the point marker to go into edit mode. Then click and drag the point marker to a new location on the coast where there was mangrove dieback according to your map, and click the **Exit** button at the top of the map. **Run** the script again. Do you see the same temporal pattern at this new location?
 
-**Congratulations - you have reached the end of the workshop.**. Remember to click the **Save** before you close your browser window.
+**Congratulations - you have reached the end of the workshop.** Remember to click the **Save** before you close your browser window.
 
 ## Summary
 
