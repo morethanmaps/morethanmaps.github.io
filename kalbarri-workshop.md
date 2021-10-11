@@ -128,7 +128,7 @@ The `Map.centreObject()` function takes two parameters: an object to center on (
     <figcaption>The GEE Map centred on Kalbarri with a zoom level of 12.</figcaption>
 </figure>
 
-*Remember, it is a good idea to save your script after each step so you don't lose any of your work*. 
+*Make sure you click the **Save** button before you move to the next section.*
 
 <br>
 
@@ -173,7 +173,6 @@ var ps4Img = ee.Image("users/jmad1v07/morethanmaps/ps4-median-composite");
 print(ps4Img);
 ```
 
-
 This loads a <a href="https://www.planet.com/products/planet-imagery/" target="_blank">Planet Scope 4</a> image into the variable `ps4Img`. Passing this variable to the `print()` function displays the `Image` metadata. You should see that the Planet Scope 4  `Image` that you have just loaded has four bands. 
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center;">
@@ -182,8 +181,6 @@ This loads a <a href="https://www.planet.com/products/planet-imagery/" target="_
 </figure>
 
 You will notice the first line of the code snippet you just executed contains two forward slashes `//` followed by some text. This is a called a comment in JavaScript. Comments are are useful for writing your own descriptions about what is happening in the script, or excluding lines of code from being executed.
-
-*Make sure you click the **Save** button before you move to the next section.*
 
 However, we're working with geographic data so it make sense to display it on a map. The following code block does that for us. 
 
@@ -206,6 +203,8 @@ Map.addLayer(ps4Img, ps4VisParams, 'PS4 Image');
     <img src="{{site.url}}/assets/images/kalbarri/kalbarri-ps4-image-map.png" class="workshop-img">
     <figcaption>Viewing the PS4 Image on the Map display.</figcaption>
 </figure>
+
+*Remember, it is a good idea to save your script after each step so you don't lose any of your work*. 
 
 ### ImageCollections
 
