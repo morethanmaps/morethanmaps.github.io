@@ -104,7 +104,7 @@ Before you continue any further, let's save the script. Click the **Save** butto
 
 *Remember, it is a good idea to save your script after each step so you don't lose any of your work*. 
 
-## Centring the Map
+## Centre the Map
 
 Now you need to centre the map on Kalbarri. You will do this by creating a geographic feature, in this case a simple point, and centre the map on this point.
 
