@@ -82,7 +82,7 @@ People living in and around the Ba Mangroves use a range of landscape resources 
 
 <div class="d-flex justify-content-center">
 <button type="button" class="btn btn-outline-primary btn-lg my-4">
-    <a href="https://earth.google.com/earth/d/1lklaMXnGgFwNHzuUg-H-sWGUhPm6iEyU?usp=sharing" target="_blank">Google Earth Tour: Response Strategies</a>
+    <a href="https://earth.google.com/earth/d/1lklaMXnGgFwNHzuUg-H-sWGUhPm6iEyU?usp=sharing" target="_blank">Google Earth Tour: Livelihoods and Ecosystem Services</a>
 </button>
 </div>
 
@@ -115,7 +115,7 @@ When climate shocks affect landscape resources and ecosystem service flows in th
 
 <div class="d-flex justify-content-center">
 <button type="button" class="btn btn-outline-primary btn-lg my-4">
-    <a href="" target="_blank">Google Earth Tour: Response Strategies</a>
+    <a href="https://earth.google.com/earth/d/1H2hw7-LbUMQAPZAimruxIlD6H4aVpBVW?usp=sharing" target="_blank">Google Earth Tour: Response Strategies</a>
 </button>
 </div>
 
