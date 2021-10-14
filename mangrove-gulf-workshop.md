@@ -31,11 +31,43 @@ title: Mangrove Dieback in the Gulf of Carpentaria
 <!----------------------------------------------------------------------------->
 
 # Mangrove Dieback Event
-- Describe the event and the probable cause (Sharyn).
 
-Listen to ABC Rural Radio's Charlie McKillop interview David Carter, the CEO of Austral Fisheries about the mangrove dieback event. This interview took place in October 2016.
+In the 2015/2016 summer The Gulf of Carpentaria recorded the largest known mangrove dieback event. Overall, 7,650 hectares of mangrove forest with an estimated 39.4 million trees died. For comparison the surface area of Sydney Harbour is less than this area at 5,255 hectares. To understand the importance of mangroves, and how this extensive area of mangroves was impacted, we first need to understand about mangroves and climate.
+
+## Mangroves
+
+The definition of a tree as mangrove is not strictly based on taxonomic relationship, rather it is the ability of the tree to possess the traits required to survive the highly saline, tidally flooded environment that they live in. Mangrove responses to these abiotic stresses are complex and, similar to all plants, involve metabolic and physiological responses. At extremes mangroves get ‘stressed’ and display physiological responses (e.g., leaf senescence), this can affect the ecosystem services they provide, including carbon (C) sequestration and storage, and habitat for fisheries. 
+
+Air and sea surface temperature, along with salinity, oceanographic conditions and geomorphology influence species composition, forest size, tree height, productivity, and health. They also influence mangrove distribution and ecosystem health. These macro-climate and environmental variables are known limitations to mangrove forest distribution and abundance. 
+
+<figure style="margin-left: auto; margin-right: auto; text-align: center">
+    <img src="{{site.url}}/assets/images/gulf/gulf-event-mangrove.png" class="workshop-img">
+    <figcaption>Carbon is present in the mangrove biomass (both aboveground and below ground) as well as dead biomass on the ground. Mangroves are also important sinks with storage of carbon in sediments.</figcaption>
+</figure>
+
+
+## Climate
+
+The climate is important in controlling these constraining traits. Extreme conditions can result in physiological thresholds being surpassed and may influence metabolic processes, such as seen in increased salinity, or drought conditions. Here, trees lose their capacity for water uptake and salt exclusion, leading to progressive loss of leaves and eventually death. 
+
+The El Nino Southern Oscillation, or ENSO, is a natural climate phenomena that results in changes in air and sea surface temperature, as well as sea level. It is categorised by three phases El Nino, La Nina, and the neutral phase. 
+
+In the tropical Pacific Ocean, ENSO can result in extreme variation in sea levels. During El Niño, weak equatorial trade winds cause the thermocline to shoal in the tropical western Pacific and the presence of cool water results in sea levels that can be lower by 20–30 cm, while conversely sea levels are higher in the east. During the La Niña phase the patterns are reversed. These sea level seesaws are intensifying with climate change and are therefore likely to increase fluctuations in tidal inundation and salinity of mangrove soils, giving rise to conditions unfavourable for tree growth. 
+
+The primary cause of the mass mangrove dieback event in the Gulf of Carpentaria was therefore a decline in the sea level, which was associated with a severe El Niño in 2015–2016. Sea levels dropped by up to 0.4–0.5 m during April to October, 2015. 
+
+## Further Resources
+
+Here are some other resources if you would like to know more about the causes and impacts of this event.
+
+The Northern Australia Environmental Research Portal provides detailed information and videos related to this event:
+
+<https://www.nespnorthern.edu.au/projects/nesp/gulf-mangrove-dieback/>
+
+ABC Rural Radio's Charlie McKillop interviews David Carter, the CEO of Austral Fisheries about the mangrove dieback event. This interview took place in October 2016.
 
 {{site.url}}/assets/other/Rural-nrn-David-Carter-welcomes-climate-change-inquiry-1010.mp3
+
 
 <!----------------------------------------------------------------------------->
 
