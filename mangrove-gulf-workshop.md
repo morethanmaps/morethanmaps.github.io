@@ -257,7 +257,6 @@ Now you have an `ee.Image()`, let's display it on the map. But first we need to 
 
 ```js
 var vis = {"bands":["SR_B4", "SR_B3", "SR_B2"], "min":6000, "max":12000};
-
 ```
 The above line defines a set of visualisation parameter that the `Map.addLayer()` understands. It includes which bands from the image should be used for the red, green and blue colour channels (in this case bands 4, 3, and 2), and the minimum and maximum pixel values to *stretch* the image to (in this case 6000 and 12000). We save these in the variable `vis` so we can easily reuse them. Now we can add the image to the map using the `Map.addLayer()` function you have used before:
 
