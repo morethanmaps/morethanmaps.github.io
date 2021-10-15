@@ -177,7 +177,7 @@ Now you can centre the map window on this location by adding the following line 
 ```js
 Map.centerObject(CoxR, 12);
 ```
-The `Map.centreObject()` function takes two parameters: an object to center on (in this case the CoxR point feature) and a zoom level. The zoom level has the same effect as `Map.setZoomLevel()` function you used above but allows you do the center and zoom in one step. Run your script to see the effect on the Map window. It should look similar to the map below:
+The `Map.centreObject()` function takes two parameters: an object to center on (in this case the CoxR point feature) and a zoom level. The zoom level has the same effect as `Map.setZoomLevel()` function you used above but allows you do the center and zoom in one step. **Run** your script to see the effect on the Map window. It should look similar to the map below:
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center">
     <img src="{{site.url}}/assets/images/gulf/gulf-map-centre.png" class="workshop-img">
@@ -620,7 +620,7 @@ The `setOptions()` function for the chart contains one important parameter: `int
     <figcaption>NDVI time series for over a mangrove dieback pixel.</figcaption>
 </figure>
 
-Run your mouse along the line representing the NDVI in the chart and the date and NDVI value will be displayed. What season (or months) do you think the mangrove dieback event occurred? Do you think the mangroves recovered in the years that followed? What do you think might cause the other smaller variations in the NDVI both before and after the dieback event?
+Trace your mouse pointer along the line representing the NDVI in the chart and the date and NDVI value will be displayed. What season (or months) do you think the mangrove dieback event occurred? Do you think the mangroves recovered in the years that followed? What do you think might cause the other smaller variations in the NDVI both before and after the dieback event?
 
 Click on the point marker to go into edit mode. Then click and drag the point marker to a new location on the coast where there was mangrove dieback according to your map, and click the **Exit** button at the top of the map. **Run** the script again. Do you see the same temporal pattern at this new location?
 
