@@ -76,7 +76,7 @@ ABC Rural Radio's Charlie McKillop interviews David Carter, the CEO of Austral F
 The Landsat series of satellites first started with the Launch of Landsat-1 in 1972 and have continued to the present day with Landsat-7 and Landsat-8 currently collecting images (see image below). The Landsat satellites have been designed to monitor land use and land change such as drought, fire, deforestation, flooding, urbanisation, and many other environmental and human-related changes. The Landsat programme is the world's longest continuous archive of satellite-based images of the earth, and this will continue into the future with the launch of Landsat-9 in September 2021. The Landsat archive is an invaluable source of information for understanding the impacts of climate change on the earth.
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center">
-    <img src="{{site.url}}/assets/images/gulf/landsat_timeline_20200318_print.JPG" class="workshop-img">
+    <img src="{{site.url}}/assets/images/gulf/landsat_timeline_20200318_print.jpg" class="workshop-img">
     <figcaption>This image depictS the timeline of the Landsat program, from Landsat 1 launched in 1972, through to Landsat 9 launched in 2021. Landsat 6 failed to reach orbit on launch. (Source: NASA Goddard Media Studios)</figcaption>
 </figure>
 
