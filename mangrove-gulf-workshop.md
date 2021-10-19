@@ -63,8 +63,6 @@ The primary cause of the mass mangrove dieback event in the Gulf of Carpentaria 
 
 Here are some other resources if you would like to know more about the causes and impacts of this event.
 
-The analysis in this workshop is based on 
-
 The Northern Australia Environmental Research Portal provides detailed information and videos related to this event:
 
 <https://www.nespnorthern.edu.au/projects/nesp/gulf-mangrove-dieback/>
@@ -73,6 +71,9 @@ ABC Rural Radio's Charlie McKillop interviews David Carter, the CEO of Austral F
 
 {{site.url}}/assets/other/Rural-nrn-David-Carter-welcomes-climate-change-inquiry-1010.mp3
 
+The analysis in this workshop is based on the following publication:
+
+Duke Norman C., Kovacs John M., Griffiths Anthony D., Preece Luke, Hill Duncan J. E., van Oosterzee Penny, Mackenzie Jock, Morning Hailey S., Burrows Damien (2017) Large-scale dieback of mangroves in Australia’s Gulf of Carpentaria: a severe ecosystem response, coincidental with an unusually extreme weather event. Marine and Freshwater Research 68, 1816-1829.
 
 <!----------------------------------------------------------------------------->
 
