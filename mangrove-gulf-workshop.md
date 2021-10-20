@@ -63,6 +63,10 @@ The primary cause of the mass mangrove dieback event in the Gulf of Carpentaria 
 
 Here are some other resources if you would like to know more about the causes and impacts of this event.
 
+This article in The Conversation documents the causes and consequences of the dieback event:
+
+<https://theconversation.com/extreme-weather-likely-behind-worst-recorded-mangrove-dieback-in-northern-australia-71880>
+
 The Northern Australia Environmental Research Portal provides detailed information and videos related to this event:
 
 <https://www.nespnorthern.edu.au/projects/nesp/gulf-mangrove-dieback/>
