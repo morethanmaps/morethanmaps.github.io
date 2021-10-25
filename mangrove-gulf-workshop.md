@@ -13,39 +13,81 @@ title: Mangrove Dieback in the Gulf of Carpentaria
 <!----------------------------------------------------------------------------->
 
 # Learning Objectives
-1. Develop an understanding of the importance of mangroves in the Gulf of Carpentaria for fisheries.
-2. Develop an understanding of remote sensing images.
-3. Learn basic programming techniques to process and analyse remote sensing images (Google Earth Engine JavaScript API).
-4. Develop an understanding of how satellite images and vegetation indices can be used to monitor mangroves.
+- Develop an understanding of the importance of mangroves in the Gulf of Carpentaria for fisheries.
+- Develop an understanding of remote sensing images.
+- Learn basic programming techniques to process and analyse remote sensing images (Google Earth Engine JavaScript API).
+- Develop an understanding of how satellite images and vegetation indices can be used to monitor mangroves.
 
 
 <!----------------------------------------------------------------------------->
 
 # Activities
-- Introduction to the Gulf of Carpentaria case study and the mangrove dieback event.
-- Introduction to Landsat and why this is such an important resource for Earth observation.
-- Use remote sensing images to display pre- and post-dieback RGB and NDVI images.
-- Map and calculate the area of the mangrove dieback event.
-- Investigate time series data representing the dieback event and possible recovery.
+1. Introduction to the Mangrove Dieback Event.
+2. Introduction to the Landsat satellites.
+3. Introduction to Google Earth Engine (GEE)
+4. Working with the GEE Map
+5. Working with satellite images in GEE.
+6. Mapping changes to vegetation
+7. Analysing mangrove dieback.
+8. Analysing mangroves through time.
 
 <!----------------------------------------------------------------------------->
 
-# Mangrove Dieback Event
-- Describe the event and the probable cause (Sharyn).
+# 1. Mangrove Dieback Event
 
-Listen to ABC Rural Radio's Charlie McKillop interview David Carter, the CEO of Austral Fisheries about the mangrove dieback event. This interview took place in October 2016.
+In the 2015/2016 summer the Gulf of Carpentaria recorded the largest known mangrove dieback event. Overall, 7,650 hectares of mangrove forest with an estimated 39.4 million trees died. For comparison the surface area of Sydney Harbour is less than this area at 5,255 hectares. To understand the importance of mangroves, and how this extensive area of mangroves was impacted, we first need to understand about mangroves and climate.
+
+## Mangroves
+
+The definition of a tree as mangrove is not strictly based on taxonomic relationship, rather it is the ability of the tree to possess the traits required to survive the highly saline, tidally flooded environment that they live in. Mangrove responses to these abiotic stresses are complex and, similar to all plants, involve metabolic and physiological responses. At extremes mangroves get ‘stressed’ and display physiological responses (e.g., leaf senescence), this can affect the ecosystem services they provide, including carbon (C) sequestration and storage, and habitat for fisheries. 
+
+Air and sea surface temperature, along with salinity, oceanographic conditions and geomorphology influence species composition, forest size, tree height, productivity, and health. They also influence mangrove distribution and ecosystem health. These macro-climate and environmental variables are known limitations to mangrove forest distribution and abundance. 
+
+<figure style="margin-left: auto; margin-right: auto; text-align: center">
+    <img src="{{site.url}}/assets/images/gulf/gulf-event-mangrove.png" class="workshop-img">
+    <figcaption>Carbon is present in the mangrove biomass (both aboveground and below ground) as well as dead biomass on the ground. Mangroves are also important sinks with storage of carbon in sediments.</figcaption>
+</figure>
+
+
+## Climate
+
+The climate is important in controlling these constraining traits. Extreme conditions can result in physiological thresholds being surpassed and may influence metabolic processes, such as seen in increased salinity, or drought conditions. Here, trees lose their capacity for water uptake and salt exclusion, leading to progressive loss of leaves and eventually death. 
+
+The El Nino Southern Oscillation, or ENSO, is a natural climate phenomena that results in changes in air and sea surface temperature, as well as sea level. It is categorised by three phases El Nino, La Nina, and the neutral phase. 
+
+In the tropical Pacific Ocean, ENSO can result in extreme variation in sea levels. During El Niño, weak equatorial trade winds cause the thermocline to shoal in the tropical western Pacific and the presence of cool water results in sea levels that can be lower by 20–30 cm, while conversely sea levels are higher in the east. During the La Niña phase the patterns are reversed. These sea level seesaws are intensifying with climate change and are therefore likely to increase fluctuations in tidal inundation and salinity of mangrove soils, giving rise to conditions unfavourable for tree growth. 
+
+The primary cause of the mass mangrove dieback event in the Gulf of Carpentaria was therefore a decline in the sea level, which was associated with a severe El Niño in 2015–2016. Sea levels dropped by up to 0.4–0.5 m during April to October, 2015. 
+
+## Further Resources
+
+Here are some other resources if you would like to know more about the causes and impacts of this event.
+
+This article in The Conversation documents the causes and consequences of the dieback event:
+
+<https://theconversation.com/extreme-weather-likely-behind-worst-recorded-mangrove-dieback-in-northern-australia-71880>
+
+The Northern Australia Environmental Research Portal provides detailed information and videos related to this event:
+
+<https://www.nespnorthern.edu.au/projects/nesp/gulf-mangrove-dieback/>
+
+ABC Rural Radio's Charlie McKillop interviews David Carter, the CEO of Austral Fisheries about the mangrove dieback event. This interview took place in October 2016.
 
 {{site.url}}/assets/other/Rural-nrn-David-Carter-welcomes-climate-change-inquiry-1010.mp3
 
+The analysis in this workshop is based on the following publication:
+
+Duke Norman C., Kovacs John M., Griffiths Anthony D., Preece Luke, Hill Duncan J. E., van Oosterzee Penny, Mackenzie Jock, Morning Hailey S., Burrows Damien (2017) Large-scale dieback of mangroves in Australia’s Gulf of Carpentaria: a severe ecosystem response, coincidental with an unusually extreme weather event. Marine and Freshwater Research 68, 1816-1829.
+
 <!----------------------------------------------------------------------------->
 
-# The Landsat Satellites
+# 2. The Landsat Satellites
 
 The Landsat series of satellites first started with the Launch of Landsat-1 in 1972 and have continued to the present day with Landsat-7 and Landsat-8 currently collecting images (see image below). The Landsat satellites have been designed to monitor land use and land change such as drought, fire, deforestation, flooding, urbanisation, and many other environmental and human-related changes. The Landsat programme is the world's longest continuous archive of satellite-based images of the earth, and this will continue into the future with the launch of Landsat-9 in September 2021. The Landsat archive is an invaluable source of information for understanding the impacts of climate change on the earth.
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center">
-    <img src="{{site.url}}/assets/images/gulf/landsat_timeline_20200318_print.JPG" class="workshop-img">
-    <figcaption>This image depictS the timeline of the Landsat program, from Landsat 1 launched in 1972, through to Landsat 9 launched in 2021. Landsat 6 failed to reach orbit on launch. (Source: NASA Goddard Media Studios)</figcaption>
+    <img src="{{site.url}}/assets/images/gulf/landsat_timeline_20200318_print.jpg" class="workshop-img">
+    <figcaption>This image depicts the timeline of the Landsat program, from Landsat 1 launched in 1972, through to Landsat 9 launched in 2021. Landsat 6 failed to reach orbit on launch. (Source: NASA Goddard Media Studios)</figcaption>
 </figure>
 
 In this workshop you will be using images captured by Landsat-8. Before we begin, it is useful to introduce the concept of **resolution** which is used to describe various aspects of satellites used for earth observation.
@@ -63,7 +105,7 @@ In this workshop you will be using images captured by Landsat-8. Before we begin
 
 <!----------------------------------------------------------------------------->
 
-# Introduction to GEE
+# 3. Introduction to GEE
 
 Google Earth Engine (GEE) is a geospatial analysis platform that runs on Google Cloud. Using Google Earth Engine you can access and analyse large amounts of geospatial data and satellite images from your web browser. 
 
@@ -95,7 +137,7 @@ In this workshop you will be focussing on the following GEE components:
 
 <!----------------------------------------------------------------------------->
 
-# Working with the GEE Map
+# 4. Working with the GEE Map
 
 We will start the practical exercise by working with the GEE map interface.
 
@@ -145,7 +187,7 @@ Now you can centre the map window on this location by adding the following line 
 ```js
 Map.centerObject(CoxR, 12);
 ```
-The `Map.centreObject()` function takes two parameters: an object to center on (in this case the CoxR point feature) and a zoom level. The zoom level has the same effect as `Map.setZoomLevel()` function you used above but allows you do the center and zoom in one step. Run your script to see the effect on the Map window. It should look similar to the map below:
+The `Map.centreObject()` function takes two parameters: an object to center on (in this case the CoxR point feature) and a zoom level. The zoom level has the same effect as `Map.setZoomLevel()` function you used above but allows you do the center and zoom in one step. **Run** your script to see the effect on the Map window. It should look similar to the map below:
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center">
     <img src="{{site.url}}/assets/images/gulf/gulf-map-centre.png" class="workshop-img">
@@ -184,7 +226,7 @@ Map.addLayer(CoxR, {}, "Cox River", false);
   
 <!----------------------------------------------------------------------------->
 
-# Working with Images
+# 5. Working with Images
 
 In this section, you will learn how to select and display satellite images in GEE, as well as how to remove clouds from images.
 
@@ -225,7 +267,6 @@ Now you have an `ee.Image()`, let's display it on the map. But first we need to 
 
 ```js
 var vis = {"bands":["SR_B4", "SR_B3", "SR_B2"], "min":6000, "max":12000};
-
 ```
 The above line defines a set of visualisation parameter that the `Map.addLayer()` understands. It includes which bands from the image should be used for the red, green and blue colour channels (in this case bands 4, 3, and 2), and the minimum and maximum pixel values to *stretch* the image to (in this case 6000 and 12000). We save these in the variable `vis` so we can easily reuse them. Now we can add the image to the map using the `Map.addLayer()` function you have used before:
 
@@ -316,7 +357,7 @@ Map.addLayer(afterImage, vis, "after image - cloud free", false);
 
 <!----------------------------------------------------------------------------->
 
-# Mapping Changes to Vegetation
+# 6. Mapping Changes to Vegetation
 
 In this section, you will use a remote sensing vegetation index to map vegetation, and changes to vegetation over time.
 
@@ -367,7 +408,7 @@ Click **Run** and then click the **Layers** button in the map window, and click 
 </figure>
 
 
-## Mapping Vegetation Change Using NDVI Differencing
+## Mapping Vegetation Change
 
 A simple way to map changes in vegetation between two time steps is to perform a subtraction between two NDVI images (i.e. NDVI differencing). We subtract the older NDVI image from the newer NDVI image:
 
@@ -394,11 +435,11 @@ Since we are focussing on loss of mangroves, we are only interested in pixels wh
 ```js
 var vegLoss = diffNDVI.lt(-0.1);
 vegLoss = vegLoss.updateMask(vegLoss); 
-Map.addLayer(vegLoss, {palette: ["ff0000"]}, "vegetation loss", false);
+Map.addLayer(vegLoss, {palette: ["red"]}, "vegetation loss", false);
 ```
 The first line calls the boolean *less than* function `lt()` on the NDVI difference image. It takes one parameter: in this case a fixed value of `-0.1`. This operation will create a new image (called `vegLoss`). This new image will only contain pixels values of 1 (where the *less than* condition was true) or 0 (where the condition was false).
 
-We are only interested in the true pixels (value of 1) so we need to exclude the false pixels. We can set these pixels to be transparent by updating the image's *mask*. The `updateMask()` function takes a boolean image (in this case the `vegLoss` image) and sets any pixels to be transparent where the boolean image is false. Only the vegetation loss pixels are displayed when we use the `Map.addLayer()` function to display the layer. Note the use of style `{palette: ["ff0000"]}` so the pixels are displayed in red:
+We are only interested in the true pixels (value of 1) so we need to exclude the false pixels. We can set these pixels to be transparent by updating the image's *mask*. The `updateMask()` function takes a boolean image (in this case the `vegLoss` image) and sets any pixels to be transparent where the boolean image is false. Only the vegetation loss pixels are displayed when we use the `Map.addLayer()` function to display the layer. Note the use of style `{palette: ["red"]}` so the pixels are displayed in red:
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center;">
     <img src="{{site.url}}/assets/images/gulf/gulf-ndvi-loss.png" class="workshop-img-small">
@@ -429,12 +470,12 @@ Map.addLayer(diffNDVI, {min: -0.1, max: 0.1}, "ndvi difference", false);
 
 var vegLoss = diffNDVI.lt(-0.1);
 vegLoss = vegLoss.updateMask(vegLoss); // Mask out non-loss pixels
-Map.addLayer(vegLoss, {palette: ["ff0000"]}, "vegetation loss", false);
+Map.addLayer(vegLoss, {palette: ["red"]}, "vegetation loss", false);
 ```
 
 <!----------------------------------------------------------------------------->
 
-# Analysing Mangrove Dieback
+# 7. Analysing Mangrove Dieback
 In this section, you will refine the vegetation loss map to exclude areas that are less likely to have mangroves. You will then calculate the area of mangrove dieback. In the final step, you will look at the NDVI of mangrove areas through time.
 
 ## Mapping the Coastline
@@ -480,7 +521,7 @@ We can use the distance from the coast image to create a boolean (true/false) im
 ```js
 var mangroveZone = distFromCoast.lte(1500);
 var mangroveLoss = vegLoss.updateMask(mangroveZone);
-Map.addLayer(mangroveLoss, {palette: ["ff0000"]}, "mangroveLoss", true);
+Map.addLayer(mangroveLoss, {palette: ["red"]}, "mangroveLoss", true);
 ```
 The *less than or equals to* function `lte()` is used to create a new `mangroveZone` image with pixel values of 1 (true) for areas within 1.5 km of the coastline, or 0 for areas that are not. We can then use this new mangroveZone image and the `updateMask()` function to set any pixels in the vegetation loss image that are outside the mangrove zone to be transparent.
 
@@ -519,8 +560,36 @@ The first line calculates the pixel area using a chain of functions. The `ee.Num
 
 **Run** the script and your console should display **Mangrove Dieback Area (km2)** of **24.4881**.
 
+## Summary
 
-## Exploring Mangrove NDVI through time
+The code from this section is summarised below. Check to make sure your code is similar.
+
+```js
+// Analysing Mangrove Dieback
+var coastline = ee.FeatureCollection("USDOS/LSIB/2017")
+  .filterMetadata("COUNTRY_NA", "equals", "Australia");
+Map.addLayer(coastline, {}, "coastline", false);
+
+var distFromCoast = coastline.distance(5000);
+Map.addLayer(distFromCoast, {min: 0, max: 5000}, "distance from coast", false);
+
+var mangroveZone = distFromCoast.lte(1500);
+var mangroveLoss = vegLoss.updateMask(mangroveZone);
+Map.addLayer(mangroveLoss, {palette: ["red"]}, "mangroveLoss", true);
+
+var lossPixels = mangroveLoss.reduceRegion({
+  reducer: ee.Reducer.count(), 
+  maxPixels: 60000000
+});
+lossPixels = ee.Number(lossPixels.get('nd'));
+print("Mangrove Dieback Pixels", lossPixels)
+
+var pixelArea = ee.Number(30).pow(2).divide(ee.Number(1000).pow(2));
+var lossArea = lossPixels.multiply(pixelArea);
+print("Mangrove Dieback Area (km2)", lossArea);
+```
+
+# 8. Analysing mangroves through time
 
 One of the powerful features of GEE is the ability to analyse the temporal pattern of phenomenon on the earth's surface over long time periods using large collections of satellite images. We will use this capability to look at changes in the Cox River mangroves since Landsat 8 began collecting images in 2013.
 
@@ -548,6 +617,7 @@ We will be using all available Landsat 8 images since the satellite was launched
 
 
 ```js
+// Analysing mangroves through time
 L8 = L8.map(removeCloud);
 var ndviImages = L8.map(calcNDVI);
 ```
@@ -588,7 +658,7 @@ The `setOptions()` function for the chart contains one important parameter: `int
     <figcaption>NDVI time series for over a mangrove dieback pixel.</figcaption>
 </figure>
 
-Run your mouse along the line representing the NDVI in the chart and the date and NDVI value will be displayed. What season (or months) do you think the mangrove dieback event occurred? Do you think the mangroves recovered in the years that followed? What do you think might cause the other smaller variations in the NDVI both before and after the dieback event?
+Trace your mouse pointer along the line representing the NDVI in the chart and the date and NDVI value will be displayed. What season (or months) do you think the mangrove dieback event occurred? Do you think the mangroves recovered in the years that followed? What do you think might cause the other smaller variations in the NDVI both before and after the dieback event?
 
 Click on the point marker to go into edit mode. Then click and drag the point marker to a new location on the coast where there was mangrove dieback according to your map, and click the **Exit** button at the top of the map. **Run** the script again. Do you see the same temporal pattern at this new location?
 
@@ -599,29 +669,7 @@ Click on the point marker to go into edit mode. Then click and drag the point ma
 The code from this section is summarised below. Check to make sure your code is similar.
 
 ```js
-// Analysing Mangrove Dieback
-var coastline = ee.FeatureCollection("USDOS/LSIB/2017")
-  .filterMetadata("COUNTRY_NA", "equals", "Australia");
-Map.addLayer(coastline, {}, "coastline", false);
-
-var distFromCoast = coastline.distance(5000);
-Map.addLayer(distFromCoast, {min: 0, max: 5000}, "distance from coast", false);
-
-var mangroveZone = distFromCoast.lte(1500);
-var mangroveLoss = vegLoss.updateMask(mangroveZone);
-Map.addLayer(mangroveLoss, {palette: ["ff0000"]}, "mangroveLoss", true);
-
-var lossPixels = mangroveLoss.reduceRegion({
-  reducer: ee.Reducer.count(), 
-  maxPixels: 60000000
-});
-lossPixels = ee.Number(lossPixels.get('nd'));
-print("Mangrove Dieback Pixels", lossPixels)
-
-var pixelArea = ee.Number(30).pow(2).divide(ee.Number(1000).pow(2));
-var lossArea = lossPixels.multiply(pixelArea);
-print("Mangrove Dieback Area (km2)", lossArea);
-
+// Analysing mangroves through time
 L8 = L8.map(removeCloud);
 var ndviImages = L8.map(calcNDVI);
 
