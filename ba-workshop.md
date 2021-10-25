@@ -43,7 +43,6 @@ A range of climatic stressors affect these ecosystems. The strong winds and heav
 ## Learning Objectives
 
 * Develop an understanding of how ecosystem services support livelihoods.
-* Develop an understanding of how satellite images can be used to monitor change in vegetation condition after a climatic shock. 
 * Learn how to build a causal loop diagram to represent the structure and dynamics of livelihood systems dependent on ecosystems.
 * Use the causal loop diagram to identify how climate impacts to ecosystems affect livelihoods.
 * Use the causal loop diagram to design an adaptation strategy or policy to boost the resilience of livelihood systems to climatic shocks. 
@@ -60,11 +59,11 @@ A variable is an entity that has a value and whose value can change. In this wor
 
 **Ecosystem**
 
-An ecosystem is an area comprising dynamic and complex interactions between plants, animals, microoganism communities and non-living factors. <a href="https://www.millenniumassessment.org/documents/document.765.aspx.pdf" target="_blank">(MA, 2003).</a> A mangrove forest is an example of an ecosystem comprising mangrove trees and various marine and nearshore animals.
+An ecosystem is an area comprising dynamic and complex interactions between plants, animals, microorganism communities and non-living factors. <a href="https://www.millenniumassessment.org/documents/document.765.aspx.pdf" target="_blank">(MA, 2003).</a> A mangrove forest is an example of an ecosystem comprising mangrove trees and various marine and nearshore animals.
 
 **Ecosystem Service** 
 
-The benefits people obtain from ecosystems. The benefits can be products such as crops, fish, and timber or processes that regulate ecosystem functioning in ways that benefit people such as flood prototection provided by coastal forest or pollination services provided by bees <a href="https://www.millenniumassessment.org/documents/document.765.aspx.pdf" target="_blank">(MA, 2003).</a> Mangrove forests provide a range of ecosystem services including timber and food (fish and crabs), storm protection services, carbon sequestration, and regulation of sediment dynamics.
+The benefits people obtain from ecosystems. The benefits can be products such as crops, fish, and timber or processes that regulate ecosystem functioning in ways that benefit people such as flood prototection provided by coastal forests or pollination services provided by bees <a href="https://www.millenniumassessment.org/documents/document.765.aspx.pdf" target="_blank">(MA, 2003).</a> Mangrove forests provide a range of ecosystem services including timber and food (fish and crabs), storm protection services, carbon sequestration, and regulation of sediment dynamics.
 
 **Socio-ecological System**
 
@@ -86,7 +85,13 @@ People living in and around the Ba Mangroves use a range of landscape resources 
 </button>
 </div>
 
-**TASK:** make a list of variables that comprise the landscape resources, ecosystem services, and economic variables that are important for supporting livelihoods in the Ba Mangrove region. 
+**TASK:** make a list of variables that comprise the landscape resources, ecosystem services, and economic variables that are important for supporting livelihoods in the Ba Mangrove region. For example, the start of your list might look like:
+
+* mangroves (mud crabs)
+* freshwater fishing
+* ocean fishing 
+* cassava
+* ...
 
 <br>
 
@@ -105,7 +110,12 @@ Work through the Google Earth Tour accessed by clicking the button below. This t
 </div>
 
 
-**TASK:** make a list of a climate shocks that affect each of the landscape components or ecosystem services that are important for supporting livelihoods (identified in Activity 1). 
+**TASK:** make a list of a climate shocks that affect each of the landscape components or ecosystem services that are important for supporting livelihoods (identified in Activity 1). For example, the start of your list might look like:
+
+* tropical cyclone - cassava damage (reduced food in houshold)
+* flooding - reduced fish catch (reduced income)
+* heat / drought - crop damage (reduced food in household / wage labour income)
+* ...
 
 <br>
 
@@ -119,7 +129,12 @@ When climate shocks affect landscape resources and ecosystem service flows in th
 </button>
 </div>
 
-**TASK:** for each climate shock that you identified in Activity 2 identify a response strategy that people have deployed. Make a list of these response strategies. 
+**TASK:** for each climate shock that you identified in Activity 2 identify a response strategy that people have deployed. Make a list of these response strategies. For example, the start of your list might look like:
+
+* heat / drought impacts to vegetables - use coconut palms as shade
+* tropical cyclones reduce mud crab collections - walk further afield to collect crabs
+* tropical cyclones impact fishing - take jobs in town to compensate lost income 
+* ...
 
 <br>
 
@@ -140,19 +155,19 @@ The first stage in building a causal loop diagram is picking a **problem or focu
 After we have identified the problem variable, we need to identify **causes**. Causes affect the problem variable and the presence of a cause can result in an increase or decrease in the problem variable. Debris in small streams and channels in the mangroves can prevent people from accessing areas to collect mud crabs; thus, an increase in debris causes a decrease in mud crab collections. Debris in small streams and channels is our cause. As levels of debris directly affects people's ability to collect crabs, we say it is a **direct cause**. 
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center;">
-    <img src="{{site.url}}/assets/images/cld-demo-1.png" class="workshop-img-small">
+    <img src="{{site.url}}/assets/images/ba/cld-demo-1.png" class="workshop-img-small">
 </figure>
 
 However, something else causes debris to build up in small streams and channels. Variables that cause a build up or decrease in debris are **indirect causes** of change in collections of mud crabs from the mangroves. They're indirect causes as they affect mud crab collections through another variable (the direct cause). In this example, a tropical cyclone is an indirect cause as the high winds associated with the storm can damage mangrove trees with fallen branches and trunks blocking streams. 
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center;">
-    <img src="{{site.url}}/assets/images/cld-demo-2.png" class="workshop-img-small">
+    <img src="{{site.url}}/assets/images/ba/cld-demo-2.png" class="workshop-img-small">
 </figure>
 
 Tropical cyclones can also directly affect levels of mud crabs in the mangroves. The high winds and flooding associated with the storm can reduce numbers of mud crabs in the mangroves which directly affects the amount people can collect. Tropical cyclones are a direct and indirect cause of levels of mud crabs available for people to collect. This is an early example of how causal loop diagrams can capture complex linkages between components of a socio-ecological system. 
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center;">
-    <img src="{{site.url}}/assets/images/cld-demo-3.png" class="workshop-img">
+    <img src="{{site.url}}/assets/images/ba/cld-demo-3.png" class="workshop-img">
 </figure>
 
 #### Identify the consequences of the problem
@@ -160,19 +175,19 @@ Tropical cyclones can also directly affect levels of mud crabs in the mangroves.
 A consequence is a result of a change in the problem variable. As tropical cyclones cause a decrease in mud crab collections, people need to respond to secure food and income. If debris is blocking people's preferred locations to collect mud crabs they collect crabs at locations that are more accessible near their home. Changing location for collecting mud crabs is a **direct consequence**.
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center;">
-    <img src="{{site.url}}/assets/images/cld-demo-4.png" class="workshop-img">
+    <img src="{{site.url}}/assets/images/ba/cld-demo-4.png" class="workshop-img">
 </figure>
 
-However, these more accessible locations for collecting mud crabs are not the best locations to collect crabs. This means people's catch is reduced and they need to find other ways to generate income. People do this by working as wage labourers on sugarcane fields. There are two things to note here. The first is that collecting crabs in sub-optimal locations links back to the problem variable of reducing levels of people's mud crab catch. The second is that tropical cyclone's causing a change in the problem variable, mud crab collections, causes people to collect crabs sub-optimal locations which reduces food and income. To compensate for this, people take on new income generating activities and work as wage labourers on sugarcane farms. This is an **indirect consequence** of tropical cyclones impacting mud crab collections. 
+However, these more accessible locations for collecting mud crabs are not the best locations to collect crabs. This means people's catch is reduced and they need to find other ways to generate income. People do this by working as wage labourers on sugarcane fields. There are two things to note here. The first is that collecting crabs in sub-optimal locations links back to the problem variable of reducing levels of people's mud crab catch. The second is that tropical cyclone's causing a change in the problem variable, mud crab collections, causes people to collect crabs in sub-optimal locations which reduces food and income. To compensate for this, people take on new income generating activities and work as wage labourers on sugarcane farms. This is an **indirect consequence** of tropical cyclones impacting mud crab collections. 
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center;">
-    <img src="{{site.url}}/assets/images/cld-demo-5.png" class="workshop-img">
+    <img src="{{site.url}}/assets/images/ba/cld-demo-5.png" class="workshop-img">
 </figure>
 
 We have mentioned that people collect crabs to generate income; this is another **direct** consequence of collecting mud crabs. It is also a direct consequence of collecting mud crabs in other locations and wage labour activities on sugarcane farms. We can see that as mud collections decrease people will have less household income (i.e. they have fewer crabs to sell at the market). This, in turn, has a knock-on effect on people's household savings. If they have less income they will have less money to put into savings and they may need to draw on their savings to make up the shortfall. Change in people's savings is an indirect consequence of tropical cyclones affecting mud crab collections. 
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center;">
-    <img src="{{site.url}}/assets/images/cld-demo-6.png" class="workshop-img">
+    <img src="{{site.url}}/assets/images/ba/cld-demo-6.png" class="workshop-img">
 </figure>
 
 #### Defining links between variables
@@ -182,7 +197,7 @@ We have started to create a system that describes how a tropical cyclone impacts
 Before we describe the links, there is one obvious link that is missing on our diagram. Tropical cyclones can affect sugarcane fields through flooding and waterlogging, which will also reduce sugarcane income. 
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center;">
-    <img src="{{site.url}}/assets/images/cld-demo-7.png" class="workshop-img">
+    <img src="{{site.url}}/assets/images/ba/cld-demo-7.png" class="workshop-img">
 </figure>
 
 There are two types of links between variables in a causal loop diagram:
@@ -193,7 +208,7 @@ There are two types of links between variables in a causal loop diagram:
 Let's add `+` or `-` signs to the links on the diagram to denote positive or negative links between system variables.
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center;">
-    <img src="{{site.url}}/assets/images/cld-demo-8.png" class="workshop-img">
+    <img src="{{site.url}}/assets/images/ba/cld-demo-8.png" class="workshop-img">
 </figure>
 
 <br>
@@ -224,10 +239,10 @@ Let's add `+` or `-` signs to the links on the diagram to denote positive or neg
 
 #### Feedback loops
 
-When links between variables form circles feedback loops form in the system depicted in the causal loop diagram. There are two types of feedback loops:
+When links between variables form circles, feedback loops form in the system depicted in the causal loop diagram. There are two types of feedback loops:
 
-* **reinforcing loop:** this occurs when a change in a causal variable propagates through the system to reinforce the initial change in the cause. Reinforcing loops occur when two positive links or two negative links form a loop. 
-* **balancing loop:** this occurs when a change in a causal variable propagates through the system and causing an opposite change in the initial cause. Balancing loops occur when one negative and one positive links form a loop.
+* **reinforcing loop:** this occurs when a change in a causal variable propagates through the system to reinforce the initial change in the cause. For example, reinforcing loops occur when two positive links or two negative links form a loop. 
+* **balancing loop:** this occurs when a change in a causal variable propagates through the system and causing an opposite change in the initial cause. For example, balancing loops occur when one negative and one positive links form a loop.
 
 There's one loop in our simple causal loop diagram describing the mud crab collection system. The loop is formed by the two negative links between collecting mud crabs and collecting mud crabs in new locations. An increase in mud crab collections causes a decrease in collecting mud crabs in new locations. This decrease in collecting mud crabs in new (sub-optimal) locations results in an increase in mud crab collections. This, in turn, means people don't need to collect mud crabs in a new location. And so on. This is a reinforcing feedback loop. However, we can see how a tropical cyclone can change the system dynamics and create reinforcing feedback loop of decreasing mud crab collections. A tropical cyclone reduces mud crab collections, which causes people to collect mud crabs in sub-optimal locations, which reduces mud crab collections, which causes people to continue collecting mud crabs in other sub-optimal locations, and so on. 
 
@@ -249,7 +264,7 @@ In Activity 1 you made a list of landscape resources and ecosystem services that
 In the middle of a sheet of paper write down your problem variable. 
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center;">
-    <img src="{{site.url}}/assets/images/paper-cld-1.jpg" class="workshop-img-small">
+    <img src="{{site.url}}/assets/images/ba/paper-cld-1.jpg" class="workshop-img-small">
 </figure>
 
 #### TASK 2: Identify causes
@@ -259,7 +274,7 @@ In Activity 2 you made a list of climatic variables that affect landscape resour
 Use a different coloured pen, and to the left of your problem variable, write down the direct climate causes on your sheet of paper. Draw arrows that link climate causes to the problem variable. 
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center;">
-    <img src="{{site.url}}/assets/images/paper-cld-2.jpg" class="workshop-img-small">
+    <img src="{{site.url}}/assets/images/ba/paper-cld-2.jpg" class="workshop-img-small">
 </figure>
 
 It is possible that climate shocks can indirectly affect your problem variable. Look at the notes you made in Activity 1 and Activity 2 to see if you can spot cases where a climate event causes a change in another variable, and the change in that variable causes a change in your problem variable. These are cases when climate variables are **indirect causes**. An example could be flooding damaging farm machinery or roads which makes it harder to harvest crops, which impacts crop production.
@@ -267,7 +282,7 @@ It is possible that climate shocks can indirectly affect your problem variable. 
 Staying on the left side of your diagram, add these causal chains where climate events are indirect causes. Draw arrows that link climate causes indirectly to the problem variable.
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center;">
-    <img src="{{site.url}}/assets/images/paper-cld-3.jpg" class="workshop-img-small">
+    <img src="{{site.url}}/assets/images/ba/paper-cld-3.jpg" class="workshop-img-small">
 </figure>
 
 #### TASK 3: Identify consequences
@@ -281,7 +296,7 @@ In Activity 3 you made a list of strategies people deployed to respond to climat
 Using a different coloured pen to your causes and problem variable, write down the consequences on the right side of your sheet of paper. Draw arrows that link the problem variable to the consequences. 
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center;">
-    <img src="{{site.url}}/assets/images/paper-cld-4.jpg" class="workshop-img">
+    <img src="{{site.url}}/assets/images/ba/paper-cld-4.jpg" class="workshop-img">
 </figure>
 
 #### TASK 4: Check for completeness
@@ -291,7 +306,7 @@ Reviewing the notes you made in Activities 1, 2, and 3 check that your causal lo
 Capturing all the indirect consequences of a climate shock to your problem variable is important to i) fully understand how people's livelihoods are affected, and ii) to assess the resilience of the sytem in terms of its capacity to provide ecosystem services. 
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center;">
-    <img src="{{site.url}}/assets/images/paper-cld-5.jpg" class="workshop-img">
+    <img src="{{site.url}}/assets/images/ba/paper-cld-5.jpg" class="workshop-img">
 </figure>
 
 #### TASK 5: Describe links
@@ -301,7 +316,7 @@ You should now have a detailed causal loop diagram depicting the direct and indi
 Add a `+` sign next to all positive links and a `-` sign next to all negative links. 
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center;">
-    <img src="{{site.url}}/assets/images/paper-cld-6.jpg" class="workshop-img">
+    <img src="{{site.url}}/assets/images/ba/paper-cld-6.jpg" class="workshop-img">
 </figure>
 
 #### TASK 6: Identify feedbacks
@@ -309,7 +324,7 @@ Add a `+` sign next to all positive links and a `-` sign next to all negative li
 Work through your causal loop diagram to identify any feedback loops which link together causes and consequences. Feedback loops can involve two or more variables and can occur between causes and consequences of your problem variable, direct and indirect causes of your problem variable, and direct and indirect consequences of your problem variable. Make a note of whether a feedback loop is reinforcing or balancing. *Label each of the feedback loops as reinforcing (R) or balancing (B).*
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center;">
-    <img src="{{site.url}}/assets/images/paper-cld-7.jpg" class="workshop-img">
+    <img src="{{site.url}}/assets/images/ba/paper-cld-7.jpg" class="workshop-img">
 </figure>
 
 <p class="text-primary">Two feedback loops have been labelled. The first is a small balancing loop between fish catch and food. The second is a larger more complex feedback loop which shows how flooded roads prevent people working in towns through restricted access, which prevents people from generating an income, which prevents people from repairing farm equipment, which prevents people from replanting, which further impacts crop production. This is a reinforcing loop; the loop is reinforcing the negative impacts of flooding on crop production.</p>
@@ -329,7 +344,7 @@ A resilient system is able to keep providing ecosystem services that people need
 * Do the feedback loops in your causal loop diagram interect with climate shock to to reduce the system's capacity to provide ecosystem services over time (low resilience) or quickly recover from the shock and maintain ecosystem service flows (high resilience)? *Label each of the feedback loops as low-resilience (LR) or high-resilience (HR)*
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center;">
-    <img src="{{site.url}}/assets/images/paper-cld-8.jpg" class="workshop-img">
+    <img src="{{site.url}}/assets/images/ba/paper-cld-8.jpg" class="workshop-img">
 </figure>
 
 <p class="text-primary">We have traced in red ink the causal chains describing how climate shocks impact crop production and labelled the feedback loops as low-resilience or high-resilience.</p>
@@ -344,7 +359,7 @@ Let's consider the role of human activities in responding to climate shocks affe
 * Are any of the human response activities part of feedback loops? *Are these feedback loops undermining the system's capacity to provide ecosystem services that are important for livelihoods or are they contributing to the system recovering after the climate shock to maintain levels of ecosystem service flows? Label any feedback loops undermining system resilience as negative (N)*
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center;">
-    <img src="{{site.url}}/assets/images/paper-cld-9.jpg" class="workshop-img">
+    <img src="{{site.url}}/assets/images/ba/paper-cld-9.jpg" class="workshop-img">
 </figure>
 
 <p class="text-primary">We've labelled fish catch and town jobs as both short- and long-term response activities as people could use these activities for a short period of time or the flood event could be a trigger to a more permanent shift in the mix of livelihood activities.</p>
@@ -364,7 +379,7 @@ The goal of this exercise is to demonstrate how causal loop diagrams can help de
 Use a pencil to sketch different adaptation responses on your diagram and trace the effect of the intervention propagating through the system to check it doesn't have any unforeseen adverse impacts and that the mechanism through which it boosts resilience is plausible. 
 
 <figure style="margin-left: auto; margin-right: auto; text-align: center;">
-    <img src="{{site.url}}/assets/images/paper-cld-10.jpg" class="workshop-img">
+    <img src="{{site.url}}/assets/images/ba/paper-cld-10.jpg" class="workshop-img">
 </figure>
 
 <p class="text-primary">We've added two interventions to disrupt the low-resilience feedback loop: cash relief to farmers to buy equipment and resources for replanting and improving drainage to reduce floods blocking roads.</p>
