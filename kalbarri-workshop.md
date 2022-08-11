@@ -34,6 +34,90 @@ The ABC news has reported on damage to buildings in Kalbarri [here](https://www.
 
 <br>
 
+<div class="workshops" id="workshops">
+    <div class="container" style="margin-top:30px; margin-bottom:-30px;">
+        <div class=row style="">
+            <div class="col-lg-4 col-md-4 col-sm-12 mb-4">
+                <div class="card border-primary mb-4 h-100">
+                    <div class="card-img">
+                        <img src="{{site.url}}/assets/images/kalbarri.png" alt="...">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h4 class="card-title">Notebook</h4>
+                        <p class="card-text">Notebook instructions for interactive workshop.</p>
+                        <a class="btn btn-primary mt-auto align-items-end" href="/kalbarri-workbook.html" target="_blank" role="button">Load</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 mb-4">
+                <div class="card border-primary mb-4 h-100">
+                    <div class="card-img">
+                        <img src="{{site.url}}/assets/images/kalbarri/gfc.png" alt="...">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h4 class="card-title">Global Forest Change</h4>
+                        <p class="card-text">Machine learning generated maps of deforestation events.</p>
+                        <a class="btn btn-primary mt-auto align-items-end" href="https://glad.earthengine.app/view/global-forest-change#dl=1;old=off;bl=off;lon=20;lat=10;zoom=3;" target="_blank" role="button">Go</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 mb-4">
+                <div class="card border-primary mb-4 h-100">
+                    <div class="card-img">
+                        <img src="{{site.url}}/assets/images/kalbarri/timelapse.png" alt="...">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h4 class="card-title">Timelapse</h4>
+                        <p class="card-text">Global video of satellite images to explore how the world is changing.</p>
+                        <a class="btn btn-primary mt-auto align-items-end" href="https://earthengine.google.com/timelapse/" target="_blank" role="button">Go</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=row style="">
+            <div class="col-lg-4 col-md-4 col-sm-12 mb-4">
+                <div class="card border-primary mb-4 h-100">
+                    <div class="card-img">
+                        <img src="{{site.url}}/assets/images/kalbarri/cloud-to-classroom.png" alt="...">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h4 class="card-title">Cloud to Classroom</h4>
+                        <p class="card-text">Range of Earth Engine apps related to Sustainable Development Goals.</p>
+                        <a class="btn btn-primary mt-auto align-items-end" href="https://www.cloudtoclassroom.org" target="_blank" role="button">Go</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 mb-4">
+                <div class="card border-primary mb-4 h-100">
+                    <div class="card-img">
+                        <img src="{{site.url}}/assets/images/kalbarri/uhi.png" alt="...">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h4 class="card-title">Urban Heat Islands</h4>
+                        <p class="card-text">Global urban heat island explorer.</p>
+                        <a class="btn btn-primary mt-auto align-items-end" href="https://yceo.users.earthengine.app/view/uhimap" target="_blank" role="button">Go</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 mb-4">
+                <div class="card border-primary mb-4 h-100">
+                    <div class="card-img">
+                        <img src="{{site.url}}/assets/images/kalbarri/earth-education.png" alt="...">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h4 class="card-title">Google Earth Education</h4>
+                        <p class="card-text">Range of resources for using Google Earth toolds for education.</p>
+                        <a class="btn btn-primary mt-auto align-items-end" href="https://www.google.com/earth/education/resources/" target="_blank" role="button">Go</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<br>
+
 # Introduction to GEE
 Google Earth Engine is a geospatial analysis platform that runs on Google Cloud. Using Google Earth Engine you can access and analyse large amounts of geospatial data and satellite images from your web browser. 
 
@@ -332,7 +416,8 @@ Map.addLayer(kalbarriPoint, {color: 'blue'}, 'Point');
 We can create a `Feature` in Google Earth Engine using the `ee.Feature()` constructor function. 
 
 ```js
-// Feature
+// 7. Feature
+// Features combine geographic coordinates with a Dictionary object of Feature properties. 
 var kalbarriFeature = ee.Feature(kalbarriPoint, {name: 'Kalbarri'});
 print('Kalbarri Feature:', kalbarriFeature);
 ```
@@ -368,7 +453,7 @@ The Planet Scope 4 `Image`s that you have been working with store data that is r
 
 As satellites orbit the Earth, they monitor the same location on the land surface across time and capture information about land surface conditions. This information can be used to track changes in properties of the Earth's land surface (e.g. land cover change or vegetation health) and identify how ecosystems are responding to climatic change and hazard events. 
 
-The process of using sensors to capture information about the Earth's land surface is remote senisng. Let's explore some core remote sensing concepts so that we can understand how the Planet Scope 4 `Image`s are created and contain useful information for detecting change caused by climatic events. 
+The process of using sensors to capture information about the Earth's land surface is remote sensing. Let's explore some core remote sensing concepts so that we can understand how the Planet Scope 4 `Image`s are created and contain useful information for detecting change caused by climatic events. 
 
 ## Remote Sensing Concepts
 
@@ -399,7 +484,7 @@ Remote sensors measure electromagnetic energy reflected by Earth surface feature
     <figcaption>Electromagnetic spectrum. Source: <a href="https://earthdata.nasa.gov/learn/backgrounders/remote-sensing" target="_blank">NASA</a>.</figcaption>
 </figure>
 
-Features on the Earth's land surface have different reflectance characteristics at different wavelenghts. Think about smooth bright white roofs; these roofs are reflecting lots incoming light across red, green, and blue visible wavelengths which is why the roof is white (reflectance across the visible spectrum) and bright (lots of incoming energy reflected). The same prinicple also explains why vegetation appears green; healthy vegetation reflects more green light and absorbs more red and blue light. 
+Features on the Earth's land surface have different reflectance characteristics at different wavelengths. Think about smooth bright white roofs; these roofs are reflecting lots incoming light across red, green, and blue visible wavelengths which is why the roof is white (reflectance across the visible spectrum) and bright (lots of incoming energy reflected). The same principle also explains why vegetation appears green; healthy vegetation reflects more green light and absorbs more red and blue light. 
 
 Remote sensors measure reflectance in different spectral wavelengths. This allows us to distinguish features on the Earth's surface based on their varying reflectance across wavelengths. Our eyes can only sense reflected energy in the visible spectrum; however, remote sensors can sense over a wider range of the electromagnetic spectrum (e.g. infrared). 
 
@@ -488,7 +573,7 @@ Click on pixels of different surface cover types such as buildings, roads, and v
 
 # Mapping Building Damage
 
-You have learnt about how we can represent real world features and phenomenon using geographic data, programming tools to manipulate and analyse geographic data, and how satellite images can be used to monitor change on the Earth's surface. Let's pull all these skills together to map the location of damaged buildings after Tropical Cyclone Seroja impacted Kalbarri in April 2021.
+You have learned about how we can represent real world features and phenomenon using geographic data, programming tools to manipulate and analyse geographic data, and how satellite images can be used to monitor change on the Earth's surface. Let's pull all these skills together to map the location of damaged buildings after Tropical Cyclone Seroja impacted Kalbarri in April 2021.
 
 First, let's have a look at the impact of Tropical Cyclone Seroja on buildings in Kalbarri. We can use a high-resolution aerial image captured by [Nearmap](https://www.nearmap.com/au/en) after the cyclone event. 
 
@@ -550,7 +635,6 @@ We're only interested in damage to buildings. Let's clip our change `Image` to j
 // builing damage
 var buildingDamage = change.clip(buildingFootprints);
 Map.addLayer(buildingDamage.select('b1'), {min: 0.8, max: 1.4, palette:['00ffff', 'ffff00', 'ff0000']}, 'Building Damage');
-
 ```
 
 Turn off all layers except the *Building Damage* layer and the *Nearmap post-TC Seroja* layer. Compare the areas in red shades, which indicate a decrease in surface reflectance, to the high-resolution Nearmap `Image`. Do the areas with decreased surface reflectance correspond to buildings with damaged roofs?
