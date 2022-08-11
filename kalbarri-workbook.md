@@ -71,9 +71,22 @@ Map.centerObject(kalbarriPoint, 12);
 
 ## Geographic Data - Raster
 
+We need to represent geographic features and phenomenon as data in our programs. Geographic data comprises:
+
+* locational / positional information. 
+* attribute / non-spatial information. 
+
+Raster data - pixels / grid cells. 
+Vector data - geometric objects (points, lines, polygons).
+
 ### Images
 
 An `Image` comprises one or more bands of raster objects. 
+
+<figure style="margin-left: auto; margin-right: auto; text-align: center;">
+    <img src="{{site.url}}/assets/images/kalbarri/raster-data.png" class="workshop-img">
+    <figcaption>Raster data - each pixel has a value that corresponds to a geographic entity or phenomenon such as land cover in the example here.</figcaption>
+</figure>
 
 ```js
 // 3. Images
@@ -106,6 +119,11 @@ Note the `//` - this is a comment which is reference text for you. It is not exe
 
 An `ImageCollection` is a stack of `Image`s. 
 
+<figure style="margin-left: auto; margin-right: auto; text-align: center;">
+    <img src="{{site.url}}/assets/images/kalbarri/image-collection.png" class="workshop-img">
+    <figcaption><code>ImageCollection</code> data structure in Google Earth Engine (source: Google Earth Engine)</figcaption>
+</figure>
+
 ```js
 //4. ImageCollection - stack of Images.
 var ps4ImgColl = ee.ImageCollection('users/jmad1v07/morethanmaps/kalbarri-ps4-tc-seroja');
@@ -130,6 +148,11 @@ print('Images pre-TC Seroja:', ps4PreTCSeroja);
 ```
 
 #### Reduce an Image Collection
+
+<figure style="margin-left: auto; margin-right: auto; text-align: center;">
+    <img src="{{site.url}}/assets/images/kalbarri/gee-reduce-image-collections.png" class="workshop-img">
+    <figcaption>Illustration of reducing an <code>ImageCollection</code> in Google Earth Engine (source: Google Earth Engine).</figcaption>
+</figure>
 
 Summarise all `Image`s in the `ImageCollection`. Here, we take the median value across all `Image`s and pixels in the `ImageCollection`.
 
