@@ -34,7 +34,7 @@ The ABC news has reported on damage to buildings in Kalbarri [here](https://www.
 
 <br>
 
-The <a href="/kalbarri-workbook.html" target="_blank">Notebook</a> provides a summary of the workshop for use in follow-me style sessions. 
+The <a href="/kalbarri-workbook.html" target="_blank">Notebook</a> provides a summary of the workshop for use in follow-me style sessions. This is a <a href="https://code.earthengine.google.com/b026c09fe77c7d7955a08ce58a1a8b6e" target="_blank">rescue</a> script in case you lose your work during a workshop. 
 
 There are some example applications to explore educational resources using Google Earth Engine or visualisations of analyses conducted using Google Earth Engine. 
 
