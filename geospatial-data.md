@@ -84,7 +84,13 @@ As you're exploring the images in the apps, consider the following questions:
 
 *What are the characteristics of satellite images that we require for this task (spatial, temporal, and thematic / radiometric resolutions)?*
 
-Spectral signature explorers:
+*Would Planet or Sentinel-2 data be more suited to detecting damaged buildings? Why?*
+
+*What time-periods do we need to capture images from to detect damaged buildings?*
+
+**Spectral signature explorers:**
+
+Use the following Google Earth Engine apps to visualise the spectral reflectance profile of image pixels before and after Tropical Cyclone Seroja impacted Kalbarri. Use the high resolution basemap image from Nearmap to identify damaged locations and explore how the reflectance has changed at these locations. 
 
 <a class="btn btn-primary" href="https://jmad1v07.users.earthengine.app/view/tc-seroja-s2-spectral-signatures" target="_blank" role="button">TC Seroja Sentinel-2 Spectral Signature Explorer</a>
 
@@ -94,7 +100,9 @@ Spectral signature explorers:
 
 <p></p>
 
-Split screen explorers:
+**Split screen explorers:**
+
+Use the following Google Earth Engine apps to visualise before Tropical Cyclone Seroja and after Tropical Cyclone Seroja images of Kalbarri to explore how damaged buildings are represented in satellite images.
 
 <a class="btn btn-primary" href="https://jmad1v07.users.earthengine.app/view/tc-seroja-s2-bands-split-screen" target="_blank" role="button">TC Seroja Sentinel-2 Split Screen Explorer</a>
 
