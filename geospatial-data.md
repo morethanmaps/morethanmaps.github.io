@@ -41,9 +41,9 @@ Consider what is driving the changes in land use and land cover that you can see
 
 * <a href="https://global-surface-water.appspot.com/map" target="_blank">Global Surface Water Explorer</a>
 * <a href="https://www.wri.org/applications/aqueduct/water-risk-atlas" target="_blank">Water Risk Atlas</a>
-* <a href="https://www.cloudtoclassroom.org/urbanization" target="_blank">Nightlights and Urbanisation</a>
+<!-- * <a href="https://www.cloudtoclassroom.org/urbanization" target="_blank">Nightlights and Urbanisation</a> -->
 * <a href="https://yceo.users.earthengine.app/view/uhimap" target="_blank">Urban Heat Island Explorer</a>
-* <a href="https://www.cloudtoclassroom.org/australian-fires" target="_blank">Australian Bushfires</a>
+<!-- * <a href="https://www.cloudtoclassroom.org/australian-fires" target="_blank">Australian Bushfires</a> -->
 * <a href="https://fews.net/" target="_blank">FEWSNET</a>
 
 <p></p>
