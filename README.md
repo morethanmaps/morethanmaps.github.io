@@ -1,3 +1,24 @@
+# More than maps - Australia
+
+Our aim is to enable student's to use state-of-the-art geospatial techniques to understand climate change impacts on our coastlines.
+
+We've developed a series of workshops that demonstrate how you can combine satellite images, geospatial technologies, and socio-economic data to identify the fingerprint of climatic hazards on coastal regions and strategies to adapt to these challenges.
+
+Find the workshops at: https://morethanmaps.earth
+
+What will you learn?
+You will learn techniques to analyse satellite and socio-economic data to identify the effect of climatic hazards on coastal ecosystems and communities. In these workshops, you will work with data collected from aeroplanes, cubesats, NASA's satellites, and collected by researcher's working with affected communities.
+
+At the end of these workshops you will know how to detect damaged buildings from aerial images right after a tropical cyclone has passed through, tease out the change in mangrove vigour after marine heatwaves, and model how people's livelihoods change when climatic hazards damage ecosystems.
+
+The case studies:
+* Building damage in Kalbarri after Tropical Cyclone Seroja, Western Australia
+* Mangrove dieback in the Gulf of Carpenteria, Northern Territory
+* Tropical Cyclone Winston's impacts on mangrove ecosystem services in Ba, Fiji
+* Partners in the UK, Ghana, and Jamaica are developing and running similar workshops as part of the UK/Australia Season 2021-22 supported by the British Council.
+
+## Build workshop website using Jekyll
+
 Update command line tools:
 
 ```
